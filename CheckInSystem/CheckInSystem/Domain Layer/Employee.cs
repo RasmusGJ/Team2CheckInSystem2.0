@@ -6,7 +6,6 @@ namespace WindowBuilder___Projekt
 {
     public class Employee
     {
-        public string DetHerLortSkalBareVirke { get; set; }
         public string IMG { get; set; }
         public string Name { get; set; }
         public string Initials { get; set; }
@@ -14,7 +13,6 @@ namespace WindowBuilder___Projekt
         public string PinCode { get; set; }
         public string Department { get; set; }
         public string Role { get; set; }
-        public string test2;
 
         public Employee(/*string img, string initials, string landLinePhone, string pinCode, string department, string role*/)
         {
