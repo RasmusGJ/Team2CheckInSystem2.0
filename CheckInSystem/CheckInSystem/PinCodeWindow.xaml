@@ -55,13 +55,13 @@
         <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="7" Grid.Row="5" Click="AddNum">2</Button>
         <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="9" Grid.Row="5" Click="AddNum">3</Button>
         <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="7" Grid.Row="6" Click="AddNum">0</Button>
-        
+
         <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="9" Grid.Row="6" Click="DeleteNum" >
             <Viewbox>
                 <Image Source="Assets/BackSpace.png"></Image>
             </Viewbox>
         </Button>
-        
+
         <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="5" Grid.Row="6" Click="ClickVerify" >
             <Viewbox>
                 <Image Source="Assets/CheckMark.png"></Image>
