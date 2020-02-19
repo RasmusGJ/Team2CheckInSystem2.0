@@ -18,6 +18,8 @@ namespace CheckInSystem
     /// </summary>
     public partial class PinCodeWindow : Window
     {
+        public string pinCode;
+
         public PinCodeWindow()
         {
             InitializeComponent();
@@ -31,7 +33,7 @@ namespace CheckInSystem
 
             UpdateCircles();
 
-        }
+        }        
 
         public void UpdateCircles()
         {
@@ -66,6 +68,7 @@ namespace CheckInSystem
 
                     //The password has been entered.
                     //Verify it here
+                    
                     //Then:
                     MoodWindow moodWindow = new MoodWindow();
                     moodWindow.Show();
@@ -74,11 +77,10 @@ namespace CheckInSystem
             }
 
         }
-
         private void DeleteNum(object sender, RoutedEventArgs e)
         {
             TextBoxNumPad.Text = TextBoxNumPad.Text.Remove(TextBoxNumPad.Text.Length - 1);
             UpdateCircles();
-        }
+        }        
     }
 }
