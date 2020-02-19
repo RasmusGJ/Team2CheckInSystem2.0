@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\BackSpace.png" />
+    <None Remove="Assets\Blurred.jpg" />
+    <None Remove="Assets\Happy2.png" />
+    <None Remove="Assets\Neutral1.png" />
+    <None Remove="Assets\Ratings-Benefit-Your-Business-Processes.png" />
+    <None Remove="Assets\Sad1.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\BackSpace.png" />
+    <Resource Include="Assets\Blurred.jpg" />
+    <Resource Include="Assets\Happy2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Neutral1.png" />
+    <Resource Include="Assets\Ratings-Benefit-Your-Business-Processes.png" />
+    <Resource Include="Assets\Sad1.png" />
+  </ItemGroup>
+
+</Project>

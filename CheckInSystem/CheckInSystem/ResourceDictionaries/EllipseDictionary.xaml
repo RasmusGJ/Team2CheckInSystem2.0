@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:CheckInSystem.ResourceDictionaries">
+    
+    <Style TargetType="Ellipse" x:Key="EmptyEllipse">
+        <Setter Property="Fill" Value="White"></Setter>
+        <Setter Property="Stroke" Value="Black"></Setter>
+        <Setter Property="StrokeThickness" Value="3"></Setter>
+        <Setter Property="Stretch" Value="Uniform"></Setter>
+    </Style>
+
+    <Style TargetType="Ellipse" x:Key="FilledEllipse">
+        <Setter Property="Fill" Value="Black"></Setter>
+        <Setter Property="Stroke" Value="Black"></Setter>
+        <Setter Property="StrokeThickness" Value="3"></Setter>
+        <Setter Property="Stretch" Value="Uniform"></Setter>
+    </Style>
+
+</ResourceDictionary>
