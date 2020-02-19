@@ -73,6 +73,20 @@ namespace CheckInSystem
                     Ellipse2.Style = (Style)FindResource("FilledEllipse");
                     Ellipse3.Style = (Style)FindResource("FilledEllipse");
                     Ellipse4.Style = (Style)FindResource("FilledEllipse");
+
+                    //The password has been entered.
+                    //Verify it here
+                    Controller controller = new Controller();
+                    if (controller.VerifyPin(pinCode) == true)
+                    {
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wrong PinCode BITCH");
+                        break;
+                    }
+                    //Then:                   
                     break;
                     
             }
