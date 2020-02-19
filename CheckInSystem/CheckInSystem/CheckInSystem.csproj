@@ -20,6 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Include="App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Assets\BackSpace.png" />
     <Resource Include="Assets\Blurred.jpg" />
     <Resource Include="Assets\Happy2.png" />
