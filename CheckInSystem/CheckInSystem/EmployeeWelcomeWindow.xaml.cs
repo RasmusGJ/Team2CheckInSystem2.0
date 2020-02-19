@@ -17,6 +17,7 @@ namespace CheckInSystem
     /// </summary>
     public partial class EmployeeWelcomeWindow : Window
     {
+
         public EmployeeWelcomeWindow()
         {
             InitializeComponent();

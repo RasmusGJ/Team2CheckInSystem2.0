@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using System.ComponentModel;
 
 namespace CheckInSystem
 {
@@ -43,5 +44,18 @@ namespace CheckInSystem
         {
 
         }
+
+        /*private string name = "rasser";
+        public string EmployeeNameBind { get { return name; } set { name = value; OnPropertyChanged("EmployeeNameBind"); }  }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(name));
+            }
+        }*/
     }
 }

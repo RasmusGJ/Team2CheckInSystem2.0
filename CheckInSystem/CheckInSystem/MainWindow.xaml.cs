@@ -20,10 +20,13 @@ namespace CheckInSystem
     /// </summary>
     public partial class MainWindow : Window
     {
+        EmployeeRepo empRepo = new EmployeeRepo();
+
         public MainWindow()
         {
             InitializeComponent();
-            WindowState = WindowState.Maximized;            
+            WindowState = WindowState.Maximized;
+            DataContext = empRepo;
 
             string nothing = "";
             string descriptionOfLastString = "The last string is part of a test just like the on you are currently reading :)";

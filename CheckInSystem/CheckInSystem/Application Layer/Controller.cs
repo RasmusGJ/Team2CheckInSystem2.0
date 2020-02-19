@@ -17,7 +17,7 @@ namespace CheckInSystem
             {
                 if (pinCode == i.PinCode)
                 {
-
+                    //employeesRepo.EmployeeNameBind = i.Name;
                     return true;
                 }               
             }
