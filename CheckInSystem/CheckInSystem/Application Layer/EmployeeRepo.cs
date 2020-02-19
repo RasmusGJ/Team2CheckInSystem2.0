@@ -15,7 +15,7 @@ namespace CheckInSystem
             {
                 conn.ConnectionString = "Server=10.56.8.32;Database=A_GRUPEDB02_2019;User Id=A_GRUPE02;Password=A_OPENDB02";
 
-                string pinCodeQuery = $"SELECT * FROM EMPLOYEE INNER JOIN Role.Title AS RoleTitle ON (";
+                string pinCodeQuery = "SELECT * FROM EMPLOYEE";
 
                 SqlCommand command = new SqlCommand(pinCodeQuery);
                 conn.Open();
@@ -43,29 +43,5 @@ namespace CheckInSystem
         {
 
         }
-        /*
-        public void nothing()
-        {
-            using (SqlConnection conn = new SqlConnection())
-            {
-                conn.ConnectionString = "Server=10.56.8.32;Database=A_GRUPEDB02_2019;User Id=A_GRUPE02;Password=A_OPENDB02";
-
-                string pinCodeQuery = $"SELECT * FROM EMPLOYEE WHERE PinCode = {pinCode}";
-
-                SqlCommand command = new SqlCommand(pinCodeQuery);
-                conn.Open();
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        Employee employee = new Employee();
-                        employee.PinCode = reader.GetString("PinCode");
-
-                    }
-
-                }
-            }
-        }
-        */
     }
 }
