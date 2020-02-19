@@ -11,13 +11,14 @@ namespace CheckInSystem
         public List<Employee> employees = new List<Employee>();
         public EmployeeRepo()
         {
-            using (SqlConnection conn = new SqlConnection())
+            string ConnectionString = "Server=10.56.8.32;Database=A_GRUPEDB02_2019;User Id=A_GRUPE02;Password=A_OPENDB02"; 
+
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
-                conn.ConnectionString = "Server=10.56.8.32;Database=A_GRUPEDB02_2019;User Id=A_GRUPE02;Password=A_OPENDB02";
 
                 string pinCodeQuery = "SELECT * FROM EMPLOYEE";
 
-                SqlCommand command = new SqlCommand(pinCodeQuery);
+                SqlCommand command = new SqlCommand(pinCodeQuery, conn);
                 conn.Open();
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
@@ -26,11 +27,10 @@ namespace CheckInSystem
                         Employee employee = new Employee();
 
                         employee.Name = reader.GetString("Name");
-                        employee.IMG = reader.GetString("IMG");
                         employee.Initials = reader.GetString("Initials");
-                        employee.LandLinePhone = reader.GetString("LandLinePhone");
+                        employee.LandLine = reader.GetString("LandLine");
                         employee.PinCode = reader.GetString("PinCode");
-                        employee.Department = reader.GetString("Department");
+                        employee.Email = reader.GetString("Email");
 
                         employees.Add(employee);
                     }

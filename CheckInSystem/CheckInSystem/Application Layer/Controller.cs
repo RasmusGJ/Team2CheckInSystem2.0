@@ -9,7 +9,7 @@ namespace CheckInSystem
 {
     public class Controller
     {
-        public EmployeeRepo employeesRepo;
+        public EmployeeRepo employeesRepo = new EmployeeRepo();
 
         public bool VerifyPin(string pinCode)
         {
