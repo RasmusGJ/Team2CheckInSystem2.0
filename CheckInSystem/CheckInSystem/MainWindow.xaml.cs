@@ -27,9 +27,6 @@ namespace CheckInSystem
             InitializeComponent();
             WindowState = WindowState.Maximized;
             DataContext = empRepo;
-
-            string nothing = "";
-            string descriptionOfLastString = "The last string is part of a test just like the on you are currently reading :)";
         }
 
         private void GoToPinCodeWindow(object sender, RoutedEventArgs e)

@@ -25,7 +25,7 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Viewbox Stretch="Uniform" Grid.Row="1" Grid.Column="1">
-            <Label Content="{Binding Path = EmployeeNameBind, UpdateSourceTrigger=PropertyChanged}"></Label>
+            <Label Name="welcomeLabel" Content="[Name Here]"></Label>
         </Viewbox>
         <Viewbox Stretch="Uniform" Grid.Row="3" Grid.Column="1">
             <Label>Your arrival has been registered</Label>

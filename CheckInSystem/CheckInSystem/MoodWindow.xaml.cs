@@ -21,6 +21,9 @@ namespace CheckInSystem
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;
+
+            Controller controller = new Controller();
+            nameLabel.Content = controller.empNameMoodWinow;
         }
 
         private void SadSelect(object sender, RoutedEventArgs e)

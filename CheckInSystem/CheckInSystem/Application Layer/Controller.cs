@@ -10,14 +10,18 @@ namespace CheckInSystem
     public class Controller
     {
         public EmployeeRepo employeesRepo = new EmployeeRepo();
+        public string empNameWelcomeWindow;
+        public string empNameMoodWindow;
 
         public bool VerifyPin(string pinCode)
         {
+            //Checks if the parameter pinCode matches PinCode property in employees list.
             foreach(var i in employeesRepo.employees)
             {
                 if (pinCode == i.PinCode)
                 {
-                    //employeesRepo.EmployeeNameBind = i.Name;
+                    empNameWelcomeWindow = i.Name;
+                    empNameMoodWindow = i.Name;
                     return true;
                 }               
             }

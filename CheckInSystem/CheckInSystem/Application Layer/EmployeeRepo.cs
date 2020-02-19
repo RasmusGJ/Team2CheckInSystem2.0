@@ -16,7 +16,7 @@ namespace CheckInSystem
 
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
-
+                //Selects all from Employee tabel in database
                 string pinCodeQuery = "SELECT * FROM EMPLOYEE";
 
                 SqlCommand command = new SqlCommand(pinCodeQuery, conn);
@@ -27,12 +27,12 @@ namespace CheckInSystem
                     {
                         Employee employee = new Employee();
 
+                        //Adds relavent column to properties in Employee object. Then adds an employee to employees list.
                         employee.Name = reader.GetString("Name");
                         employee.Initials = reader.GetString("Initials");
                         employee.LandLine = reader.GetString("LandLine");
                         employee.PinCode = reader.GetString("PinCode");
                         employee.Email = reader.GetString("Email");
-
                         employees.Add(employee);
                     }
 
