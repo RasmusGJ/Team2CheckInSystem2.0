@@ -23,7 +23,7 @@ namespace CheckInSystem
         public MainWindow()
         {
             InitializeComponent();
-            WindowState = WindowState.Maximized;
+            WindowState = WindowState.Maximized;            
 
             string nothing = "";
             string descriptionOfLastString = "The last string is part of a test just like the on you are currently reading :)";

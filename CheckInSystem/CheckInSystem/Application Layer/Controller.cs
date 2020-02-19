@@ -12,7 +12,7 @@ namespace CheckInSystem
         public EmployeeRepo employeesRepo;
 
         public void VerifyPin(string pinCode)
-        {
+        {            
             //EmployeeRepo employee = new EmployeeRepo(pinCode);
         }
         public void UpdateCheckInTime()
