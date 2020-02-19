@@ -28,8 +28,10 @@ namespace CheckInSystem
 
         private void AddNum(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Hej alle sammen!");
-            TextBoxNumPad.Text += (sender as Button).Content;
+            if(TextBoxNumPad.Text.Length < 4)
+            {
+                TextBoxNumPad.Text += (sender as Button).Content;
+            }
 
             UpdateCircles();
 
@@ -39,6 +41,12 @@ namespace CheckInSystem
         {
             switch (TextBoxNumPad.Text.Length)
             {
+                case 0:
+                    Ellipse1.Style = (Style)FindResource("EmptyEllipse");
+                    Ellipse2.Style = (Style)FindResource("EmptyEllipse");
+                    Ellipse3.Style = (Style)FindResource("EmptyEllipse");
+                    Ellipse4.Style = (Style)FindResource("EmptyEllipse");
+                    break;
                 case 1:
                     Ellipse1.Style = (Style)FindResource("FilledEllipse");
                     Ellipse2.Style = (Style)FindResource("EmptyEllipse");
@@ -65,24 +73,39 @@ namespace CheckInSystem
                     Ellipse2.Style = (Style)FindResource("FilledEllipse");
                     Ellipse3.Style = (Style)FindResource("FilledEllipse");
                     Ellipse4.Style = (Style)FindResource("FilledEllipse");
-
-                    //The password has been entered.
-                    //Verify it here
-                    Controller controller = new Controller();
-                    controller.VerifyPin(pinCode);
-
-                    //Then:
-                    MoodWindow moodWindow = new MoodWindow();
-                    moodWindow.Show();
-                    this.Close();
                     break;
+                    
             }
 
         }
         private void DeleteNum(object sender, RoutedEventArgs e)
         {
-            TextBoxNumPad.Text = TextBoxNumPad.Text.Remove(TextBoxNumPad.Text.Length - 1);
+            if(TextBoxNumPad.Text.Length >= 1)
+            {
+                TextBoxNumPad.Text = TextBoxNumPad.Text.Remove(TextBoxNumPad.Text.Length - 1);
+            }
+            
             UpdateCircles();
-        }        
+        }
+
+        private void ClickVerify(object sender, RoutedEventArgs e)
+        {
+            if(TextBoxNumPad.Text.Length != 4)
+            {
+                MessageBox.Show("Incorrect pin");
+                return;
+            }
+
+            //The password has been entered.
+            //Verify it here
+            Controller controller = new Controller();
+            controller.VerifyPin(pinCode);
+
+            //Then:
+            MoodWindow moodWindow = new MoodWindow();
+            moodWindow.Show();
+            this.Close();
+            
+        }
     }
 }

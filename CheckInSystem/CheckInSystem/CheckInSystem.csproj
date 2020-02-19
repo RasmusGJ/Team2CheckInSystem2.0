@@ -9,6 +9,8 @@
   <ItemGroup>
     <None Remove="Assets\BackSpace.png" />
     <None Remove="Assets\Blurred.jpg" />
+    <None Remove="Assets\CheckMark.jpg" />
+    <None Remove="Assets\CheckMark.png" />
     <None Remove="Assets\Happy2.png" />
     <None Remove="Assets\Neutral1.png" />
     <None Remove="Assets\Ratings-Benefit-Your-Business-Processes.png" />
@@ -26,6 +28,7 @@
   <ItemGroup>
     <Resource Include="Assets\BackSpace.png" />
     <Resource Include="Assets\Blurred.jpg" />
+    <Resource Include="Assets\CheckMark.png" />
     <Resource Include="Assets\Happy2.png" />
   </ItemGroup>
 
