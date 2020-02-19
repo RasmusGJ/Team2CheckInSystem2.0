@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WindowBuilder___Projekt
+namespace CheckInSystem
 {
     public class Employee
     {
