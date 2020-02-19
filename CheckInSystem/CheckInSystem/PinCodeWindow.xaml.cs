@@ -28,7 +28,6 @@ namespace CheckInSystem
 
         private void AddNum(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Hej alle sammen!");
             TextBoxNumPad.Text += (sender as Button).Content;
 
             UpdateCircles();
@@ -69,12 +68,16 @@ namespace CheckInSystem
                     //The password has been entered.
                     //Verify it here
                     Controller controller = new Controller();
-                    controller.VerifyPin(pinCode);
-
-                    //Then:
-                    MoodWindow moodWindow = new MoodWindow();
-                    moodWindow.Show();
-                    this.Close();
+                    if (controller.VerifyPin(pinCode) == true)
+                    {
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wrong PinCode BITCH");
+                        break;
+                    }
+                    //Then:                   
                     break;
             }
 

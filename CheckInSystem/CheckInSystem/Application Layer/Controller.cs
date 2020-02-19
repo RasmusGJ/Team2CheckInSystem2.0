@@ -11,9 +11,13 @@ namespace CheckInSystem
     {
         public EmployeeRepo employeesRepo;
 
-        public void VerifyPin(string pinCode)
-        {            
-            //EmployeeRepo employee = new EmployeeRepo(pinCode);
+        public bool VerifyPin(string pinCode)
+        {
+            MoodWindow moodWindow = new MoodWindow();
+            moodWindow.Show();
+            return true;
+
+            
         }
         public void UpdateCheckInTime()
         {
