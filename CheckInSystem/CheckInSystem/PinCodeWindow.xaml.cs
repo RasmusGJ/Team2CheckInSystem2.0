@@ -26,6 +26,7 @@ namespace CheckInSystem
 
         private void AddNum(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show("Hej alle sammen!");
             TextBoxNumPad.Text += (sender as Button).Content;
 
             UpdateCircles();
