@@ -6,6 +6,7 @@ namespace WindowBuilder___Projekt
 {
     public class Employee
     {
+        public string DetHerLortSkalBareVirke { get; set; }
         public string IMG { get; set; }
         public string Name { get; set; }
         public string Initials { get; set; }
