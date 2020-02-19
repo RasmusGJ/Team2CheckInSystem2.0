@@ -30,6 +30,9 @@ namespace CheckInSystem
                         employee.Initials = reader.GetString("Initials");
                         employee.LandLinePhone = reader.GetString("LandLinePhone");
                         employee.PinCode = reader.GetString("PinCode");
+                        employee.Department = reader.GetString("Department");
+
+                        employees.Add(employee);
                     }
 
                 }

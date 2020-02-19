@@ -13,11 +13,16 @@ namespace CheckInSystem
 
         public bool VerifyPin(string pinCode)
         {
-            MoodWindow moodWindow = new MoodWindow();
-            moodWindow.Show();
-            return true;
-
-            
+            foreach(var i in employeesRepo.employees)
+            {
+                if (pinCode == i.PinCode)
+                {
+                    MoodWindow moodWindow = new MoodWindow();
+                    moodWindow.Show();
+                    return true;
+                }               
+            }
+            return false;          
         }
         public void UpdateCheckInTime()
         {
