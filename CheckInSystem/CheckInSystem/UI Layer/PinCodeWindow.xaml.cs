@@ -68,7 +68,9 @@ namespace CheckInSystem
 
                     //The password has been entered.
                     //Verify it here
-                    
+                    Controller controller = new Controller();
+                    controller.VerifyPin(pinCode);
+
                     //Then:
                     MoodWindow moodWindow = new MoodWindow();
                     moodWindow.Show();
