@@ -18,7 +18,6 @@ namespace CheckInSystem
     /// </summary>
     public partial class PinCodeWindow : Window
     {
-        public string pinCode;
 
         public PinCodeWindow()
         {
@@ -72,21 +71,7 @@ namespace CheckInSystem
                     Ellipse1.Style = (Style)FindResource("FilledEllipse");
                     Ellipse2.Style = (Style)FindResource("FilledEllipse");
                     Ellipse3.Style = (Style)FindResource("FilledEllipse");
-                    Ellipse4.Style = (Style)FindResource("FilledEllipse");
-
-                    //The password has been entered.
-                    //Verify it here
-                    Controller controller = new Controller();
-                    if (controller.VerifyPin(pinCode) == true)
-                    {
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Wrong PinCode BITCH");
-                        break;
-                    }
-                    //Then:                   
+                    Ellipse4.Style = (Style)FindResource("FilledEllipse");                 
                     break;
                     
             }
@@ -110,15 +95,20 @@ namespace CheckInSystem
                 return;
             }
 
-            //The password has been entered.
-            //Verify it here
+            //Verify pin
             Controller controller = new Controller();
-            controller.VerifyPin(pinCode);
+            string pinCode = TextBoxNumPad.Text;
 
-            //Then:
-            MoodWindow moodWindow = new MoodWindow();
-            moodWindow.Show();
-            this.Close();
+            if (controller.VerifyPin(pinCode) == true)
+            {
+                MoodWindow moodWindow = new MoodWindow();
+                moodWindow.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Wrong PinCode BITCH");
+            }
             
         }
     }
