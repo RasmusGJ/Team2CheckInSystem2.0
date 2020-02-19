@@ -35,7 +35,6 @@ namespace CheckInSystem
                         employee.Email = reader.GetString("Email");
                         employees.Add(employee);
                     }
-
                 }
             }
         }       

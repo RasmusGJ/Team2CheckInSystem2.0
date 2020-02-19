@@ -23,7 +23,7 @@ namespace CheckInSystem
             WindowState = WindowState.Maximized;
 
             Controller controller = new Controller();
-            nameLabel.Content = controller.empNameMoodWinow;
+            nameLabel.Content = controller.empNameMoodWindow;
         }
 
         private void SadSelect(object sender, RoutedEventArgs e)

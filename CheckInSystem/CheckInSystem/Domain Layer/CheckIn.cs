@@ -7,6 +7,5 @@ namespace CheckInSystem
     public class CheckIn
     {
         private Mood mood;
-
     }
 }
