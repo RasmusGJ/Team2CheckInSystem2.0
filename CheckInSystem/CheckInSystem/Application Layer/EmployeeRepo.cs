@@ -4,7 +4,7 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace WindowBuilder___Projekt
+namespace CheckInSystem
 {
     public class EmployeeRepo
     {
