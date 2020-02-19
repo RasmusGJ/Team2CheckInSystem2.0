@@ -17,8 +17,7 @@ namespace CheckInSystem
             {
                 if (pinCode == i.PinCode)
                 {
-                    MoodWindow moodWindow = new MoodWindow();
-                    moodWindow.Show();
+
                     return true;
                 }               
             }

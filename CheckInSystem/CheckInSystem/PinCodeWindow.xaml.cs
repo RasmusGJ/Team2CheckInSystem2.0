@@ -108,6 +108,8 @@ namespace CheckInSystem
             else
             {
                 MessageBox.Show("Wrong PinCode BITCH");
+                TextBoxNumPad.Text = "";
+                UpdateCircles();
             }
             
         }
