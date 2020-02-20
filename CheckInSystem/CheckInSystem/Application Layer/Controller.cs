@@ -12,9 +12,9 @@ namespace CheckInSystem.Application_Layer
 {
     public class Controller
     {
-        public CheckInRepo CheckInRepo = new CheckInRepo();
         public EmployeeRepo employeesRepo = new EmployeeRepo();
-        public Person CurrentPerson;
+        public string empNameWelcomeWindow;
+        public string empNameMoodWindow;
         
         public bool VerifyPin(string pinCode)
         {
@@ -22,8 +22,7 @@ namespace CheckInSystem.Application_Layer
             foreach(Employee i in employeesRepo.employees)
             {
                 if (pinCode == i.PinCode)
-                {
-                    CurrentPerson = i;
+                {                   
                     return true;
                 }               
             }
@@ -34,12 +33,9 @@ namespace CheckInSystem.Application_Layer
 
         }
 
-        public void AssignMood(Mood mood)
+        public void AssignMood()
         {
-            CheckIn newCheckIn = new CheckIn();
-            newCheckIn.mood = mood;
-            newCheckIn.person = CurrentPerson;
-            CheckInRepo.CheckIn(newCheckIn);
+
         }
     }
 }
