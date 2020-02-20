@@ -9,6 +9,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using CheckInSystem;
+using CheckInSystem.Application_Layer;
+using CheckInSystem.Domain_Layer;
 
 namespace CheckInSystem
 {
@@ -23,7 +26,7 @@ namespace CheckInSystem
             InitializeComponent();
             WindowState = WindowState.Maximized;
 
-            nameLabel.Content = controller.Person.Name;
+            nameLabel.Content = controller.CurrentPerson.Name;
         }
 
         private void SadSelect(object sender, RoutedEventArgs e)
@@ -52,7 +55,8 @@ namespace CheckInSystem
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            CheckInRepo checkInRepo = new CheckInRepo();
+            checkInRepo.CheckOut(controller.CurrentPerson);
         }
     }
 }

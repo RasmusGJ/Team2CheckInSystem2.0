@@ -12,8 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CheckInSystem.Domain_Layer;
 
-namespace CheckInSystem
+namespace CheckInSystem.Application_Layer
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -26,7 +27,6 @@ namespace CheckInSystem
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;
-            DataContext = empRepo;
         }
 
         private void GoToPinCodeWindow(object sender, RoutedEventArgs e)

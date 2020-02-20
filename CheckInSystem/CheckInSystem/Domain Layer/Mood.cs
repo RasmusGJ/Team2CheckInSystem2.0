@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using CheckInSystem.Application_Layer;
 
 namespace CheckInSystem.Domain_Layer
 {
