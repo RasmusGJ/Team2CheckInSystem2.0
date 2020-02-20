@@ -95,7 +95,8 @@ namespace CheckInSystem
                 return;
             }
 
-            //Verify pin
+            //Calls method VerifyPin, which returns true or false. 
+            //If it returns true, continues program. If false, displays error message
             Controller controller = new Controller();
             string pinCode = TextBoxNumPad.Text;
 
