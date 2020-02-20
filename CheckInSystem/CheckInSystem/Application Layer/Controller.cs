@@ -19,9 +19,7 @@ namespace CheckInSystem
             foreach(Employee i in employeesRepo.employees)
             {
                 if (pinCode == i.PinCode)
-                {
-                    empNameWelcomeWindow = i.Name;
-                    empNameMoodWindow = i.Name;
+                {                   
                     return true;
                 }               
             }
