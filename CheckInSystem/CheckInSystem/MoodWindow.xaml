@@ -80,7 +80,7 @@
                     <ImageBrush ImageSource ="Assets\Sad1.png"></ImageBrush>
                 </Button.Background>
             </Button>
-            <Button Name="checkOutButton" Content="Check Out" Grid.Row="5" Grid.Column="3"/>
+            <Button Name="checkOutButton" Content="Check Out" Grid.Row="5" Grid.Column="3" Click="checkOutButton_Click_1"/>
         </Grid>
     </Grid>
 </Window>

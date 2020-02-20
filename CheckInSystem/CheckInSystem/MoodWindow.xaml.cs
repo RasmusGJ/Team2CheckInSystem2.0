@@ -70,6 +70,9 @@ namespace CheckInSystem
         private void checkOutButton_Click_1(object sender, RoutedEventArgs e)
         {           
             checkInRepo.CheckOut(controller.CurrentPerson);
+            EmployeeCheckoutWindow checkoutWindow = new EmployeeCheckoutWindow();
+            checkoutWindow.Show();
+            this.Close();
         }
     }
 }
