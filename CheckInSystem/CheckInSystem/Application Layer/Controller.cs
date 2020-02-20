@@ -5,8 +5,6 @@ using System.IO;
 using System.Data;
 using System.Data.SqlClient;
 using CheckInSystem.Domain_Layer;
-using CheckInSystem;
-using CheckInSystem.Application_Layer;
 
 namespace CheckInSystem.Application_Layer
 {
@@ -23,6 +21,7 @@ namespace CheckInSystem.Application_Layer
             {
                 if (pinCode == i.PinCode)
                 {
+                    CurrentPerson = new Employee();
                     CurrentPerson = i;
                     return true;
                 }               

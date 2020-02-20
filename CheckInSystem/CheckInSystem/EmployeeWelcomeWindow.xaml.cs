@@ -23,8 +23,6 @@ namespace CheckInSystem
             InitializeComponent();
             WindowState = WindowState.Maximized;
 
-            Controller controller = new Controller();
-            welcomeLabel.Content = controller.empNameWelcomeWindow;
         }
 
         private void ButtonClick(object sender, RoutedEventArgs e)

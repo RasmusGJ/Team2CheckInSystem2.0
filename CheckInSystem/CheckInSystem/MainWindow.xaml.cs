@@ -21,7 +21,6 @@ namespace CheckInSystem.Application_Layer
     /// </summary>
     public partial class MainWindow : Window
     {
-        EmployeeRepo empRepo = new EmployeeRepo();
 
         public MainWindow()
         {
