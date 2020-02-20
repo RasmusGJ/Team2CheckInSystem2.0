@@ -42,7 +42,7 @@
             <Viewbox Stretch="Uniform" Grid.Column="3" Grid.Row="1">
                 <Label Name="nameLabel"
                FontFamily="QuickSand"
-               Content="Michael"    
+               Content="[Name Here]"    
                Foreground="Black">
                 </Label>
             </Viewbox>

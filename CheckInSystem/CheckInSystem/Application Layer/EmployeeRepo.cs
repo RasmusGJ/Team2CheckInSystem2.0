@@ -17,7 +17,9 @@ namespace CheckInSystem
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 //Selects all from Employee tabel in database
-                string pinCodeQuery = "SELECT * FROM EMPLOYEE";
+                string pinCodeQuery = "SELECT Employee.Id, Employee.Name, Employee.Email, Employee.MobilePhone, Employee.LandlinePhone, Employee.Initials, Employee.PinCode, Role.Title AS RoleTitle " +
+                    "FROM Employee " +
+                    "INNER JOIN Role ON Employee.Role_Id = Role.Id";
 
                 SqlCommand command = new SqlCommand(pinCodeQuery, conn);
                 conn.Open();
@@ -30,9 +32,11 @@ namespace CheckInSystem
                         //Adds relavent column to properties in Employee object. Then adds an employee to employees list.
                         employee.Name = reader.GetString("Name");
                         employee.Initials = reader.GetString("Initials");
-                        employee.LandLine = reader.GetString("LandLine");
+                        employee.LandlinePhone = reader.GetString("LandlinePhone");
                         employee.PinCode = reader.GetString("PinCode");
                         employee.Email = reader.GetString("Email");
+                        employee.Role = reader.GetString("RoleTitle");
+                        employee.MobilePhone = reader.GetString("MobilePhone");
                         employees.Add(employee);
                     }
                 }

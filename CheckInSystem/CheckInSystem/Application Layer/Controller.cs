@@ -12,7 +12,7 @@ namespace CheckInSystem
         public EmployeeRepo employeesRepo = new EmployeeRepo();
         public string empNameWelcomeWindow;
         public string empNameMoodWindow;
-
+        
         public bool VerifyPin(string pinCode)
         {
             //Checks if the parameter pinCode matches PinCode property in employees list.
