@@ -7,12 +7,13 @@ namespace CheckInSystem.Application_Layer
 {
     public class CheckInRepo
     {
-        private bool CheckIfCheckedIn()
+        public List<CheckIn> CheckIns = new List<CheckIn>();
+        private bool CheckIfCheckedIn(Person person)
         {
             return true;
         }
 
-        public void CheckIn() 
+        public void CheckIn(CheckIn checkIn) 
         { 
 
         }
