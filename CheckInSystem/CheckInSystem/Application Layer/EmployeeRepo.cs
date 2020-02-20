@@ -4,8 +4,9 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.ComponentModel;
+using CheckInSystem.Domain_Layer;
 
-namespace CheckInSystem
+namespace CheckInSystem.Application_Layer
 {
     public class EmployeeRepo
     {

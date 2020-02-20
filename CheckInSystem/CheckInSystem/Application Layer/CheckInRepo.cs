@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Data.SqlClient;
+using CheckInSystem.Domain_Layer;
 
 namespace CheckInSystem.Application_Layer
 {
@@ -15,7 +16,7 @@ namespace CheckInSystem.Application_Layer
 
         public void CheckIn(CheckIn checkIn) 
         {
-            checkIn.FromTime = DateTime.Now();
+            checkIn.
         }
 
         public void CheckOut(Person person)

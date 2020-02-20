@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CheckInSystem
+namespace CheckInSystem.Domain_Layer
 {
     public abstract class Person
     {

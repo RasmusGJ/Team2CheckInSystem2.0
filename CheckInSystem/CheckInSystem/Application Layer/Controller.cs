@@ -4,9 +4,11 @@ using System.Text;
 using System.IO;
 using System.Data;
 using System.Data.SqlClient;
+using CheckInSystem.Domain_Layer;
+using CheckInSystem;
 using CheckInSystem.Application_Layer;
 
-namespace CheckInSystem
+namespace CheckInSystem.Application_Layer
 {
     public class Controller
     {
