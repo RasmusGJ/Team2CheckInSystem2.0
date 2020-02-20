@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CheckInSystem.Domain_Layer;
 
-namespace CheckInSystem.Application_Layer
+namespace CheckInSystem
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
