@@ -22,7 +22,8 @@ namespace CheckInSystem.Application_Layer
             foreach(Employee i in employeesRepo.employees)
             {
                 if (pinCode == i.PinCode)
-                {                   
+                {
+                    CurrentPerson = i;
                     return true;
                 }               
             }
