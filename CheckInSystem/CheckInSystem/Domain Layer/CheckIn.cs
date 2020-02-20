@@ -4,9 +4,16 @@ using System.Text;
 
 namespace CheckInSystem
 {
-    public class CheckIn
+    public class CheckIn : TimeStamp
     {
-        private Mood mood;
+		private Mood _mood;
+
+		public Mood mood
+		{
+			get { return _mood; }
+			set { _mood = value; }
+		}
+
 
 		private Person _person;
 

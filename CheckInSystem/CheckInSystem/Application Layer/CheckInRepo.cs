@@ -13,8 +13,8 @@ namespace CheckInSystem.Application_Layer
         }
 
         public void CheckIn(CheckIn checkIn) 
-        { 
-
+        {
+            checkIn.FromTime = DateTime.Now();
         }
 
         public void CheckOut(Person person)

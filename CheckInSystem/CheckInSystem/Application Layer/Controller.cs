@@ -4,14 +4,15 @@ using System.Text;
 using System.IO;
 using System.Data;
 using System.Data.SqlClient;
+using CheckInSystem.Application_Layer;
 
 namespace CheckInSystem
 {
     public class Controller
     {
+        public CheckInRepo CheckInRepo = new CheckInRepo();
         public EmployeeRepo employeesRepo = new EmployeeRepo();
-        public string empNameWelcomeWindow;
-        public string empNameMoodWindow;
+        public Person CurrentPerson;
         
         public bool VerifyPin(string pinCode)
         {
@@ -20,8 +21,7 @@ namespace CheckInSystem
             {
                 if (pinCode == i.PinCode)
                 {
-                    empNameWelcomeWindow = i.Name;
-                    empNameMoodWindow = i.Name;
+                    CurrentPerson = i;
                     return true;
                 }               
             }
@@ -32,9 +32,12 @@ namespace CheckInSystem
 
         }
 
-        public void AssignMood()
+        public void AssignMood(Mood mood)
         {
-
+            CheckIn newCheckIn = new CheckIn();
+            newCheckIn.mood = mood;
+            newCheckIn.person = CurrentPerson;
+            CheckInRepo.CheckIn(newCheckIn);
         }
     }
 }
