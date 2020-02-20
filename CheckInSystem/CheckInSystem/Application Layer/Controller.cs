@@ -12,9 +12,9 @@ namespace CheckInSystem.Application_Layer
 {
     public class Controller
     {
+        CheckInRepo CheckInRepo = new CheckInRepo();
         public EmployeeRepo employeesRepo = new EmployeeRepo();
-        public string empNameWelcomeWindow;
-        public string empNameMoodWindow;
+        public Person CurrentPerson;
         
         public bool VerifyPin(string pinCode)
         {
@@ -33,8 +33,12 @@ namespace CheckInSystem.Application_Layer
 
         }
 
-        public void AssignMood()
+        public void AssignMood(Mood mood)
         {
+            CheckIn newCheckIn = new CheckIn();
+            newCheckIn.mood = mood;
+            newCheckIn.person = CurrentPerson;
+            CheckInRepo.CheckIn(newCheckIn);
 
         }
     }

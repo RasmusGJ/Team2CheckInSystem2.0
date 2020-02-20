@@ -17,6 +17,7 @@ namespace CheckInSystem.Application_Layer
         public void CheckIn(CheckIn checkIn) 
         {
             checkIn.FromTime = DateTime.Now;
+            CheckIns.Add(checkIn);
         }
 
         public void CheckOut(Person person)
