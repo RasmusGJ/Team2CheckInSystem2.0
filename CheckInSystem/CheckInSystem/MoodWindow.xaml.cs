@@ -20,12 +20,20 @@ namespace CheckInSystem
     public partial class MoodWindow : Window
     {
         Controller controller = new Controller();
+        CheckInRepo checkInRepo = new CheckInRepo();
+
         public MoodWindow()
         {
+            if (checkInRepo.CheckIfCheckedIn(controller.CurrentPerson) == true)
+            {
+                checkOutButton.Visibility = Visibility.Visible;
+            }
+            else
+                checkOutButton.Visibility = Visibility.Hidden;
+
             InitializeComponent();
             WindowState = WindowState.Maximized;
-
-            
+                  
         }
 
         public void GetController(Controller newController)
@@ -59,9 +67,8 @@ namespace CheckInSystem
             this.Close();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            CheckInRepo checkInRepo = new CheckInRepo();
+        private void checkOutButton_Click_1(object sender, RoutedEventArgs e)
+        {           
             checkInRepo.CheckOut(controller.CurrentPerson);
         }
     }

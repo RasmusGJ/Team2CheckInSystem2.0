@@ -8,6 +8,5 @@ namespace CheckInSystem.Domain_Layer
     {
         public DateTime FromTime { get; set; }
         public DateTime ToTime { get; set; }
-
     }
 }
