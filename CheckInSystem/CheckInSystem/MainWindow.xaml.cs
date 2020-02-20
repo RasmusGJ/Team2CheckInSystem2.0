@@ -20,13 +20,11 @@ namespace CheckInSystem
     /// </summary>
     public partial class MainWindow : Window
     {
-        EmployeeRepo empRepo = new EmployeeRepo();
 
         public MainWindow()
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;
-            DataContext = empRepo;
         }
 
         private void GoToPinCodeWindow(object sender, RoutedEventArgs e)

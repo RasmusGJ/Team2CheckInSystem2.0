@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using CheckInSystem.Application_Layer;
 
 namespace CheckInSystem
 {
@@ -18,7 +19,7 @@ namespace CheckInSystem
     /// </summary>
     public partial class PinCodeWindow : Window
     {
-
+        public Controller controller = new Controller();
         public PinCodeWindow()
         {
             InitializeComponent();
@@ -97,12 +98,13 @@ namespace CheckInSystem
 
             //Calls method VerifyPin, which returns true or false. 
             //If it returns true, continues program. If false, displays error message
-            Controller controller = new Controller();
+            
             string pinCode = TextBoxNumPad.Text;
 
             if (controller.VerifyPin(pinCode) == true)
             {
                 MoodWindow moodWindow = new MoodWindow();
+                moodWindow.GetController(controller);
                 moodWindow.Show();
                 this.Close();
             }

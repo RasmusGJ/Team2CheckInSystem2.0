@@ -25,6 +25,13 @@ namespace CheckInSystem
             InitializeComponent();
             WindowState = WindowState.Maximized;
 
+            
+        }
+
+        public void GetController(Controller newController)
+        {
+            controller = newController;
+            MessageBox.Show(newController.CurrentPerson.Name);
             nameLabel.Content = controller.CurrentPerson.Name;
         }
 

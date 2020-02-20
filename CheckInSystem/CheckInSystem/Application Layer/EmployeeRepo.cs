@@ -38,7 +38,7 @@ namespace CheckInSystem.Application_Layer
                         employee.Email = reader.GetString("Email");
                         employee.Role = reader.GetString("RoleTitle");
                         employee.MobilePhone = reader.GetString("MobilePhone");
-                        employee.Id = reader.GetString("Id");
+                        employee.Id = reader.GetInt32("Id");
                         employees.Add(employee);
                     }
                 }
