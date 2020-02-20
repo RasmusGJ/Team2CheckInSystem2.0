@@ -16,7 +16,7 @@ namespace CheckInSystem
         public bool VerifyPin(string pinCode)
         {
             //Checks if the parameter pinCode matches PinCode property in employees list.
-            foreach(var i in employeesRepo.employees)
+            foreach(Employee i in employeesRepo.employees)
             {
                 if (pinCode == i.PinCode)
                 {
