@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CheckInSystem
 {
-    enum Mood
+    public enum Mood
     {
         Positive,
         Neutral,

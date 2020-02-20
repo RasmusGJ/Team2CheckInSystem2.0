@@ -17,17 +17,18 @@ namespace CheckInSystem
     /// </summary>
     public partial class MoodWindow : Window
     {
+        Controller controller = new Controller();
         public MoodWindow()
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;
 
-            Controller controller = new Controller();
-            nameLabel.Content = controller.empNameMoodWindow;
+            nameLabel.Content = controller.Person.Name;
         }
 
         private void SadSelect(object sender, RoutedEventArgs e)
         {
+            controller.AssignMood(Mood.Negative);
             EmployeeWelcomeWindow welcomeWindow = new EmployeeWelcomeWindow();
             welcomeWindow.Show();
             this.Close();
@@ -35,6 +36,7 @@ namespace CheckInSystem
 
         private void NeutralSelect(object sender, RoutedEventArgs e)
         {
+            controller.AssignMood(Mood.Neutral);
             EmployeeWelcomeWindow welcomeWindow = new EmployeeWelcomeWindow();
             welcomeWindow.Show();
             this.Close();
@@ -42,6 +44,7 @@ namespace CheckInSystem
 
         private void HappySelect(object sender, RoutedEventArgs e)
         {
+            controller.AssignMood(Mood.Positive);
             EmployeeWelcomeWindow welcomeWindow = new EmployeeWelcomeWindow();
             welcomeWindow.Show();
             this.Close();
