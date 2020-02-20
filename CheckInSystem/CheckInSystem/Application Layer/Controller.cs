@@ -39,7 +39,6 @@ namespace CheckInSystem.Application_Layer
             newCheckIn.mood = mood;
             newCheckIn.person = CurrentPerson;
             CheckInRepo.CheckIn(newCheckIn);
-
         }
     }
 }

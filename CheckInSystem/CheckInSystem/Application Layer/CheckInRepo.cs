@@ -12,8 +12,22 @@ namespace CheckInSystem.Application_Layer
         public List<CheckIn> CheckIns = new List<CheckIn>();
         public bool CheckIfCheckedIn(Person person)
         {
+            string ConnectionString = "Server=10.56.8.32;Database=A_GRUPEDB02_2019;User Id=A_GRUPE02;Password=A_OPENDB02";
 
-            return true;
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                //Select employee or guest id from database and compare it with person.Id.
+                string checkEmployeeCheckIn = "SELECT Employee_Id FROM CheckIn;";
+                string checkGuestCheckIn = "SELECT Guest_Id FROM CheckIn;";
+
+                SqlCommand command = new SqlCommand(checkEmployeeCheckIn + checkGuestCheckIn, conn);
+                conn.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    
+                }
+                return true;
+            }
         }
 
         public void CheckIn(CheckIn checkIn) 
