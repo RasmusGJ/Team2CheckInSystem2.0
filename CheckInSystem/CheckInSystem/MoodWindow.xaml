@@ -42,7 +42,7 @@
             </Viewbox>
 
             <Viewbox Stretch="Uniform" Grid.Column="3" Grid.Row="1">
-                <Label Name="nameLabel"
+                <Label x:Name="nameLabel"
                FontFamily="QuickSand"
                Content="[Name Here]"    
                Foreground="Black">
@@ -80,7 +80,7 @@
                     <ImageBrush ImageSource ="Assets\Sad1.png"></ImageBrush>
                 </Button.Background>
             </Button>
-            <Button Name="checkOutButton" Content="Check Out" Grid.Row="5" Grid.Column="3" Click="checkOutButton_Click_1"/>
+            <Button x:Name="checkOutButton" Content="Check Out" Grid.Row="5" Grid.Column="3" Click="checkOutButton_Click_1"/>
         </Grid>
     </Grid>
 </Window>

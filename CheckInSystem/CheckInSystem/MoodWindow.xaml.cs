@@ -24,23 +24,25 @@ namespace CheckInSystem
 
         public MoodWindow()
         {
+
+            InitializeComponent();
+            WindowState = WindowState.Maximized;
+                  
             if (checkInRepo.CheckIfCheckedIn(controller.CurrentPerson) == true)
             {
                 checkOutButton.Visibility = Visibility.Visible;
             }
             else
                 checkOutButton.Visibility = Visibility.Hidden;
-
-            InitializeComponent();
-            WindowState = WindowState.Maximized;
-                  
         }
 
         public void GetController(Controller newController)
         {
             controller = newController;
             MessageBox.Show(newController.CurrentPerson.Name);
+
             nameLabel.Content = controller.CurrentPerson.Name;
+            
         }
 
         private void SadSelect(object sender, RoutedEventArgs e)
