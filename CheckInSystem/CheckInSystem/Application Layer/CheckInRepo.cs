@@ -9,7 +9,6 @@ namespace CheckInSystem.Application_Layer
     public class CheckInRepo
     {
         public TimeStamp stamp;
-        public List<CheckIn> CheckIns = new List<CheckIn>();
         public bool CheckIfCheckedIn(Person person)
         {
             string ConnectionString = "Server=10.56.8.32;Database=A_GRUPEDB02_2019;User Id=A_GRUPE02;Password=A_OPENDB02";
@@ -33,7 +32,6 @@ namespace CheckInSystem.Application_Layer
         public void CheckIn(CheckIn checkIn) 
         {
             checkIn.FromTime = DateTime.Now;
-            CheckIns.Add(checkIn);
         }
 
         public void CheckOut(Person person)
