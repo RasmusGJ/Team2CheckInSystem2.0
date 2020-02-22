@@ -16,11 +16,15 @@ namespace CheckInSystem.Application_Layer
 
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
-                //Select employee or guest id from database and compare it with person.Id.
-                string checkEmployeeCheckIn = "SELECT Employee_Id FROM CheckIn;";
-                string checkGuestCheckIn = "SELECT Guest_Id FROM CheckIn;";
 
-                SqlCommand command = new SqlCommand(checkEmployeeCheckIn + checkGuestCheckIn, conn);
+                string checkForCheckIn = person is Employee ? //Test if the person is an employee
+                    "INSERT INTO CheckIn ( FromDateTime, Employee_Id , Mood_Id) " +                         //If person is an employee(true)
+                    "VALUES ();"    // 
+                    :
+                    "INSERT INTO CheckIn ( FromDateTime, Guest_Id) " +                                      //If person is not an employee(false)
+                    "VALUES ();";                             //
+
+                SqlCommand command = new SqlCommand(checkForCheckIn, conn);
                 conn.Open();
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
