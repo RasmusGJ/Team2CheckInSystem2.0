@@ -10,19 +10,20 @@ namespace CheckInSystem.Application_Layer
 {
     public class Controller
     {
-        CheckInRepo CheckInRepo = new CheckInRepo();
+        public CheckInRepo CheckInRepo = new CheckInRepo();
         public EmployeeRepo employeesRepo = new EmployeeRepo();
         public Person CurrentPerson;
         
         public bool VerifyPin(string pinCode)
         {
             //Checks if the parameter pinCode matches PinCode property in employees list.            
-            foreach(Employee i in employeesRepo.employees)
+            foreach(Employee employee in employeesRepo.employees)
             {
-                if (pinCode == i.PinCode)
+                if (pinCode == employee.PinCode)
                 {
                     CurrentPerson = new Employee();
-                    CurrentPerson = i;
+                    CurrentPerson = employee;
+                    
                     return true;
                 }               
             }

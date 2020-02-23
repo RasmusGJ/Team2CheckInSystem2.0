@@ -7,9 +7,9 @@ namespace CheckInSystem.Domain_Layer
 {
     public enum Mood
     {
-        Null,
-        Positive,
-        Neutral,
-        Negative
+        Null = 1,
+        Positive = 2,
+        Neutral = 3,
+        Negative = 4
     };
 }

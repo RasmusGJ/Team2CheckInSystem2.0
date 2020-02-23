@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Data.SqlClient;
+using System.Data;
 using CheckInSystem.Domain_Layer;
 using System.Windows;
 
@@ -9,35 +10,70 @@ namespace CheckInSystem.Application_Layer
 {
     public class CheckInRepo
     {
+        List<CheckIn> checkIns = new List<CheckIn>();
         string ConnectionString = "Server=10.56.8.32;Database=A_GRUPEDB02_2019;User Id=A_GRUPE02;Password=A_OPENDB02";
 
-        public bool CheckIfCheckedIn(Person person)
+        public CheckInRepo()
         {
-
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
+                DateTime today = DateTime.Now;
+                string todayDate = today.ToString("yyyy-dd-MM");
+                //Selects all from Employee tabel in database
+                string stringQuery = "SELECT Id, FromDateTime, ToDateTime, Employee_Id, Guest_Id, Mood_Id " +
+                    "FROM CheckIn " + 
+                    "WHERE FromDateTime > '" + todayDate + "'";
 
-                string checkForCheckIn = person is Employee ? //Test if the person is an employee
-                    "INSERT INTO CheckIn ( FromDateTime, Employee_Id , Mood_Id) " +                         //If person is an employee(true)
-                    "VALUES ();"    // 
-                    :
-                    "INSERT INTO CheckIn ( FromDateTime, Guest_Id) " +                                      //If person is not an employee(false)
-                    "VALUES ();";                             //
-
-                SqlCommand command = new SqlCommand(checkForCheckIn, conn);
+                SqlCommand command = new SqlCommand(stringQuery, conn);
                 conn.Open();
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
-                    
+                    while (reader.Read())
+                    {
+                        CheckIn checkIn = new CheckIn();
+
+                        //Adds relavent column to properties in Employee object. Then adds an employee to employees list.
+                        checkIn.Id = reader.GetInt32("Id");
+                        checkIn.FromTime = reader.GetDateTime("FromDateTime");
+                        checkIn.ToTime = reader.GetDateTime("ToDateTime");
+                        checkIn.mood = (Mood)(reader.GetInt32("Mood_Id"));
+
+                        if (reader.GetInt32("Employee_Id") == 0)
+                        {
+                            //Guest guest = new Guest(); HUSK AT LAVE GUEST KLASSE!!!
+                            //checkIn.person.Id = reader.GetString("Guest_Id");
+                        }
+                        else
+                        {
+                            Employee employee = new Employee();
+                            employee.Id = reader.GetInt32("Employee_Id");
+                            checkIn.person = employee;
+                        }
+
+                        checkIns.Add(checkIn);
+                    }
                 }
-                return true;
             }
+        }
+
+        public bool CheckIfCheckedIn(Employee person)
+        {
+            foreach(CheckIn checkIn in checkIns)
+            {
+                if(checkIn.ToTime.ToString("yyyy-dd-MM HH:mm:ss") == "1900-01-01 00:00:00" && checkIn.person.Id == person.Id)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public void CheckIn(CheckIn checkIn) 
         {
             checkIn.FromTime = DateTime.Now;
             string currentTime = checkIn.FromTime.ToString("yyyy-dd-MM HH:mm:ss");
+
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 //Insert a checkout time to database.

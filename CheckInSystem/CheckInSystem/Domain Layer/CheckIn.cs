@@ -6,6 +6,8 @@ namespace CheckInSystem.Domain_Layer
 {
     public class CheckIn : TimeStamp
     {
+		public int Id { get; set; }
+
 		private Mood _mood;
 
 		public Mood mood
