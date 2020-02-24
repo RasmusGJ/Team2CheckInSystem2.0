@@ -14,9 +14,10 @@
     <None Remove="Assets\EmployeeIcon.png" />
     <None Remove="Assets\GuestIcon.png" />
     <None Remove="Assets\Happy2.png" />
+    <None Remove="Assets\hydacLogo.png" />
     <None Remove="Assets\Neutral1.png" />
-    <None Remove="Assets\Ratings-Benefit-Your-Business-Processes.png" />
     <None Remove="Assets\Sad1.png" />
+    <None Remove="Fonts\orkney-bold.ttf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,12 +35,15 @@
     <Resource Include="Assets\EmployeeIcon.png" />
     <Resource Include="Assets\GuestIcon.png" />
     <Resource Include="Assets\Happy2.png" />
+    <Resource Include="Assets\hydacLogo.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Assets\Neutral1.png" />
-    <Resource Include="Assets\Ratings-Benefit-Your-Business-Processes.png" />
     <Resource Include="Assets\Sad1.png" />
+    <Content Include="Fonts\orkney-bold.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

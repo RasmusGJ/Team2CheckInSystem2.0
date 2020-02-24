@@ -5,6 +5,7 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
+            <FontFamily x:Key="OrkneyBold">./Fonts/orkney-bold.tts#orkney-bold</FontFamily>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="ResourceDictionaries/EllipseDictionary.xaml" />
                 <ResourceDictionary Source="ResourceDictionaries/NumPadDictionary.xaml" />

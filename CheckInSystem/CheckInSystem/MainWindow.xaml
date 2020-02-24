@@ -33,14 +33,14 @@
         <Viewbox Stretch="Uniform" Panel.ZIndex="1"  Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2">
                  <Label>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Foreground="White" Text="Welcome "/>
-                        <TextBlock Foreground="#191919" Text="to Hydac "/>
+                    <TextBlock FontFamily="{StaticResource OrkneyBold}" Foreground="White" Text="Welcome "/>
+                    <TextBlock Foreground="#191919" Text="to Hydac "/>
                     </StackPanel>
                  </Label>                
         </Viewbox>
         
         <Viewbox Stretch="Uniform" Panel.ZIndex="1"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
-            <Label Content="Employee" Foreground="White"/>
+                <Label Content="Employee" Foreground="White"/>
         </Viewbox>
         
         <Viewbox Stretch="Uniform" Panel.ZIndex="1"  Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2">

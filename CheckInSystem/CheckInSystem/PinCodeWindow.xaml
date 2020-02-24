@@ -5,11 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CheckInSystem"
         mc:Ignorable="d"
-        Title="PinCodeWindow" Height="450" Width="800">
-    
-    <Window.Background>
-        <ImageBrush ImageSource ="Assets\Blurred.jpg"></ImageBrush>
-    </Window.Background>
+        Title="PinCodeWindow" Height="450" Width="800"> 
     
     <Grid>
         <Grid.ColumnDefinitions>
@@ -31,6 +27,8 @@
             <ColumnDefinition Width="4*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="0.5*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="0.5*"></RowDefinition>
@@ -39,30 +37,34 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        
-        <Ellipse x:Name="Ellipse1" Style="{StaticResource EmptyEllipse}" Grid.Row="1" Grid.Column="2"></Ellipse>
-        <Ellipse x:Name="Ellipse2" Style="{StaticResource EmptyEllipse}" Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="2"></Ellipse>
-        <Ellipse x:Name="Ellipse3" Style="{StaticResource EmptyEllipse}" Grid.Row="1" Grid.Column="9" Grid.ColumnSpan="2"></Ellipse>
-        <Ellipse x:Name="Ellipse4" Style="{StaticResource EmptyEllipse}" Grid.Row="1" Grid.Column="13"></Ellipse>
 
-        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="5" Grid.Row="3" Click="AddNum">7</Button>
-        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="7" Grid.Row="3" Click="AddNum">8</Button>
-        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="9" Grid.Row="3" Click="AddNum">9</Button>
-        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="5" Grid.Row="4" Click="AddNum">4</Button>
-        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="7" Grid.Row="4" Click="AddNum">5</Button>
-        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="9" Grid.Row="4" Click="AddNum">6</Button>
-        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="5" Grid.Row="5" Click="AddNum">1</Button>
-        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="7" Grid.Row="5" Click="AddNum">2</Button>
-        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="9" Grid.Row="5" Click="AddNum">3</Button>
-        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="7" Grid.Row="6" Click="AddNum">0</Button>
+        <Viewbox Grid.Column="4" Grid.ColumnSpan="7">
+            <Image Source="Assets\hydacLogo.png"></Image>
+        </Viewbox>
+            
+        <Ellipse x:Name="Ellipse1" Style="{StaticResource EmptyEllipse}" Grid.Row="3" Grid.Column="2"></Ellipse>
+        <Ellipse x:Name="Ellipse2" Style="{StaticResource EmptyEllipse}" Grid.Row="3" Grid.Column="5" Grid.ColumnSpan="2"></Ellipse>
+        <Ellipse x:Name="Ellipse3" Style="{StaticResource EmptyEllipse}" Grid.Row="3" Grid.Column="9" Grid.ColumnSpan="2"></Ellipse>
+        <Ellipse x:Name="Ellipse4" Style="{StaticResource EmptyEllipse}" Grid.Row="3" Grid.Column="13"></Ellipse>
 
-        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="9" Grid.Row="6" Click="DeleteNum" >
+        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="5" Grid.Row="5" Click="AddNum">7</Button>
+        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="7" Grid.Row="5" Click="AddNum">8</Button>
+        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="9" Grid.Row="5" Click="AddNum">9</Button>
+        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="5" Grid.Row="6" Click="AddNum">4</Button>
+        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="7" Grid.Row="6" Click="AddNum">5</Button>
+        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="9" Grid.Row="6" Click="AddNum">6</Button>
+        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="5" Grid.Row="7" Click="AddNum">1</Button>
+        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="7" Grid.Row="7" Click="AddNum">2</Button>
+        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="9" Grid.Row="7" Click="AddNum">3</Button>
+        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="7" Grid.Row="8" Click="AddNum">0</Button>
+
+        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="9" Grid.Row="8" Click="DeleteNum" >
             <Viewbox>
                 <Image Source="Assets/BackSpace.png"></Image>
             </Viewbox>
         </Button>
 
-        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="5" Grid.Row="6" Click="ClickVerify" >
+        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="5" Grid.Row="8" Click="ClickVerify" >
             <Viewbox>
                 <Image Source="Assets/CheckMark.png"></Image>
             </Viewbox>
@@ -70,6 +72,8 @@
         
 
         <TextBox x:Name="TextBoxNumPad" Grid.Row="2" Grid.Column="6" Grid.ColumnSpan="4" Visibility="Hidden"></TextBox>
+        
+        <Rectangle Panel.ZIndex="-1" Grid.Column="1" Grid.Row="2"  Grid.ColumnSpan="14" Grid.RowSpan="3" Fill="LightGray"/>
 
 
     </Grid>
