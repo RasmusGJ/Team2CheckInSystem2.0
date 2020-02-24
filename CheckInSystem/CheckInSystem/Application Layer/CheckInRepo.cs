@@ -114,17 +114,24 @@ namespace CheckInSystem.Application_Layer
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 //Insert a checkout time to database.
-                string checkOutQuery = "UPDATE CheckIn" +
-                "SET ToDateTime '" + currentTime + "'" + 
-                "WHERE Id =" + Id + ";";    
+                string checkOutQuery = "UPDATE CheckIn " +
+                "SET ToDateTime = '" + currentTime + "' " + 
+                "WHERE Id =" + Id + ";";
 
-                SqlCommand command = new SqlCommand(checkOutQuery, conn);
-                conn.Open();
+                MessageBox.Show(checkOutQuery);
 
-                using (SqlDataReader reader = command.ExecuteReader())
+                using (SqlCommand command = new SqlCommand(checkOutQuery, conn))
                 {
+                    conn.Open();
+                    int result = command.ExecuteNonQuery();
 
+                    if (result < 0)
+                    {
+                        MessageBox.Show("Error: no lines have been added");
+                    }
                 }
+
+
             }
         }
     }
