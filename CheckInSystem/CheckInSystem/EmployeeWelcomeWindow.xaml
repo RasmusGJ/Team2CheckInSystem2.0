@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CheckInSystem"
         mc:Ignorable="d"
-        Title="EmployeeWelcomeWindow" Height="450" Width="800">
+        Title="EmployeeWelcomeWindow" Height="1620" Width="2160">
     <Window.Background>
         <ImageBrush ImageSource ="Assets\Blurred.jpg"></ImageBrush>
     </Window.Background>
@@ -24,16 +24,26 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
+        
         <Viewbox Stretch="Uniform" Grid.Row="1" Grid.Column="1">
-            <Label Name="welcomeLabel" Content="[Name Here]"></Label>
+            <Label HorizontalAlignment="Right">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="welcomeText" Text="Welcome "></TextBlock>
+                    <TextBlock x:Name="nameText" Text="InsertName"></TextBlock>
+                </StackPanel>
+            </Label>
         </Viewbox>
+        
         <Viewbox Stretch="Uniform" Grid.Row="3" Grid.Column="1">
             <Label>Your arrival has been registered</Label>
         </Viewbox>
+        
         <Button  Grid.Row="5" Grid.Column="1" Click="ButtonClick" >
             <Viewbox Stretch="Uniform">
                 <Label>OK</Label>
             </Viewbox>
         </Button>
+        
+        
     </Grid>
 </Window>

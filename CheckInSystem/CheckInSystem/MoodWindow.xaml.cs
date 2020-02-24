@@ -20,7 +20,6 @@ namespace CheckInSystem
     public partial class MoodWindow : Window
     {
         Controller controller;
-        CheckInRepo checkInRepo;
 
         public MoodWindow()
         {
@@ -35,8 +34,6 @@ namespace CheckInSystem
         {
             controller = newController;
             MessageBox.Show(newController.CurrentPerson.Name);
-
-            nameLabel.Content = controller.CurrentPerson.Name;
 
             HideOrShowCheckOutBtn();
             
@@ -53,36 +50,46 @@ namespace CheckInSystem
             {
                 checkOutButton.Visibility = Visibility.Hidden;
             }
+
+
+            nameLabel.Content = controller.CurrentPerson.Name;
         }
 
         private void SadSelect(object sender, RoutedEventArgs e)
         {
             controller.AssignMood(Mood.Negative);
-            EmployeeWelcomeWindow welcomeWindow = new EmployeeWelcomeWindow();
-            welcomeWindow.Show();
-            this.Close();
+            OpenWelcomeWindow();
+
         }
 
         private void NeutralSelect(object sender, RoutedEventArgs e)
         {
             controller.AssignMood(Mood.Neutral);
-            EmployeeWelcomeWindow welcomeWindow = new EmployeeWelcomeWindow();
-            welcomeWindow.Show();
-            this.Close();
+            OpenWelcomeWindow();
+
         }
 
         private void HappySelect(object sender, RoutedEventArgs e)
         {
             controller.AssignMood(Mood.Positive);
+            OpenWelcomeWindow();
+        }
+
+        private void OpenWelcomeWindow()
+        {
             EmployeeWelcomeWindow welcomeWindow = new EmployeeWelcomeWindow();
+            welcomeWindow.GetController(controller);
             welcomeWindow.Show();
             this.Close();
+
         }
+
 
         private void checkOutButton_Click_1(object sender, RoutedEventArgs e)
         {           
-            checkInRepo.CheckOut(controller.CurrentPerson);
+            controller.CheckInRepo.CheckOut(controller.CurrentPerson);
             EmployeeCheckoutWindow checkoutWindow = new EmployeeCheckoutWindow();
+            checkoutWindow.GetController(controller);
             checkoutWindow.Show();
             this.Close();
         }

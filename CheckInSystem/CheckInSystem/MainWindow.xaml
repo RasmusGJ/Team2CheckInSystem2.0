@@ -5,49 +5,94 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CheckInSystem"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    
+        Title="MainWindow" Height="1620" Width="2160">
+
     <Window.Background>
-        <ImageBrush ImageSource ="Assets\Blurred.jpg"></ImageBrush>
+        <SolidColorBrush Color="#EFEFEF"></SolidColorBrush>
     </Window.Background>
-    
     <Grid>
         
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="4*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+
         </Grid.ColumnDefinitions>
         
         <Grid.RowDefinitions>
-            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="1.2*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="2*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="2*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        
-        <Viewbox Stretch="Uniform"   Grid.Row="0" Grid.Column="1">
-            <Label>Welcome to Hydac</Label>
+
+        <Rectangle Opacity="0.95" Name="rectangleRed" Fill="#E12728" Grid.ColumnSpan="2" Grid.RowSpan="5"/>
+
+        <Viewbox Stretch="Uniform" Panel.ZIndex="1"  Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2">
+                 <Label>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Foreground="White" Text="Welcome "/>
+                        <TextBlock Foreground="#191919" Text="to Hydac "/>
+                    </StackPanel>
+                 </Label>                
         </Viewbox>
         
-        <Viewbox Stretch="Uniform"   Grid.Row="1" Grid.Column="1">
-            <Label>Please verify your arrival</Label>
+        <Viewbox Stretch="Uniform" Panel.ZIndex="1"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+            <Label Content="Employee" Foreground="White"/>
         </Viewbox>
         
-        <Button Grid.Column="1" Grid.Row="2" Click="GoToPinCodeWindow">
+        <Viewbox Stretch="Uniform" Panel.ZIndex="1"  Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2">
+            <Label Content="Guest" Foreground="#191919"/>
+        </Viewbox>
+
+        <Button  Opacity="0" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="6" Click="GoToPinCodeWindow">            
             <Viewbox Stretch="Uniform">
-                <Label>Employee</Label>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"></RowDefinition>
+                        <RowDefinition Height="4*"></RowDefinition>
+                        <RowDefinition Height="4*"></RowDefinition>
+                        <RowDefinition Height="2*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Column="0" Grid.Row="0"> </Label>
+                    <Label Grid.Column="0" Grid.Row="3" FontSize="1" Foreground="White">Employee</Label>
+                </Grid>
             </Viewbox>
         </Button>
         
-        <Button Grid.Column="1" Grid.Row="4">
+        <Image Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Width="700" Source ="Assets\EmployeeIcon.png"></Image>
+
+        <Button Opacity="0" Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="6">
             <Viewbox Stretch="Uniform">
-                <Label>Guest</Label>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"></RowDefinition>
+                        <RowDefinition Height="4*"></RowDefinition>
+                        <RowDefinition Height="4*"></RowDefinition>
+                        <RowDefinition Height="2*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Column="0" Grid.Row="0"></Label>
+                    <Label Grid.Column="0" Grid.Row="3" FontSize="1" Foreground="Black">Guest</Label>
+                </Grid>
             </Viewbox>
         </Button>
         
+        <Image Width="700" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="2" Source ="Assets\GuestIcon.png"></Image>
+
     </Grid>
 
 </Window>

@@ -26,10 +26,12 @@ namespace CheckInSystem
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;
+            WindowStyle = WindowStyle.None;
         }
 
         private void GoToPinCodeWindow(object sender, RoutedEventArgs e)
         {
+            rectangleRed.Fill = new SolidColorBrush(Color.FromRgb(254,24,24));
             PinCodeWindow pinWindow = new PinCodeWindow();
             pinWindow.Show();
             this.Close();
