@@ -85,8 +85,6 @@ namespace CheckInSystem.Application_Layer
                     "INSERT INTO CheckIn ( FromDateTime, Guest_Id) " +                                      //If person is not an employee(false)
                     "VALUES ('" + currentTime + "'," + checkIn.person.Id + ");";                             //
 
-                MessageBox.Show(addCheckIn);
-
                 using (SqlCommand command = new SqlCommand(addCheckIn, conn))
                 {
                     conn.Open();
@@ -102,15 +100,25 @@ namespace CheckInSystem.Application_Layer
 
         public void CheckOut(Person person)
         {
+            int Id = 0;
+            foreach (CheckIn checkIn in checkIns)
+            {
+                if (checkIn.ToTime.ToString("yyyy-dd-MM HH:mm:ss") == "1900-01-01 00:00:00" && checkIn.person.Id == person.Id)
+                {
+                    Id = checkIn.Id;
+                }
+            }
+
+            string currentTime = DateTime.Now.ToString("yyyy-dd-MM HH:mm:ss");
+
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 //Insert a checkout time to database.
-                string addCheckOutTimeEmployee = "INSERT INTO CheckIn ( ToDateTime ) " +
-                    "VALUES (" + DateTime.Now + ") WHERE " + person.Id + "= Employee_Id;";
-                string addCheckOutTimeGuest = "INSERT INTO CheckIn ( ToDateTime ) " +
-                    "VALUES (" + DateTime.Now + ") WHERE " + person.Id + "= Guest_Id;";
+                string checkOutQuery = "UPDATE CheckIn" +
+                "SET ToDateTime '" + currentTime + "'" + 
+                "WHERE Id =" + Id + ";";    
 
-                SqlCommand command = new SqlCommand(addCheckOutTimeEmployee + addCheckOutTimeGuest, conn);
+                SqlCommand command = new SqlCommand(checkOutQuery, conn);
                 conn.Open();
 
                 using (SqlDataReader reader = command.ExecuteReader())
