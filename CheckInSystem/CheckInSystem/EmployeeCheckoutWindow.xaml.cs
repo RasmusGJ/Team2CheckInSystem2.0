@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using CheckInSystem.Application_Layer;
 
 namespace CheckInSystem
 {
@@ -17,9 +18,26 @@ namespace CheckInSystem
     /// </summary>
     public partial class EmployeeCheckoutWindow : Window
     {
+        Controller controller;
         public EmployeeCheckoutWindow()
         {
             InitializeComponent();
+            WindowState = WindowState.Maximized;
+        }
+
+        public void GetController(Controller newController)
+        {
+            controller = newController;
+            MessageBox.Show(newController.CurrentPerson.Name);
+
+            nameLabel.Content = controller.CurrentPerson.Name;
+        }
+
+        private void GoToMainWindow(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
     }
 }

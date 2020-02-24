@@ -25,12 +25,19 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Viewbox Stretch="Uniform" Grid.Row="1" Grid.Column="1">
-            <Label Name="welcomeLabel" Content="Have a nice day [Insert name]"></Label>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Name="welcomeLabel" Content="Have a nice day " Grid.Column="0"></Label>
+                <Label Name="nameLabel" Content="InsertName" Grid.Column="1"></Label>
+            </Grid>
         </Viewbox>
         <Viewbox Stretch="Uniform" Grid.Row="3" Grid.Column="1">
             <Label>Your departure has  been registered</Label>
         </Viewbox>
-        <Button  Grid.Row="5" Grid.Column="1">
+        <Button  Grid.Row="5" Grid.Column="1" Click="GoToMainWindow">
             <Viewbox Stretch="Uniform">
                 <Label>OK</Label>
             </Viewbox>

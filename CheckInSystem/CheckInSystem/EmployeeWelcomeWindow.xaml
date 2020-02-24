@@ -25,7 +25,14 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Viewbox Stretch="Uniform" Grid.Row="1" Grid.Column="1">
-            <Label Name="welcomeLabel" Content="[Name Here]"></Label>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Name="welcomeLabel" Content="Welcome" Grid.Column="0"></Label>
+                <Label Name="nameLabel" Content="InsertName" Grid.Column="1"></Label>
+            </Grid>
         </Viewbox>
         <Viewbox Stretch="Uniform" Grid.Row="3" Grid.Column="1">
             <Label>Your arrival has been registered</Label>
@@ -35,5 +42,7 @@
                 <Label>OK</Label>
             </Viewbox>
         </Button>
+        
+        
     </Grid>
 </Window>

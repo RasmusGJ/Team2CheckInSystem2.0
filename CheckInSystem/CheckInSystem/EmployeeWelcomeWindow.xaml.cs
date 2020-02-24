@@ -9,19 +9,32 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using CheckInSystem.Application_Layer;
 
 namespace CheckInSystem
 {
     /// <summary>
     /// Interaction logic for EmployeeWelcomeWindow.xaml
     /// </summary>
+    /// 
+
     public partial class EmployeeWelcomeWindow : Window
     {
+        Controller controller;
 
         public EmployeeWelcomeWindow()
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;
+
+        }
+        public void GetController(Controller newController)
+        {
+            controller = newController;
+            MessageBox.Show(newController.CurrentPerson.Name);
+
+            nameLabel.Content = controller.CurrentPerson.Name;
+
 
         }
 
