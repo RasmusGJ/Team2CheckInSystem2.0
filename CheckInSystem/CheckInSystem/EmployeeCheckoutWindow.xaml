@@ -24,16 +24,16 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
+
         <Viewbox Stretch="Uniform" Grid.Row="1" Grid.Column="1">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Label Name="welcomeLabel" Content="Have a nice day " Grid.Column="0"></Label>
-                <Label Name="nameLabel" Content="InsertName" Grid.Column="1"></Label>
-            </Grid>
+            <Label HorizontalAlignment="Right">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="welcomeText" Text="Have a nice day "></TextBlock>
+                    <TextBlock x:Name="nameText" Text="InsertName"></TextBlock>
+                </StackPanel>
+            </Label>
         </Viewbox>
+
         <Viewbox Stretch="Uniform" Grid.Row="3" Grid.Column="1">
             <Label>Your departure has  been registered</Label>
         </Viewbox>

@@ -30,7 +30,7 @@ namespace CheckInSystem
             controller = newController;
             MessageBox.Show(newController.CurrentPerson.Name);
 
-            nameLabel.Content = controller.CurrentPerson.Name;
+            nameText.Text = controller.CurrentPerson.Name;
         }
 
         private void GoToMainWindow(object sender, RoutedEventArgs e)
