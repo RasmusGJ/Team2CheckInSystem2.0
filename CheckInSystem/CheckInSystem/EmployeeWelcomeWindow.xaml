@@ -5,40 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CheckInSystem"
         mc:Ignorable="d"
-        Title="EmployeeWelcomeWindow" Height="1620" Width="2160">
-    <Window.Background>
-        <ImageBrush ImageSource ="Assets\Blurred.jpg"></ImageBrush>
-    </Window.Background>
+        Title="EmployeeWelcomeWindow" Height="1620" Width="2160">    
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="4*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="0.7*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="0.6*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="1.5*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
         </Grid.RowDefinitions>
+
+        <Viewbox>
+            <Image Source="Assets\hydacLogo.png"/>
+        </Viewbox>
         
-        <Viewbox Stretch="Uniform" Grid.Row="1" Grid.Column="1">
+        <Viewbox Stretch="Uniform" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
             <Label HorizontalAlignment="Right">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock x:Name="welcomeText" Text="Welcome "></TextBlock>
-                    <TextBlock x:Name="nameText" Text="InsertName"></TextBlock>
+                    <TextBlock x:Name="nameText" Foreground="#E12728" Text="InsertName"></TextBlock>
                 </StackPanel>
             </Label>
         </Viewbox>
         
-        <Viewbox Stretch="Uniform" Grid.Row="3" Grid.Column="1">
+        <Viewbox Stretch="Uniform" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
             <Label>Your arrival has been registered</Label>
-        </Viewbox>
+        </Viewbox>        
         
-        <Button  Grid.Row="5" Grid.Column="1" Click="ButtonClick" >
+        <Viewbox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Stretch="Uniform">
+            <Image Source="Assets\WelcomeIcon.png"></Image>
+        </Viewbox>
+
+        <Button Style="{StaticResource BtnStyle}" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Click="ButtonClick" >
             <Viewbox Stretch="Uniform">
                 <Label>OK</Label>
             </Viewbox>
