@@ -43,13 +43,5 @@ namespace CheckInSystem
             mainWindow.Show();
             this.Close();
         }
-
-        private void BackButton_Click(object sender, RoutedEventArgs e)
-        {
-            MoodWindow moodWindow = new MoodWindow();
-            moodWindow.GetController(controller);
-            moodWindow.Show();
-            this.Close();
-        }
     }
 }

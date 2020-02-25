@@ -51,11 +51,5 @@
             </Viewbox>
         </Button>
 
-        <Button x:Name="backButton" Style="{StaticResource NumPadBtn}" Grid.Column="0" Grid.Row="7" Click="BackButton_Click">
-            <Viewbox>
-                <Image Source="Assets\backButtonIcon.png"/>
-            </Viewbox>
-        </Button>
-
     </Grid>
 </Window>
