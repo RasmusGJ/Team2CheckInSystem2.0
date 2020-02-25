@@ -30,7 +30,7 @@
         <Viewbox Stretch="Uniform" Grid.Row="3" Grid.Column="1">
             <Label>Your departure has  been registered</Label>
         </Viewbox>
-        <Button  Grid.Row="5" Grid.Column="1">
+        <Button  Grid.Row="5" Grid.Column="1" Click="GoToMainWindow">
             <Viewbox Stretch="Uniform">
                 <Label>OK</Label>
             </Viewbox>
