@@ -28,7 +28,7 @@ namespace CheckInSystem
         public void GetController(Controller newController)
         {
             controller = newController;
-            MessageBox.Show(newController.CurrentPerson.Name);
+            //MessageBox.Show(newController.CurrentPerson.Name);
 
             nameText.Text = controller.CurrentPerson.Name;
         }

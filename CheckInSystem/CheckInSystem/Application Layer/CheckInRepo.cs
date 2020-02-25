@@ -118,7 +118,7 @@ namespace CheckInSystem.Application_Layer
                 "SET ToDateTime = '" + currentTime + "' " + 
                 "WHERE Id =" + Id + ";";
 
-                MessageBox.Show(checkOutQuery);
+                //MessageBox.Show(checkOutQuery);
 
                 using (SqlCommand command = new SqlCommand(checkOutQuery, conn))
                 {
