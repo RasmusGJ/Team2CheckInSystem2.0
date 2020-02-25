@@ -3,8 +3,14 @@
                     xmlns:local="clr-namespace:CheckInSystem.ResourceDictionaries">
     
     <Style TargetType="Button" x:Key="NumPadBtn">
-        <Setter Property="BorderThickness" Value="1"></Setter>
-        <Setter Property="Background" Value="LightGray"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Background" Value="White"></Setter>
     </Style>
-    
+    <Style TargetType="Button" x:Key="BtnStyle">
+        <Setter Property="BorderThickness" Value="7"></Setter>
+        <Setter Property="BorderBrush" Value="#E12728"></Setter>
+        <Setter Property="Background" Value="#E12728"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+
+    </Style>
 </ResourceDictionary>

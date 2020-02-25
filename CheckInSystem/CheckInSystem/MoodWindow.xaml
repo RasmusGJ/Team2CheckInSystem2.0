@@ -5,10 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CheckInSystem"
         mc:Ignorable="d"
-        Title="MoodWindow" Height="1620" Width="2160">
-    <Window.Background>
-        <ImageBrush ImageSource ="Assets\Blurred.jpg"></ImageBrush>
-    </Window.Background>
+        Title="MoodWindow" Height="1620" Width="2160">   
     <Grid>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -23,16 +20,25 @@
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
+                <RowDefinition Height="0.7*" />
                 <RowDefinition Height="1.5*" />
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
+                <RowDefinition Height="0.03*" />
+                <RowDefinition Height="1*" />
                 <RowDefinition Height="3*" />
                 <RowDefinition Height="1*" />
-                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />                
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
+            
+            <Rectangle Panel.ZIndex="-1" Grid.Column="2" Grid.Row="4"  Grid.ColumnSpan="3" Fill="Black"/>
+            
+            <Viewbox>
+                <Image Source="Assets\hydacLogo.png"/>
+            </Viewbox>
 
-            <Viewbox Stretch="Uniform" Grid.ColumnSpan="5" Grid.RowSpan="1" Grid.Column="1" Grid.Row="0">
+            <Viewbox VerticalAlignment="Bottom" Stretch="Uniform" Grid.ColumnSpan="5" Grid.Column="1" Grid.Row="1">
                 <Label 
                 Name="welcomeLabel" 
                 Content="Hej,"   
@@ -41,46 +47,48 @@
                 </Label>
             </Viewbox>
 
-            <Viewbox Stretch="Uniform" Grid.Column="3" Grid.Row="1">
+            <Viewbox VerticalAlignment="Top" Stretch="Uniform" Grid.Column="3" Grid.Row="2">
                 <Label x:Name="nameLabel"
                FontFamily="QuickSand"
                Content="[Name Here]"    
-               Foreground="Black">
+               Foreground="#E12728">
                 </Label>
             </Viewbox>
 
-            <Viewbox Stretch="Uniform" Grid.Column="3" Grid.Row="2">
+            <Viewbox Stretch="Uniform" Grid.Column="3" Grid.Row="3">
                 <Label Name="moodLabel" 
-               Content="Vælg dit humør:" 
+               Content="Hvilket humør er du i?" 
                Foreground="Black"
                FontFamily="QuickSand">
                 </Label>
             </Viewbox>
 
-            <Button Grid.Column="5" Grid.Row="3"                
+            <Button Grid.Column="5" Grid.Row="6"                
                 Name="happyLabel" 
                 BorderBrush="Transparent" Click="HappySelect">
                 <Button.Background>
-                    <ImageBrush Stretch="Uniform" ImageSource ="Assets\Happy2.png"></ImageBrush>
+                    <ImageBrush Stretch="Uniform" ImageSource="Assets\HappySmiley.png"></ImageBrush>
                 </Button.Background>
             </Button>
 
-            <Button Grid.Column="3" Grid.Row="3"
+            <Button Grid.Column="3" Grid.Row="6"
                 Name="neutralLabel" 
                 BorderBrush="Transparent" Click="NeutralSelect">
                 <Button.Background>
-                    <ImageBrush Stretch="Uniform"  ImageSource ="Assets\Neutral1.png"></ImageBrush>
+                    <ImageBrush Stretch="Uniform"  ImageSource ="Assets\NeutralSmiley.png"></ImageBrush>
                 </Button.Background>
             </Button>
 
-            <Button Grid.Column="1" Grid.Row="3"
+            <Button Grid.Column="1" Grid.Row="6"
                 Name="sadLabel" 
                 BorderBrush="Transparent" Click="SadSelect">
                 <Button.Background>
-                    <ImageBrush Stretch="Uniform" ImageSource ="Assets\Sad1.png"></ImageBrush>
+                    <ImageBrush Stretch="Uniform" ImageSource ="Assets\SadSmiley.png"></ImageBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="checkOutButton" Content="Check Out" Grid.Row="5" Grid.Column="3" Click="checkOutButton_Click_1"/>
+            
+            <Button Style="{StaticResource BtnStyle}" x:Name="checkOutButton" FontSize="40" Content="Check Out" Grid.Row="8" Grid.Column="3" Click="checkOutButton_Click_1"/>
+            
         </Grid>
     </Grid>
 </Window>
