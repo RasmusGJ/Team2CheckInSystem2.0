@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using CheckInSystem.Application_Layer;
 
 namespace CheckInSystem
 {
@@ -20,7 +21,7 @@ namespace CheckInSystem
         public GuestRequestWindow()
         {
             InitializeComponent();
-
+            EmployeeRepo employeeRepo = new EmployeeRepo();
         }
     }
 }
