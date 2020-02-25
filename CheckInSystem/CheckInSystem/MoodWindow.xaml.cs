@@ -23,10 +23,8 @@ namespace CheckInSystem
 
         public MoodWindow()
         {
-
             InitializeComponent();
-            WindowState = WindowState.Maximized;
-                  
+            WindowState = WindowState.Maximized;                  
             
         }
 
@@ -35,9 +33,7 @@ namespace CheckInSystem
             controller = newController;
             MessageBox.Show(newController.CurrentPerson.Name);
 
-            HideOrShowCheckOutBtn();
-            
-
+            HideOrShowCheckOutBtn();          
         }
 
         public void HideOrShowCheckOutBtn()
@@ -81,7 +77,6 @@ namespace CheckInSystem
             welcomeWindow.GetController(controller);
             welcomeWindow.Show();
             this.Close();
-
         }
 
 
@@ -91,6 +86,14 @@ namespace CheckInSystem
             EmployeeCheckoutWindow checkoutWindow = new EmployeeCheckoutWindow();
             checkoutWindow.GetController(controller);
             checkoutWindow.Show();
+            this.Close();
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            PinCodeWindow pinCodeWindow = new PinCodeWindow();
+            pinCodeWindow.GetController(controller);
+            pinCodeWindow.Show();
             this.Close();
         }
     }

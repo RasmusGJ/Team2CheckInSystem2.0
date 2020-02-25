@@ -88,6 +88,11 @@
         
         <Rectangle Panel.ZIndex="-1" Grid.Column="4" Grid.Row="2"  Grid.ColumnSpan="8" Grid.RowSpan="3" Fill="LightGray"/>
 
-
+        <Button x:Name="backButton" Style="{StaticResource NumPadBtn}" Grid.Column="0" Grid.Row="9" Click="BackButton_Click">
+            <Viewbox>
+                <Image Source="Assets\backButtonIcon.png"/>
+            </Viewbox>
+        </Button>
+        
     </Grid>
 </Window>
