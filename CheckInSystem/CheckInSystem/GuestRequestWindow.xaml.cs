@@ -13,16 +13,13 @@ using System.Windows.Shapes;
 namespace CheckInSystem
 {
     /// <summary>
-    /// Interaction logic for NoReservationWindow.xaml
+    /// Interaction logic for GuestRequestWindow.xaml
     /// </summary>
-    public partial class NoReservationWindow : Window
+    public partial class GuestRequestWindow : Window
     {
-        public NoReservationWindow()
+        public GuestRequestWindow()
         {
             InitializeComponent();
-        }
-        public void GetPerson()
-        {
 
         }
     }

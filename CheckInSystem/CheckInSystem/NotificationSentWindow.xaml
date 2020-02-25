@@ -34,7 +34,7 @@
             <Label>You have received fire safety</Label>
         </Viewbox>
         <Viewbox Stretch="Uniform" Grid.Row="7" Grid.Column="1">
-            <Label>informationon your phone.</Label>
+            <Label>information on your phone.</Label>
         </Viewbox>
         <Viewbox Stretch="Uniform" Grid.Row="8" Grid.Column="1">
             <Label FontWeight="Bold">Please read it</Label>

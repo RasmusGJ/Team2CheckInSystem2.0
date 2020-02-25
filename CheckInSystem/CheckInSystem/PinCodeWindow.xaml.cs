@@ -25,6 +25,10 @@ namespace CheckInSystem
             InitializeComponent();
             WindowState = WindowState.Maximized;
         }
+        public void GetController(Controller newController)
+        {
+            controller = newController;
+        }
 
         private void AddNum(object sender, RoutedEventArgs e)
         {
@@ -114,7 +118,13 @@ namespace CheckInSystem
                 TextBoxNumPad.Text = "";
                 UpdateCircles();
             }
-            
+
+        }
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainwindow = new MainWindow();            
+            mainwindow.Show();
+            this.Close();
         }
     }
 }
