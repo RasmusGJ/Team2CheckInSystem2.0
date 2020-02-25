@@ -33,20 +33,52 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <ListBox x:Name="Listbox" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="5" Grid.RowSpan="4">
-            <ListView Margin="10" Name="List" Width="1920" Height="100" FontSize="60"  >
-                <ListView.View>
-                    <GridView >
-                        <GridViewColumn Header="Name" Width="640"/>
-                        <GridViewColumn Header="Role" Width="400"/>
-                        <GridViewColumn Header="Department" Width="640"/>
-                    </GridView>
-                </ListView.View>
-            </ListView>
-        </ListBox>
+        
+        <ListView x:Name="Listbox"  ItemsSource="{Binding employees}" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="5" Grid.RowSpan="4">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=Name}" Width="200">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=Name}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Role" DisplayMemberBinding="{Binding Path=Role}" Width="300" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=Role}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Department" DisplayMemberBinding="{Binding Path=Department}" Width="400">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=Department}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="GridViewColumnHeader">
+                            <Setter Property="Height"  Value="50"/>
+                            <Setter Property="FontSize" Value="30"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="Background" Value="#E12728"/>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+                </GridView>
+            </ListView.View>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Height" Value="100" />
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+        
         <Viewbox Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left">
             <Label>Name:</Label>
         </Viewbox>
+        
         <Viewbox Grid.Row="4" Grid.Column="4" HorizontalAlignment="Left">
             <Label>Department::</Label>
         </Viewbox>

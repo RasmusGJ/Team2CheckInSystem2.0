@@ -10,7 +10,7 @@ namespace CheckInSystem.Application_Layer
 {
     public class EmployeeRepo
     {
-        public List<Employee> employees = new List<Employee>();
+        public List<Employee> employees { get; set; } = new List<Employee>();
         public EmployeeRepo()
         {
             string ConnectionString = "Server=10.56.8.32;Database=A_GRUPEDB02_2019;User Id=A_GRUPE02;Password=A_OPENDB02"; 

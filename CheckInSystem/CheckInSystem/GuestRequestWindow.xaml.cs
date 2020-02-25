@@ -21,7 +21,9 @@ namespace CheckInSystem
         public GuestRequestWindow()
         {
             InitializeComponent();
+            WindowState = WindowState.Maximized;
             EmployeeRepo employeeRepo = new EmployeeRepo();
+            DataContext = employeeRepo;
         }
     }
 }

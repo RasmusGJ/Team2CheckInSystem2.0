@@ -35,5 +35,12 @@ namespace CheckInSystem
             pinWindow.Show();
             this.Close();
         }
+
+        private void GoToGuestRequestWindow(object sender, RoutedEventArgs e)
+        {
+            GuestRequestWindow guestRequestWindow = new GuestRequestWindow();
+            guestRequestWindow.Show();
+            this.Close();
+        }
     }
 }
