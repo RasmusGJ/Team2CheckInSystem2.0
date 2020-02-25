@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CheckInSystem"
         mc:Ignorable="d"
-        Title="EmployeeWelcomeWindow" Height="" Width="800">
+        Title="EmployeeWelcomeWindow" Height="1620" Width="2160">
     <Window.Background>
         <ImageBrush ImageSource ="Assets\Blurred.jpg"></ImageBrush>
     </Window.Background>

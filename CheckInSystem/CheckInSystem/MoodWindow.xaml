@@ -41,7 +41,7 @@
             <Viewbox VerticalAlignment="Bottom" Stretch="Uniform" Grid.ColumnSpan="5" Grid.Column="1" Grid.Row="1">
                 <Label 
                 Name="welcomeLabel" 
-                Content="Hej,"   
+                Content="Hej"   
                 Foreground="Black"                
                 FontFamily="QuickSand">
                 </Label>
@@ -60,7 +60,7 @@
                Content="Hvilket humør er du i?" 
                Foreground="Black"
                FontFamily="QuickSand">
-                </Label>
+                </Label>                
             </Viewbox>
 
             <Button Grid.Column="5" Grid.Row="6"                
