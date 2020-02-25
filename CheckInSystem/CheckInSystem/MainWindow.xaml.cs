@@ -26,7 +26,6 @@ namespace CheckInSystem
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;
-            WindowStyle = WindowStyle.None;
         }
 
         private void GoToPinCodeWindow(object sender, RoutedEventArgs e)
