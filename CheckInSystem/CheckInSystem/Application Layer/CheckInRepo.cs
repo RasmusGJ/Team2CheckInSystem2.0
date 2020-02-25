@@ -22,7 +22,8 @@ namespace CheckInSystem.Application_Layer
                 //Selects all from Employee tabel in database
                 string stringQuery = "SELECT Id, FromDateTime, ToDateTime, Employee_Id, Guest_Id, Mood_Id " +
                     "FROM CheckIn " + 
-                    "WHERE FromDateTime > '" + todayDate + "'";
+                    "WHERE FromDateTime > '" + todayDate + "' " +
+                    "ORDER BY FromDateTime DESC";
 
                 SqlCommand command = new SqlCommand(stringQuery, conn);
                 conn.Open();
@@ -77,7 +78,7 @@ namespace CheckInSystem.Application_Layer
             Person checkInPerson = new Employee();
             checkInPerson.Id = checkIn.person.Id;
 
-            if (!CheckIfCheckedIn(checkInPerson as Employee))
+            if (CheckIfCheckedIn(checkInPerson as Employee) == true)
             {
                 CheckOut(checkInPerson);
             }
