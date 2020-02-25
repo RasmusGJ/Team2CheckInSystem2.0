@@ -86,9 +86,10 @@
                     <ImageBrush Stretch="Uniform" ImageSource ="Assets\SadSmiley.png"></ImageBrush>
                 </Button.Background>
             </Button>
-            
-            <Button Style="{StaticResource BtnStyle}" x:Name="checkOutButton" FontSize="40" Content="Check Out" Grid.Row="8" Grid.Column="3" Click="checkOutButton_Click_1"/>
-            
+
+            <Button Style="{StaticResource BtnStyle}" x:Name="checkOutButton" FontSize="40" Content="Check Out" Grid.Row="8" Grid.Column="3" Click="checkOutButton_Click_1">
+                
+            </Button>
         </Grid>
     </Grid>
 </Window>

@@ -10,7 +10,7 @@
         <Setter Property="BorderThickness" Value="7"></Setter>
         <Setter Property="BorderBrush" Value="#E12728"></Setter>
         <Setter Property="Background" Value="#E12728"></Setter>
-        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>       
 
     </Style>
 </ResourceDictionary>
