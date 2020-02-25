@@ -39,11 +39,11 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Rectangle Panel.ZIndex="1" Height="0.8" VerticalAlignment="Bottom" Fill="Gray" Grid.Column="5" Grid.Row="6" Grid.ColumnSpan="6"></Rectangle>
-        <Rectangle Panel.ZIndex="1" Height="0.8" VerticalAlignment="Bottom" Fill="Gray" Grid.Column="5" Grid.Row="5" Grid.ColumnSpan="6"></Rectangle>
         <Rectangle Panel.ZIndex="1" Height="0.8" VerticalAlignment="Bottom" Fill="Gray" Grid.Column="5" Grid.Row="7" Grid.ColumnSpan="6"></Rectangle>
-        <Rectangle Panel.ZIndex="1" Width="0.8" HorizontalAlignment="Right" Fill="Gray" Grid.Column="3" Grid.Row="5" Grid.RowSpan="4" Grid.ColumnSpan="4"></Rectangle>
-        <Rectangle Panel.ZIndex="1" Width="0.8" HorizontalAlignment="Right" Fill="Gray" Grid.Column="5" Grid.Row="5" Grid.RowSpan="4" Grid.ColumnSpan="4"></Rectangle>
+        <Rectangle Panel.ZIndex="1" Height="0.8" VerticalAlignment="Bottom" Fill="Gray" Grid.Column="5" Grid.Row="6" Grid.ColumnSpan="6"></Rectangle>
+        <Rectangle Panel.ZIndex="1" Height="0.8" VerticalAlignment="Bottom" Fill="Gray" Grid.Column="5" Grid.Row="8" Grid.ColumnSpan="6"></Rectangle>
+        <Rectangle Panel.ZIndex="1" Width="0.8" HorizontalAlignment="Right" Fill="Gray" Grid.Column="3" Grid.Row="6" Grid.RowSpan="4" Grid.ColumnSpan="4"></Rectangle>
+        <Rectangle Panel.ZIndex="1" Width="0.8" HorizontalAlignment="Right" Fill="Gray" Grid.Column="5" Grid.Row="6" Grid.RowSpan="4" Grid.ColumnSpan="4"></Rectangle>
 
         <Viewbox Grid.Column="5" Grid.ColumnSpan="6">
             <Image Source="Assets\hydacLogo.png"></Image>
@@ -53,10 +53,12 @@
             <Label>Enter PIN</Label>
         </Viewbox>
 
-        <Ellipse x:Name="Ellipse1" Style="{StaticResource EmptyEllipse}" Grid.Row="3" Grid.Column="6"></Ellipse>
-        <Ellipse x:Name="Ellipse2" Style="{StaticResource EmptyEllipse}" Grid.Row="3" Grid.Column="7"></Ellipse>
-        <Ellipse x:Name="Ellipse3" Style="{StaticResource EmptyEllipse}" Grid.Row="3" Grid.Column="8"></Ellipse>
-        <Ellipse x:Name="Ellipse4" Style="{StaticResource EmptyEllipse}" Grid.Row="3" Grid.Column="9"></Ellipse>
+
+        <Ellipse x:Name="Ellipse1" Style="{StaticResource EmptyEllipse}" Grid.Row="3" Grid.Column="6" Stretch="Uniform"></Ellipse>
+        <Ellipse x:Name="Ellipse2" Style="{StaticResource EmptyEllipse}" Grid.Row="3" Grid.Column="7" Stretch="Uniform"></Ellipse>
+        <Ellipse x:Name="Ellipse3" Style="{StaticResource EmptyEllipse}" Grid.Row="3" Grid.Column="8" Stretch="Uniform"></Ellipse>
+        <Ellipse x:Name="Ellipse4" Style="{StaticResource EmptyEllipse}" Grid.Row="3" Grid.Column="9" Stretch="Uniform"></Ellipse>
+
 
         <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="5" Grid.Row="6" Click="AddNum">7</Button>
         <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="7" Grid.Row="6" Click="AddNum">8</Button>
