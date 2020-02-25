@@ -40,10 +40,10 @@
         
         <Viewbox Stretch="Uniform" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
             <Label>Your arrival has been registered</Label>
-        </Viewbox>        
-        
+        </Viewbox>
+
         <Viewbox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Stretch="Uniform">
-            <Image Source="Assets\WelcomeIcon.png"></Image>
+            <Image Name="CheckMarkImage" Source="Assets\WelcomeIcon.png"></Image>
         </Viewbox>
 
         <Button Style="{StaticResource BtnStyle}" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Click="ButtonClick" >

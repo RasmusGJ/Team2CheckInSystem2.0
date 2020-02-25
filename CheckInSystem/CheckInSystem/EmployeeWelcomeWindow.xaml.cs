@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using CheckInSystem.Application_Layer;
+using System.Threading;
 
 namespace CheckInSystem
 {
@@ -26,16 +27,13 @@ namespace CheckInSystem
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;
-
         }
         public void GetController(Controller newController)
         {
             controller = newController;
-            MessageBox.Show(newController.CurrentPerson.Name);
+            //MessageBox.Show(newController.CurrentPerson.Name);
 
             nameText.Text = controller.CurrentPerson.Name;
-
-
         }
 
         private void ButtonClick(object sender, RoutedEventArgs e)

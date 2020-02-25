@@ -39,6 +39,12 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
+        <Rectangle Panel.ZIndex="1" Height="0.8" VerticalAlignment="Bottom" Fill="Gray" Grid.Column="5" Grid.Row="6" Grid.ColumnSpan="6"></Rectangle>
+        <Rectangle Panel.ZIndex="1" Height="0.8" VerticalAlignment="Bottom" Fill="Gray" Grid.Column="5" Grid.Row="5" Grid.ColumnSpan="6"></Rectangle>
+        <Rectangle Panel.ZIndex="1" Height="0.8" VerticalAlignment="Bottom" Fill="Gray" Grid.Column="5" Grid.Row="7" Grid.ColumnSpan="6"></Rectangle>
+        <Rectangle Panel.ZIndex="1" Width="0.8" HorizontalAlignment="Right" Fill="Black" Grid.Column="3" Grid.Row="5" Grid.RowSpan="3" Grid.ColumnSpan="4"></Rectangle>
+        <Rectangle Panel.ZIndex="1" Width="0.8" HorizontalAlignment="Right" Fill="Black" Grid.Column="5" Grid.Row="5" Grid.RowSpan="3" Grid.ColumnSpan="4"></Rectangle>
+
         <Viewbox Grid.Column="5" Grid.ColumnSpan="6">
             <Image Source="Assets\hydacLogo.png"></Image>
         </Viewbox>
