@@ -13,19 +13,19 @@ using System.Windows.Shapes;
 namespace CheckInSystem
 {
     /// <summary>
-    /// Interaction logic for AnnounceArrivalWindow.xaml
+    /// Interaction logic for MeetingTimeGuestWindow.xaml
     /// </summary>
-    public partial class AnnounceArrivalWindow : Window
+    public partial class MeetingTimeGuestWindow : Window
     {
-        public AnnounceArrivalWindow()
+        public MeetingTimeGuestWindow()
         {
             InitializeComponent();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainwindow = new MainWindow();
-            mainwindow.Show();
+            AnnounceArrivalWindow announceArrivalWindow = new AnnounceArrivalWindow();
+            announceArrivalWindow.Show();
             this.Close();
         }
     }
