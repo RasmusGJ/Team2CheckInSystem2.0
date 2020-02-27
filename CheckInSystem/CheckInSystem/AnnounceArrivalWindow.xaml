@@ -5,16 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CheckInSystem"
         mc:Ignorable="d"
-        Title="AnnounceArrivalWindow" Height="450" Width="800">
+        Title="AnnounceArrivalWindow" Height="1620" Width="2160">
     <Grid>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="4*"></ColumnDefinition>
-                <ColumnDefinition Width="8*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="4*"></ColumnDefinition>
-                <ColumnDefinition Width="8*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
@@ -31,12 +36,90 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <Viewbox Grid.Row="1" Grid.Column="1">
+            <Viewbox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Grid.ColumnSpan="2">
                 <Label>Name:</Label>
             </Viewbox>
-            <Viewbox Stretch="Uniform" Grid.Row="1" Grid.Column="4">
+            <Viewbox Stretch="Uniform" Grid.Row="1" Grid.Column="7" HorizontalAlignment="Left" Grid.ColumnSpan="2">
                 <Label>Company</Label>
             </Viewbox>
+            <Viewbox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Left">
+                <TextBox Text="">
+                    
+                
+                </TextBox>
+            </Viewbox>
+            <Viewbox Grid.Row="2" Grid.Column="7" Grid.ColumnSpan="4" HorizontalAlignment="Left">
+                <TextBox Text="">
+
+
+                </TextBox>
+            </Viewbox>
+            <Viewbox Grid.Row="3" Grid.Column="7" HorizontalAlignment="Left">
+                <Label>Phone:</Label>
+            </Viewbox>
+            <Viewbox Grid.Row="4" Grid.Column="7" Grid.ColumnSpan="2" HorizontalAlignment="Left">
+                <TextBox Text="48592578">
+                </TextBox>
+            </Viewbox>
+            <Viewbox Grid.Row="5" Grid.Column="7" HorizontalAlignment="Left">
+                <Label>E-mail:</Label>
+            </Viewbox>
+            <Viewbox Grid.Row="6" Grid.Column="7" Grid.ColumnSpan="4" HorizontalAlignment="Left">
+                <TextBox Text="hydac1234@gmail.com">
+                </TextBox>
+            </Viewbox>
+            <Viewbox Grid.Row="8" Grid.Column="7" HorizontalAlignment="Left" Grid.ColumnSpan="2">
+                <Label>Remember me:</Label>
+            </Viewbox>
+            <Button  Grid.Row="10" Grid.Column="3" Grid.ColumnSpan="6" Style="{StaticResource BtnStyle}" >
+                <Viewbox Stretch="Uniform">
+
+                    <Label>OK</Label>
+                </Viewbox>
+            </Button>
+            <ToggleButton  Grid.Row="8" Grid.Column="9" Grid.ColumnSpan="1" HorizontalAlignment="Right" Width="130" />
+            <Viewbox Stretch="Uniform">
+            </Viewbox>
+
+            <ListView x:Name="Listbox"  ItemsSource="{Binding employees}" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="5" Grid.RowSpan="6">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=Role}" Width="425" >
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Role}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Company" DisplayMemberBinding="{Binding Path=Department}" Width="425">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Department}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridView.ColumnHeaderContainerStyle>
+                            <Style TargetType="GridViewColumnHeader">
+                                <Setter Property="Height"  Value="50"/>
+                                <Setter Property="FontSize" Value="30"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Background" Value="#E12728"/>
+                            </Style>
+                        </GridView.ColumnHeaderContainerStyle>
+                    </GridView>
+                </ListView.View>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="Height" Value="100" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+            <Button x:Name="backButton" Style="{StaticResource NumPadBtn}" Grid.Column="1" Grid.Row="10" Click="BackButton_Click">
+                <Viewbox>
+                    <Image Source="Assets\backButtonIcon.png"/>
+                </Viewbox>
+            </Button>
+
         </Grid>
     </Grid>
 </Window>
