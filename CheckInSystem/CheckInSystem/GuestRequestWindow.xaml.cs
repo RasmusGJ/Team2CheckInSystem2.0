@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using CheckInSystem.Application_Layer;
+using CheckInSystem.Domain_Layer;
 
 namespace CheckInSystem
 {
@@ -23,7 +24,27 @@ namespace CheckInSystem
             InitializeComponent();
             WindowState = WindowState.Maximized;
             EmployeeRepo employeeRepo = new EmployeeRepo();
-            DataContext = employeeRepo;
+            DataContext = employeeRepo;            
+            listView.ItemsSource = employeeRepo.employees;
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(listView.ItemsSource);
+            view.Filter = UserFilter;
+        }
+
+        private bool UserFilter(object item)
+        {
+            if (String.IsNullOrEmpty(nameFilter.Text))
+                return true;
+            if (String.IsNullOrEmpty(departmentFilter.Text))
+                return true;
+            else if (!String.IsNullOrEmpty(departmentFilter.Text))
+                return ((item as Employee).Department.IndexOf(departmentFilter.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+            else
+                return ((item as Employee).Name.IndexOf(nameFilter.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+        }
+
+        private void txtFilter_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(listView.ItemsSource).Refresh();
         }
     }
 }

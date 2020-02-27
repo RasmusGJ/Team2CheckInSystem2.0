@@ -34,7 +34,7 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         
-        <ListView x:Name="Listbox"  ItemsSource="{Binding employees}" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="5" Grid.RowSpan="4">
+        <ListView x:Name="listView"  ItemsSource="{Binding employees}" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="5" Grid.RowSpan="4">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=Name}" Width="200">
@@ -83,11 +83,11 @@
             <Label>Department::</Label>
         </Viewbox>
         <Viewbox Grid.Row="5" Grid.Column="2">
-            <TextBox Width="90">
+            <TextBox Name="nameFilter" Width="90" TextChanged="txtFilter_TextChanged">
             </TextBox>
         </Viewbox>
         <Viewbox Grid.Row="5" Grid.Column="4">
-            <TextBox Width="90">
+            <TextBox Name="departmentFilter" Width="90" TextChanged="txtFilter_TextChanged">
             </TextBox>
         </Viewbox>
         <Button Grid.Column="1" Grid.Row="12" Grid.ColumnSpan="5" Style="{StaticResource BtnStyle}">
