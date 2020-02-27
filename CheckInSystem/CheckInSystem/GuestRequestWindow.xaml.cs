@@ -33,9 +33,7 @@ namespace CheckInSystem
         private bool UserFilter(object item)
         {
             if (String.IsNullOrEmpty(nameFilter.Text))
-                return true;
-            if (String.IsNullOrEmpty(departmentFilter.Text))
-                return true;
+                return true;           
             else if (!String.IsNullOrEmpty(departmentFilter.Text))
                 return ((item as Employee).Department.IndexOf(departmentFilter.Text, StringComparison.OrdinalIgnoreCase) >= 0);
             else
