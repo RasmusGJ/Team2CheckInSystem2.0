@@ -32,14 +32,14 @@ namespace CheckInSystem.Application_Layer
                         Employee employee = new Employee();
 
                         //Adds relavent column to properties in Employee object. Then adds an employee to employees list.
-                        employee.Name = String.IsNullOrEmpty(reader.GetString("Name")) ? " " : reader.GetString("Name");
-                        employee.Initials = String.IsNullOrEmpty(reader.GetString("Initials")) ? " " : reader.GetString("Initials");
-                        employee.LandlinePhone = String.IsNullOrEmpty(reader.GetString("LandlinePhone")) ? " " : reader.GetString("LandlinePhone");
-                        employee.PinCode = String.IsNullOrEmpty(reader.GetString("PinCode")) ? " " : reader.GetString("PinCode");
-                        employee.Email = String.IsNullOrEmpty(reader.GetString("Email")) ? " " : reader.GetString("Email");
-                        employee.Role = String.IsNullOrEmpty(reader.GetString("RoleTitle")) ? " " : reader.GetString("RoleTitle");
-                        employee.MobilePhone = String.IsNullOrEmpty(reader.GetString("MobilePhone")) ? " " : reader.GetString("MobilePhone");
-                        employee.Department = String.IsNullOrEmpty(reader.GetString("DepartmentTitle")) ? " " : reader.GetString("DepartmentTitle");
+                        employee.Name = reader.GetString("Name");
+                        employee.Initials = reader.GetString("Initials");
+                        employee.LandlinePhone = reader.GetString("LandlinePhone");
+                        employee.PinCode = reader.GetString("PinCode");
+                        employee.Email = reader.GetString("Email");
+                        employee.Role = reader.GetString("RoleTitle");
+                        employee.MobilePhone = reader.GetString("MobilePhone");
+                        employee.Department = reader.GetString("DepartmentTitle");
                         employee.Id = reader.GetInt32("Id");
                         employees.Add(employee);
                     }

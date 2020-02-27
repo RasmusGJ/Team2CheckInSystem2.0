@@ -31,7 +31,6 @@ namespace CheckInSystem
         public void GetController(Controller newController)
         {
             controller = newController;
-            MessageBox.Show(newController.CurrentPerson.Name);
 
             HideOrShowCheckOutBtn();          
         }
@@ -41,6 +40,7 @@ namespace CheckInSystem
             if (controller.CheckInRepo.CheckIfCheckedIn(controller.CurrentPerson as Employee) == true)
             {
                 checkOutButton.Visibility = Visibility.Visible;
+                moodLabel.Content = "\t\tDu er allerede checket ind.\nDu kan nu vælge at opdatere dit humør eller checke ud igen.";
             }
             else
             {
