@@ -25,5 +25,12 @@ namespace CheckInSystem
             EmployeeRepo employeeRepo = new EmployeeRepo();
             DataContext = employeeRepo;
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
     }
 }
