@@ -55,11 +55,12 @@
             </Label>
         </Viewbox>
 
-        <Viewbox Stretch="Uniform" Grid.Column="3" Grid.Row="3">
+        <Viewbox Stretch="Uniform" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="5" HorizontalAlignment="Center" >
             <Label Name="moodLabel" 
                Content="Hvilket humør er du i?" 
                Foreground="Black"
-               FontFamily="QuickSand">
+               FontFamily="QuickSand"
+               HorizontalAlignment="Center">
             </Label>
         </Viewbox>
 

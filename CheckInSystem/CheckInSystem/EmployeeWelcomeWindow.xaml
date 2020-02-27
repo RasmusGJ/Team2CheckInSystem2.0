@@ -31,14 +31,14 @@
         <Viewbox Stretch="Uniform" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
             <Label HorizontalAlignment="Right">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock x:Name="welcomeText" Text="Welcome "></TextBlock>
+                    <TextBlock x:Name="welcomeText" Text="Velkommen "></TextBlock>
                     <TextBlock x:Name="nameText" Foreground="#E12728" Text="InsertName"></TextBlock>
                 </StackPanel>
             </Label>
         </Viewbox>
         
         <Viewbox Stretch="Uniform" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
-            <Label>Your arrival has been registered</Label>
+            <Label>Din ankomst er blevet registreret</Label>
         </Viewbox>
 
         <Viewbox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Stretch="Uniform">
