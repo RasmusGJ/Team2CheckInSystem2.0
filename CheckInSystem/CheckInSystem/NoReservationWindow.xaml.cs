@@ -25,5 +25,19 @@ namespace CheckInSystem
         {
 
         }
+
+        private void GoToGuestRequestWindow(object sender, RoutedEventArgs e)
+        {
+            GuestRequestWindow guestRequestWindow = new GuestRequestWindow();
+            guestRequestWindow.Show();
+            this.Close();
+        }
+
+        private void GoToCoffeeDrinkerWindow(object sender, RoutedEventArgs e)
+        {
+            CoffeeDrinkerWindow coffeeDrinkerWindow = new CoffeeDrinkerWindow();
+            coffeeDrinkerWindow.Show();
+            this.Close();
+        }
     }
 }
