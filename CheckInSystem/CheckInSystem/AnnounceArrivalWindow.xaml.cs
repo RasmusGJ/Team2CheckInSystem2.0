@@ -28,5 +28,12 @@ namespace CheckInSystem
             mainwindow.Show();
             this.Close();
         }
+
+        private void Ok_Button(object sender, RoutedEventArgs e)
+        {
+            GuestRequestWindow guestRequestWindow = new GuestRequestWindow();
+            guestRequestWindow.Show();
+            this.Close();
+        }
     }
 }
