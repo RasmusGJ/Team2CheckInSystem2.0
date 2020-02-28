@@ -20,6 +20,7 @@ namespace CheckInSystem
         public NoReservationWindow()
         {
             InitializeComponent();
+            WindowState = WindowState.Maximized;
         }
         public void GetPerson()
         {
@@ -38,6 +39,11 @@ namespace CheckInSystem
             CoffeeDrinkerWindow coffeeDrinkerWindow = new CoffeeDrinkerWindow();
             coffeeDrinkerWindow.Show();
             this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

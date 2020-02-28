@@ -24,7 +24,7 @@
         </Grid.RowDefinitions>
 
         <Viewbox Stretch="Uniform"   Grid.Row="0" Grid.Column="1">
-            <Label>Please state your reason to be here</Label>
+            <Label>Please state your reason for being here</Label>
         </Viewbox>
 
         <Button Grid.Column="1" Grid.Row="2" Click="GoToGuestRequestWindow">
