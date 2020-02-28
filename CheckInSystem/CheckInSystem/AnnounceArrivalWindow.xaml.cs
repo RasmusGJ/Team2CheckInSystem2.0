@@ -32,8 +32,8 @@ namespace CheckInSystem
 
         private void Ok_Button(object sender, RoutedEventArgs e)
         {
-            GuestRequestWindow guestRequestWindow = new GuestRequestWindow();
-            guestRequestWindow.Show();
+            NoReservationWindow noReservationWindow = new NoReservationWindow();
+            noReservationWindow.Show();
             this.Close();
         }
 
