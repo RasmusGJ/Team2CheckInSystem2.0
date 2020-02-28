@@ -21,8 +21,14 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>                
+                <RowDefinition></RowDefinition>                
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="1*" ></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
@@ -31,57 +37,49 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>                
             </Grid.RowDefinitions>
+
+            <Viewbox Stretch="Uniform"  HorizontalAlignment="Left" Grid.ColumnSpan="2">
+                <Image Source="Assets/hydacLogo.png"/>
+            </Viewbox>
             <Viewbox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Grid.ColumnSpan="2">
                 <Label>Name:</Label>
             </Viewbox>
             <Viewbox Stretch="Uniform" Grid.Row="1" Grid.Column="7" HorizontalAlignment="Left" Grid.ColumnSpan="2">
                 <Label>Company</Label>
             </Viewbox>
-            <Viewbox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Left">
-                <TextBox Text="">
-                    
-                
-                </TextBox>
-            </Viewbox>
-            <Viewbox Grid.Row="2" Grid.Column="7" Grid.ColumnSpan="4" HorizontalAlignment="Left">
-                <TextBox Text="">
 
+            <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" Text="Insert Here" VerticalContentAlignment="Center" FontSize="35"/>
 
-                </TextBox>
-            </Viewbox>
-            <Viewbox Grid.Row="3" Grid.Column="7" HorizontalAlignment="Left">
+            <TextBox Grid.Row="2" Grid.Column="7" Grid.ColumnSpan="5" Text="Insert Here" VerticalContentAlignment="Center" FontSize="35"/>
+            
+            <Viewbox Grid.Row="3" Grid.Column="7" Grid.ColumnSpan="2" HorizontalAlignment="Left">
                 <Label>Phone:</Label>
             </Viewbox>
-            <Viewbox Grid.Row="4" Grid.Column="7" Grid.ColumnSpan="2" HorizontalAlignment="Left">
-                <TextBox Text="48592578">
-                </TextBox>
-            </Viewbox>
-            <Viewbox Grid.Row="5" Grid.Column="7" HorizontalAlignment="Left">
+
+            <TextBox Grid.Row="4" Grid.Column="7" Grid.ColumnSpan="5" Text="Insert Here" VerticalContentAlignment="Center" FontSize="35"/>
+
+            <Viewbox Stretch="Uniform" Grid.Row="5" Grid.Column="7" Grid.ColumnSpan="2" HorizontalAlignment="Left">
                 <Label>E-mail:</Label>
             </Viewbox>
-            <Viewbox Grid.Row="6" Grid.Column="7" Grid.ColumnSpan="4" HorizontalAlignment="Left">
-                <TextBox Text="hydac1234@gmail.com">
-                </TextBox>
-            </Viewbox>
+
+            <TextBox Grid.Row="6" Grid.Column="7" Grid.ColumnSpan="5" Text="Insert Here" VerticalContentAlignment="Center" FontSize="35"/>
+
             <Viewbox Grid.Row="8" Grid.Column="7" HorizontalAlignment="Left" Grid.ColumnSpan="2">
                 <Label>Remember me:</Label>
             </Viewbox>
-            <Button  Grid.Row="10" Grid.Column="3" Grid.ColumnSpan="6" Style="{StaticResource BtnStyle}" Click="Ok_Button" >
+            <Button  Grid.Row="11" Grid.Column="3" Grid.ColumnSpan="6" Style="{StaticResource BtnStyle}" Click="Ok_Button" >
                 <Viewbox Stretch="Uniform">
 
                     <Label>OK</Label>
                 </Viewbox>
             </Button>
-            <ToggleButton  Grid.Row="8" Grid.Column="9" Grid.ColumnSpan="1" HorizontalAlignment="Right" Width="130" />
+            <ToggleButton  Grid.Row="8" Grid.Column="11" Grid.ColumnSpan="1" HorizontalAlignment="Right" Width="130" />
             <Viewbox Stretch="Uniform">
             </Viewbox>
 
-            <ListView x:Name="Listbox"  ItemsSource="{Binding employees}" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="5" Grid.RowSpan="6">
+            <ListView x:Name="Listbox"  ItemsSource="{Binding employees}" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="5" Grid.RowSpan="6">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=Role}" Width="425" >
@@ -114,7 +112,7 @@
                     </Style>
                 </ListView.ItemContainerStyle>
             </ListView>
-            <Button x:Name="backButton" Style="{StaticResource NumPadBtn}" Grid.Column="1" Grid.Row="10" Click="BackButton_Click">
+            <Button x:Name="backButton" Style="{StaticResource NumPadBtn}" Grid.Column="1" Grid.Row="11" Click="BackButton_Click">
                 <Viewbox>
                     <Image Source="Assets\backButtonIcon.png"/>
                 </Viewbox>

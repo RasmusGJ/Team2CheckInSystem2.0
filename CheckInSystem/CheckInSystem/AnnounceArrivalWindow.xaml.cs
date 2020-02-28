@@ -35,5 +35,6 @@ namespace CheckInSystem
             guestRequestWindow.Show();
             this.Close();
         }
+
     }
 }
