@@ -57,5 +57,12 @@ namespace CheckInSystem
             mainWindow.Show();
             this.Close();
         }
+
+        private void Click_Ok(object sender, RoutedEventArgs e)
+        {
+            NotificationSentWindow notificationSent = new NotificationSentWindow();
+            notificationSent.Show();
+            this.Close();
+        }
     }
 }

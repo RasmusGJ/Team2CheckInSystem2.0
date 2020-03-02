@@ -66,7 +66,7 @@ namespace CheckInSystem
         private void Ok_Button(object sender, RoutedEventArgs e)
         {
 
-            controller.AssignGuestCheckIn();
+            //controller.AssignGuestCheckIn();
             NoReservationWindow noReservationWindow = new NoReservationWindow();
             noReservationWindow.Show();
             this.Close();

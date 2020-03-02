@@ -90,7 +90,7 @@
             <TextBox Name="departmentFilter" Width="90" TextChanged="txtFilter_TextChanged">
             </TextBox>
         </Viewbox>
-        <Button Grid.Column="2" Grid.Row="12" Grid.ColumnSpan="3" Style="{StaticResource BtnStyle}">
+        <Button Grid.Column="2" Grid.Row="12" Grid.ColumnSpan="3" Style="{StaticResource BtnStyle}" Click="Click_Ok">
             <Viewbox Stretch="Uniform">
                 <Label>Ok</Label>
             </Viewbox>
