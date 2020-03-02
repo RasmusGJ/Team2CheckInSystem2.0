@@ -20,6 +20,7 @@ namespace CheckInSystem
     /// </summary>
     public partial class AnnounceArrivalWindow : Window
     {
+        Controller controller;
         public AnnounceArrivalWindow()
         {
             InitializeComponent();
@@ -57,9 +58,15 @@ namespace CheckInSystem
             mainwindow.Show();
             this.Close();
         }
+        public void GetController(Controller newController)
+        {
+            controller = newController;
+        }
 
         private void Ok_Button(object sender, RoutedEventArgs e)
         {
+
+            controller.AssignGuestCheckIn();
             NoReservationWindow noReservationWindow = new NoReservationWindow();
             noReservationWindow.Show();
             this.Close();

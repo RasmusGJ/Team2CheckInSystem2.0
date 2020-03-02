@@ -85,8 +85,7 @@ namespace CheckInSystem.Application_Layer
 
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
-                //Insert a checkout time to database.
-
+                //Insert a checkIn time to database.
                 string addCheckIn = checkIn.person is Employee ? //Test if the person is an employee
                     "INSERT INTO CheckIn ( FromDateTime, Employee_Id , Mood_Id) " +                         //If person is an employee(true)
                     "VALUES ('" + currentTime + "'," + checkIn.person.Id + "," + (int)checkIn.mood + ");"    // 

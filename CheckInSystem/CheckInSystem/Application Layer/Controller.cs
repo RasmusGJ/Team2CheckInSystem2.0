@@ -12,6 +12,7 @@ namespace CheckInSystem.Application_Layer
     {
         public CheckInRepo CheckInRepo = new CheckInRepo();
         public EmployeeRepo employeesRepo = new EmployeeRepo();
+        public GuestRepo guestRepo = new GuestRepo();
         public Person CurrentPerson;
         
         public bool VerifyPin(string pinCode)
@@ -23,21 +24,25 @@ namespace CheckInSystem.Application_Layer
                 {
                     CurrentPerson = new Employee();
                     CurrentPerson = employee;
-                    
+
                     return true;
                 }               
             }
             return false;          
-        }
-        public void UpdateCheckInTime()
-        {
-
         }
 
         public void AssignMood(Mood mood)
         {
             CheckIn newCheckIn = new CheckIn();
             newCheckIn.mood = mood;
+            newCheckIn.person = CurrentPerson;
+            CheckInRepo.CheckIn(newCheckIn);
+        }
+
+        public void AssignGuestCheckIn()
+        {
+            CurrentPerson = new Guest();            
+            CheckIn newCheckIn = new CheckIn();
             newCheckIn.person = CurrentPerson;
             CheckInRepo.CheckIn(newCheckIn);
         }
