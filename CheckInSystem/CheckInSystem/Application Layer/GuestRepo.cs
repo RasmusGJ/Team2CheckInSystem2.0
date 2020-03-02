@@ -3,11 +3,20 @@ using System.Collections.Generic;
 using System.Text;
 using CheckInSystem.Domain_Layer;
 using System.Data.SqlClient;
+using System.ComponentModel;
+using System.Collections.ObjectModel;
+
 
 namespace CheckInSystem.Application_Layer
 {
-    public class GuestRepo
+    public class GuestRepo : INotifyPropertyChanged
     {
+        private Guest selectedGuest;
+        public ObservableCollection<Guest> observableCollectionGuest { get; set; } = new ObservableCollection<Guest>();
+        public Guest SelectedGuest { get { return selectedGuest; } set { selectedGuest = value; OnPropertyChanged("SelectedProduct"); } }
+
+
+
         public List<Guest> guests { get; set; } = new List<Guest>();
         public GuestRepo()
         {
@@ -35,6 +44,15 @@ namespace CheckInSystem.Application_Layer
                         guests.Add(guest);
                     }
                 }
+            }
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(name));
             }
         }
     }
