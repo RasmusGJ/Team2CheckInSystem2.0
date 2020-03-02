@@ -80,7 +80,7 @@
         </Viewbox>
         
         <Viewbox Grid.Row="4" Grid.Column="4" HorizontalAlignment="Left">
-            <Label>Department::</Label>
+            <Label>Department:</Label>
         </Viewbox>
         <Viewbox Grid.Row="5" Grid.Column="2">
             <TextBox Name="nameFilter" Width="90" TextChanged="txtFilter_TextChanged">
