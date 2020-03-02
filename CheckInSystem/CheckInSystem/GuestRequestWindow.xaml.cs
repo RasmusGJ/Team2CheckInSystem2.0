@@ -27,8 +27,7 @@ namespace CheckInSystem
             DataContext = employeeRepo;            
             listView.ItemsSource = employeeRepo.employees;
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(listView.ItemsSource);
-            List<Predicate<object>> filters = new List<Predicate<object>>();
-            view.Filter = filters;
+            view.Filter = UserFilter;
         }
 
         private bool UserFilter(object item)
