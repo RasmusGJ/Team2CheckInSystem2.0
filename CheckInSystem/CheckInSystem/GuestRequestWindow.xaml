@@ -96,7 +96,7 @@
             </Viewbox>
         </Button>
         <Viewbox Stretch="Uniform" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3" Grid.RowSpan="2">
-            <Label>Who do you wish to talk to</Label>
+            <Label>Who do you wish to talk to?</Label>
         </Viewbox>
         <Button x:Name="backButton1" Style="{StaticResource NumPadBtn}" Grid.Column="1" Grid.Row="12" Click="BackButton_Click">
             <Viewbox >
