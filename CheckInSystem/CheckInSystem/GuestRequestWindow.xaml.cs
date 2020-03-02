@@ -33,12 +33,18 @@ namespace CheckInSystem
 
         private bool UserFilter(object item)
         {
-            if (String.IsNullOrEmpty(nameFilter.Text))
-                return true;           
-            else if (!String.IsNullOrEmpty(departmentFilter.Text))
+            if (String.IsNullOrEmpty(nameFilter.Text) && String.IsNullOrEmpty(departmentFilter.Text))
+                return true;        
+            
+            else if (String.IsNullOrEmpty(departmentFilter.Text) == false && String.IsNullOrEmpty(nameFilter.Text))
                 return ((item as Employee).Department.IndexOf(departmentFilter.Text, StringComparison.OrdinalIgnoreCase) >= 0);
-            else
+
+            else if(String.IsNullOrEmpty(nameFilter.Text) == false && String.IsNullOrEmpty(departmentFilter.Text))
                 return ((item as Employee).Name.IndexOf(nameFilter.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+
+            else
+                return ((item as Employee).Name.IndexOf(nameFilter.Text, StringComparison.OrdinalIgnoreCase) >= 0 && 
+                    (item as Employee).Department.IndexOf(departmentFilter.Text, StringComparison.OrdinalIgnoreCase) >= 0);
         }
 
         private void txtFilter_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)

@@ -36,10 +36,10 @@ namespace CheckInSystem
             this.Close();
         }
 
-        private void GoToGuestRequestWindow(object sender, RoutedEventArgs e)
+        private void GoToGuestArrivalWindow(object sender, RoutedEventArgs e)
         {
-            GuestRequestWindow guestRequestWindow = new GuestRequestWindow();
-            guestRequestWindow.Show();
+            AnnounceArrivalWindow arrivalWindow = new AnnounceArrivalWindow();
+            arrivalWindow.Show();
             this.Close();
         }
     }

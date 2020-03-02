@@ -20,8 +20,28 @@ namespace CheckInSystem
         public NoReservationWindow()
         {
             InitializeComponent();
+            WindowState = WindowState.Maximized;
         }
         public void GetPerson()
+        {
+
+        }
+
+        private void GoToGuestRequestWindow(object sender, RoutedEventArgs e)
+        {
+            GuestRequestWindow guestRequestWindow = new GuestRequestWindow();
+            guestRequestWindow.Show();
+            this.Close();
+        }
+
+        private void GoToCoffeeDrinkerWindow(object sender, RoutedEventArgs e)
+        {
+            CoffeeDrinkerWindow coffeeDrinkerWindow = new CoffeeDrinkerWindow();
+            coffeeDrinkerWindow.Show();
+            this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }

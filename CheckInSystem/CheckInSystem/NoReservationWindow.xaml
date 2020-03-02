@@ -24,16 +24,16 @@
         </Grid.RowDefinitions>
 
         <Viewbox Stretch="Uniform"   Grid.Row="0" Grid.Column="1">
-            <Label>Please state your reason to be here</Label>
+            <Label>Please state your reason for being here</Label>
         </Viewbox>
 
-        <Button Grid.Column="1" Grid.Row="2">
+        <Button Grid.Column="1" Grid.Row="2" Click="GoToGuestRequestWindow">
             <Viewbox Stretch="Uniform">
                 <Label>I wish to talk to an associate</Label>
             </Viewbox>
         </Button>
 
-        <Button Grid.Column="1" Grid.Row="4">
+        <Button Grid.Column="1" Grid.Row="4" Click="Button_Click">
             <Viewbox Stretch="Uniform">
                 <Label>I am here for the free Coffee</Label>
             </Viewbox>
