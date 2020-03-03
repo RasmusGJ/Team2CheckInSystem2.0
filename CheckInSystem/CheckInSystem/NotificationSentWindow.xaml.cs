@@ -25,8 +25,8 @@ namespace CheckInSystem
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Controller controller = new Controller();
-            controller.SendMail();
+            //Controller controller = new Controller();
+            //controller.SendMail();
             MainWindow mainwindow = new MainWindow();
             mainwindow.Show();
             this.Close();
