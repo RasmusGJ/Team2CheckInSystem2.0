@@ -23,6 +23,8 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+
         </Grid.RowDefinitions>
         <Viewbox Stretch="Uniform" Grid.Row="1" Grid.Column="1">
             <Label Name="welcomeLabel" Content="A notification has been sent to"></Label>
@@ -40,5 +42,16 @@
             <Label FontWeight="Bold">Please read it</Label>
         </Viewbox>
         <Image Source="\Assets\Happy2.PNG" Grid.RowSpan="3" Grid.Row="3" Grid.Column="1"/>
+        <Button  Grid.Row="9" Grid.Column="1" Style="{StaticResource BtnStyle}" Click="Button_Click" >
+            <Viewbox Stretch="Uniform">
+
+                <Label>OK</Label>
+            </Viewbox>
+        </Button>
+        <Button x:Name="backButton" Style="{StaticResource NumPadBtn}" Grid.Column="0" Grid.Row="9" Click="BackButton_Click">
+            <Viewbox>
+                <Image Source="Assets\backButtonIcon.png"/>
+            </Viewbox>
+        </Button>
     </Grid>
 </Window>

@@ -20,6 +20,21 @@ namespace CheckInSystem
         public NotificationSentWindow()
         {
             InitializeComponent();
+            WindowState = WindowState.Maximized;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainwindow = new MainWindow();
+            mainwindow.Show();
+            this.Close();
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            NoReservationWindow noReservationWindow = new NoReservationWindow();
+            noReservationWindow.Show();
+            this.Close();
         }
     }
 }
