@@ -46,5 +46,10 @@ namespace CheckInSystem.Application_Layer
             newCheckIn.person = CurrentPerson;
             CheckInRepo.CheckIn(newCheckIn);
         }
+
+        public void SendMail(string guestEmail)
+        {
+
+        }
     }
 }

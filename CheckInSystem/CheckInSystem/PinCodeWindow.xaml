@@ -60,16 +60,16 @@
         <Ellipse x:Name="Ellipse4" Style="{StaticResource EmptyEllipse}" Grid.Row="3" Grid.Column="9" Stretch="Uniform"></Ellipse>
 
 
-        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="5" Grid.Row="6" Click="AddNum">7</Button>
-        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="7" Grid.Row="6" Click="AddNum">8</Button>
-        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="9" Grid.Row="6" Click="AddNum">9</Button>
-        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="5" Grid.Row="7" Click="AddNum">4</Button>
-        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="7" Grid.Row="7" Click="AddNum">5</Button>
-        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="9" Grid.Row="7" Click="AddNum">6</Button>
-        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="5" Grid.Row="8" Click="AddNum">1</Button>
-        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="7" Grid.Row="8" Click="AddNum">2</Button>
-        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="9" Grid.Row="8" Click="AddNum">3</Button>
-        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="7" Grid.Row="9" Click="AddNum">0</Button>
+        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="5" Grid.Row="6" FontSize="25" Click="AddNum">7</Button>
+        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="7" Grid.Row="6" FontSize="25" Click="AddNum">8</Button>
+        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="9" Grid.Row="6" FontSize="25" Click="AddNum">9</Button>
+        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="5" Grid.Row="7" FontSize="25" Click="AddNum">4</Button>
+        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="7" Grid.Row="7" FontSize="25" Click="AddNum">5</Button>
+        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="9" Grid.Row="7" FontSize="25" Click="AddNum">6</Button>
+        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="5" Grid.Row="8" FontSize="25" Click="AddNum">1</Button>
+        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="7" Grid.Row="8" FontSize="25" Click="AddNum">2</Button>
+        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="9" Grid.Row="8" FontSize="25" Click="AddNum">3</Button>
+        <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="7" Grid.Row="9" FontSize="25" Click="AddNum">0</Button>
 
         <Button Style="{StaticResource NumPadBtn}" Grid.ColumnSpan="2" Grid.Column="9" Grid.Row="9" Click="DeleteNum" >
             <Viewbox>
