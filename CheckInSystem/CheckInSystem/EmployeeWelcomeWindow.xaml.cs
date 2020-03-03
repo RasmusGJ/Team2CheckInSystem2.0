@@ -36,7 +36,7 @@ namespace CheckInSystem
             nameText.Text = controller.CurrentPerson.Name;
         }
 
-        private void ButtonClick(object sender, RoutedEventArgs e)
+        private void GoToMainWindow(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
             this.Visibility = Visibility.Hidden;

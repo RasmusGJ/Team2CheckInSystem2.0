@@ -80,7 +80,7 @@ namespace CheckInSystem
         }
 
 
-        private void checkOutButton_Click_1(object sender, RoutedEventArgs e)
+        private void CheckOutButton(object sender, RoutedEventArgs e)
         {           
             controller.CheckInRepo.CheckOut(controller.CurrentPerson);
             EmployeeCheckoutWindow checkoutWindow = new EmployeeCheckoutWindow();
