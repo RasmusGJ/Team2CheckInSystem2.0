@@ -9,7 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using CheckInSystem.Application_Layer;
 namespace CheckInSystem
 {
     /// <summary>
@@ -25,6 +25,8 @@ namespace CheckInSystem
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            Controller controller = new Controller();
+            controller.SendMail();
             MainWindow mainwindow = new MainWindow();
             mainwindow.Show();
             this.Close();
