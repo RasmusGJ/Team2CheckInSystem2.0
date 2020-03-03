@@ -71,6 +71,5 @@ namespace CheckInSystem
             noReservationWindow.Show();
             this.Close();
         }
-
     }
 }
