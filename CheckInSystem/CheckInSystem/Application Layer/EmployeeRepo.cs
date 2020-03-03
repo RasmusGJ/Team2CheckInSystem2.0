@@ -5,11 +5,16 @@ using System.Data;
 using System.Data.SqlClient;
 using System.ComponentModel;
 using CheckInSystem.Domain_Layer;
+using System.Collections.ObjectModel;
 
 namespace CheckInSystem.Application_Layer
 {
-    public class EmployeeRepo
+    public class EmployeeRepo : INotifyPropertyChanged
     {
+        private Employee selectedEmp;
+        public ObservableCollection<Employee> observableCollectionGuest { get; set; } = new ObservableCollection<Employee>();
+        public Employee SelectedEmp { get { return selectedEmp; } set { selectedEmp = value; OnPropertyChanged("SelectedProduct"); } }
+
         public List<Employee> employees { get; set; } = new List<Employee>();
         public EmployeeRepo()
         {
@@ -45,6 +50,16 @@ namespace CheckInSystem.Application_Layer
                     }
                 }
             }
-        }       
+
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(name));
+            }
+        }
     }
 }
