@@ -6,38 +6,55 @@
         xmlns:local="clr-namespace:CheckInSystem"
         mc:Ignorable="d"
         Title="NoReservationWindow" Height="1620" Width="2160">
+
+    <Window.Background>
+        <SolidColorBrush Color="#EFEFEF"></SolidColorBrush>
+    </Window.Background>
     <Grid>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="4*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="1.2*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="2*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="2*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Viewbox Stretch="Uniform"   Grid.Row="0" Grid.Column="1">
-            <Label>Please state your reason for being here</Label>
+        <Rectangle Panel.ZIndex="-1" Opacity="0.95" Name="rectangleRed" Fill="#E12728" Grid.ColumnSpan="2" Grid.RowSpan="5"/>
+
+        <Viewbox Stretch="Uniform" Panel.ZIndex="1"  Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2">
+            <Label>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Foreground="#EFEFEF" Text="       You don't seem to " RenderTransformOrigin="0.498,1.078"/>
+                    <TextBlock Foreground="#191919" Text="have an appointment  "/>
+                </StackPanel>
+            </Label>
+        </Viewbox>        
+
+        <Viewbox Stretch="Uniform" Panel.ZIndex="1"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+            <Label Content="Grab a cup of Coffee?" Foreground="#EFEFEF"/>
         </Viewbox>
 
-        <Button Grid.Column="1" Grid.Row="2" Click="GoToGuestRequestWindow">
-            <Viewbox Stretch="Uniform">
-                <Label>I wish to talk to an associate</Label>
-            </Viewbox>
+        <Viewbox Stretch="Uniform" Panel.ZIndex="-1"  Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2">
+            <Label Content="Speak with personal?" Foreground="#191919"/>
+        </Viewbox>
+
+        <Button  Opacity="0" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="6" Click="GoToCoffeeDrinkerWindow">
         </Button>
 
-        <Button Grid.Column="1" Grid.Row="4" Click="Button_Click">
-            <Viewbox Stretch="Uniform">
-                <Label>I am here for the free Coffee</Label>
-            </Viewbox>
-        </Button>
+        <Image Panel.ZIndex="-1" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Width="700" Source ="Assets\coffeeIcon.png"></Image>
+
+        <Button Opacity="0" Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="6" Click="GoToGuestRequestWindow"/>
+
+        <Image Panel.ZIndex="-1" Width="700" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="2" Source ="Assets\GuestIcon.png"></Image>
 
     </Grid>
 </Window>

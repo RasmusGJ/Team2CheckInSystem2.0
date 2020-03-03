@@ -13,6 +13,7 @@
     <None Remove="Assets\CheckMark.jpg" />
     <None Remove="Assets\CheckMark.png" />
     <None Remove="Assets\CheckMarkVid.mp4" />
+    <None Remove="Assets\coffeeIcon.png" />
     <None Remove="Assets\EmployeeIcon.png" />
     <None Remove="Assets\GuestIcon.png" />
     <None Remove="Assets\HappySmiley.png" />
@@ -37,6 +38,7 @@
     <Resource Include="Assets\Blurred.jpg" />
     <Resource Include="Assets\CheckMark.png" />
     <Resource Include="Assets\CheckMarkVid.mp4" />
+    <Resource Include="Assets\coffeeIcon.png" />
     <Resource Include="Assets\EmployeeIcon.png" />
     <Resource Include="Assets\GuestIcon.png" />
     <Resource Include="Assets\HappySmiley.png" />
