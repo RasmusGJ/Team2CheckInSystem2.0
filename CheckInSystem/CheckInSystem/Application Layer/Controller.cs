@@ -4,6 +4,8 @@ using System.Text;
 using System.IO;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows;
+using System.Net.Mail;
 using CheckInSystem.Domain_Layer;
 
 namespace CheckInSystem.Application_Layer
@@ -47,9 +49,30 @@ namespace CheckInSystem.Application_Layer
             CheckInRepo.CheckIn(newCheckIn);
         }
 
-        public void SendMail(string guestEmail)
+        public void SendMail()
         {
+            try
+            {
+                MailMessage mail = new MailMessage();
+                SmtpClient SmtpServer = new SmtpClient("smtp.live.com");
+                //From mail
+                mail.From = new MailAddress("ras_jebril@hotmail.com");
+                //Target mail
+                mail.To.Add("ras_jebril@hotmail.com");
+                mail.Subject = "Hydac bygning - Brandsikkerheds brochure";
+                mail.Body = "This is for testing SMTP mail from Hotmail";
 
+                SmtpServer.Port = 587;
+                SmtpServer.Credentials = new System.Net.NetworkCredential("ras_jebril@hotmail.com", "KODE HER");
+                SmtpServer.EnableSsl = true;
+
+                SmtpServer.Send(mail);
+                MessageBox.Show("mail Send");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

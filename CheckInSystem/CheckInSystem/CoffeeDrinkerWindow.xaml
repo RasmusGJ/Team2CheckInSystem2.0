@@ -20,6 +20,8 @@
             <RowDefinition Height="2*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+
+            <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
@@ -40,5 +42,15 @@
             <Label FontWeight="Bold">Please read it</Label>
         </Viewbox>
         <Image Source="\Assets\Happy2.PNG" Grid.RowSpan="3" Grid.Row="3" Grid.Column="1"/>
+        <Button x:Name="backButton" Style="{StaticResource NumPadBtn}" Grid.Column="0" Grid.Row="9" Click="backButton_Click" >
+            <Viewbox>
+                <Image Source="Assets\backButtonIcon.png"/>
+            </Viewbox>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="1" Style="{StaticResource BtnStyle}" Click="Button_Click">
+            <Viewbox Stretch="Uniform">
+                <Label>Ok</Label>
+            </Viewbox>
+        </Button>
     </Grid>
 </Window>
