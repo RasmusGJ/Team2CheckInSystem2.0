@@ -60,20 +60,20 @@
                 <Label>Phone:</Label>
             </Viewbox>
 
-            <TextBox Text="{Binding ElementName=listView, Path=SelectedItem.MobilePhone, Mode=OneWay}" Grid.Row="5" Grid.Column="7" Grid.ColumnSpan="5" VerticalContentAlignment="Center" FontSize="25"/>
+            <TextBox Text="{Binding ElementName=listView, Path=SelectedItem.MobilePhone, Mode=OneWay}" Name="phoneBox" Grid.Row="5" Grid.Column="7" Grid.ColumnSpan="5" VerticalContentAlignment="Center" FontSize="25" TextChanged="TextBox_TextChanged"/>
 
             <Viewbox Grid.Row="6" Grid.Column="7" Grid.ColumnSpan="2" HorizontalAlignment="Left">
                 <Label>E-mail:</Label>
             </Viewbox>
 
-            <TextBox Text="{Binding ElementName=listView, Path=SelectedItem.Email, Mode=OneWay}" Grid.Row="7" Grid.Column="7" Grid.ColumnSpan="5" VerticalContentAlignment="Center" FontSize="25"/>
+            <TextBox Text="{Binding ElementName=listView, Path=SelectedItem.Email, Mode=OneWay}" Name="emailBox" Grid.Row="7" Grid.Column="7" Grid.ColumnSpan="5" VerticalContentAlignment="Center" FontSize="25"/>
 
 
             <Viewbox Grid.Row="9" Grid.Column="7" HorizontalAlignment="Left" Grid.ColumnSpan="2">
                 <Label>Remember me:</Label>
             </Viewbox>
 
-            <Button  Grid.Row="11" Grid.Column="3" Grid.ColumnSpan="6" Style="{StaticResource BtnStyle}" Click="Ok_Button" >
+            <Button x:Name="okButton"  Grid.Row="11" Grid.Column="3" Grid.ColumnSpan="6" Style="{StaticResource BtnStyle}" Click="Ok_Button" >
                 <Viewbox Stretch="Uniform">
                     <Label>OK</Label>
                 </Viewbox>

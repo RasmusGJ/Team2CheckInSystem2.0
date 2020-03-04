@@ -25,6 +25,14 @@ namespace CheckInSystem
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;
+            okButton.IsHitTestVisible = true;
+
+            
+            if (!String.IsNullOrEmpty(nameBox.Text) && !String.IsNullOrEmpty (compBox.Text) && !String.IsNullOrEmpty(phoneBox.Text) && !String.IsNullOrEmpty (emailBox.Text))
+            {
+                okButton.IsEnabled = true;
+            }
+            
             GuestRepo guestRepo = new GuestRepo();
             DataContext = guestRepo;
             listView.ItemsSource = guestRepo.guests;
@@ -72,5 +80,9 @@ namespace CheckInSystem
             this.Close();
         }
 
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+        }
     }
 }
