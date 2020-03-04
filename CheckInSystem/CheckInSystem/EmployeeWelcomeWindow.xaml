@@ -45,7 +45,7 @@
             <Image Name="CheckMarkImage" Source="Assets\WelcomeIcon.png"></Image>
         </Viewbox>
 
-        <Button Style="{StaticResource BtnStyle}" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Click="ButtonClick" >
+        <Button Style="{StaticResource BtnStyle}" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Click="GoToMainWindow" >
             <Viewbox Stretch="Uniform">
                 <Label>OK</Label>
             </Viewbox>

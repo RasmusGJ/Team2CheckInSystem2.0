@@ -53,8 +53,8 @@ namespace CheckInSystem
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
+            NoReservationWindow noReservationWindow = new NoReservationWindow();
+            noReservationWindow.Show();
             this.Close();
         }
 

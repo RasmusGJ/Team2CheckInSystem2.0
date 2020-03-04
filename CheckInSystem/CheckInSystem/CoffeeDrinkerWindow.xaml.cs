@@ -20,6 +20,28 @@ namespace CheckInSystem
         public CoffeeDrinkerWindow()
         {
             InitializeComponent();
+            WindowState = WindowState.Maximized;
+        }
+
+        private void backButton_Click(object sender, RoutedEventArgs e)
+        {
+            NoReservationWindow noReservationWindow = new NoReservationWindow();
+            noReservationWindow.Show();
+            this.Close();
+        }
+
+        private void Click_Ok(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
     }
 }
