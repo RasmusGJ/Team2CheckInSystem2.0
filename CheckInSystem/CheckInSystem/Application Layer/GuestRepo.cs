@@ -63,7 +63,6 @@ namespace CheckInSystem.Application_Layer
                 }
             }
         }
-
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string name)
         {
