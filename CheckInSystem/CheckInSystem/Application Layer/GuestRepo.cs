@@ -53,7 +53,7 @@ namespace CheckInSystem.Application_Layer
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 //Selects all from Employee tabel in database
-                string guestInsertQuery = "IF NOT EXISTS (SELECT * FROM Guest WHERE Guest.MobilePhone = '" + phone + "') INSERT INTO Guest VALUES ('" + name + "', '" + email + "', '" + company + "', '" + phone + "');";
+                string guestInsertQuery = "IF NOT EXISTS (SELECT * FROM Guest WHERE Guest.MobilePhone = '" + phone + "' AND WHERE Guest.Email = '" + email + "' AND WHERE Guest.Company = '" + company + "') INSERT INTO Guest VALUES ('" + name + "', '" + email + "', '" + company + "', '" + phone + "');";
 
                 SqlCommand command = new SqlCommand(guestInsertQuery, conn);
                 conn.Open();
