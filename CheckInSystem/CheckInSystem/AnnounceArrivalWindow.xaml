@@ -78,22 +78,22 @@
                     </Hyperlink>
                 </Label>
             </Viewbox>
-            <Button Grid.Row="11" Grid.Column="3" Grid.ColumnSpan="6" Style="{StaticResource BtnStyle}" Click="Ok_Button" >
 
             <Button x:Name="okButton"  Grid.Row="11" Grid.Column="3" Grid.ColumnSpan="6" Style="{StaticResource BtnStyle}" Click="Ok_Button" >
-                <Viewbox Stretch="Uniform">
-                    <Label>OK</Label>
+                    <Viewbox Stretch="Uniform">
+                        <Label>OK</Label>
+                    </Viewbox>
+                </Button>
+                
+                <Viewbox x:Name="rememberBox" Grid.Row="9" Grid.Column="11" Grid.ColumnSpan="1" HorizontalAlignment="Right" Stretch="Uniform">
+                    <CheckBox/>
                 </Viewbox>
-            </Button>
 
-            <Viewbox x:Name="rememberBox" Grid.Row="9" Grid.Column="11" Grid.ColumnSpan="1" HorizontalAlignment="Right" Stretch="Uniform">
-                <CheckBox/>
-            </Viewbox>
-            <Viewbox x:Name="termsBox" Grid.Row="10" Grid.Column="11" Grid.ColumnSpan="1" HorizontalAlignment="Right" Stretch="Uniform">
-                <CheckBox Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
-            </Viewbox>
+                <Viewbox x:Name="termsBox" Grid.Row="10" Grid.Column="11" Grid.ColumnSpan="1" HorizontalAlignment="Right" Stretch="Uniform">
+                    <CheckBox Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+                </Viewbox>
 
-            <ListView x:Name="listView" ItemsSource="{Binding guests, UpdateSourceTrigger=Explicit}" SelectedItem="{Binding Path=SelectedGuest, UpdateSourceTrigger=Explicit}" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="5" Grid.RowSpan="6">
+                <ListView x:Name="listView" ItemsSource="{Binding guests, UpdateSourceTrigger=Explicit}" SelectedItem="{Binding Path=SelectedGuest, UpdateSourceTrigger=Explicit}" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="5" Grid.RowSpan="6">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=Name}" Width="300" >
