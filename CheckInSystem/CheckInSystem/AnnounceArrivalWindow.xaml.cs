@@ -25,6 +25,7 @@ namespace CheckInSystem
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;
+            okButton.IsHitTestVisible = false;
             GuestRepo guestRepo = new GuestRepo();
             DataContext = guestRepo;
             listView.ItemsSource = guestRepo.guests;
@@ -65,12 +66,17 @@ namespace CheckInSystem
 
         private void Ok_Button(object sender, RoutedEventArgs e)
         {
-            GuestRepo guestRepo = new GuestRepo();
-            guestRepo.AddGuestToDB(nameBox.Text, compBox.Text, emailBox.Text, phoneBox.Text);
-            //controller.AssignGuestCheckIn();
-            NoReservationWindow noReservationWindow = new NoReservationWindow();
-            noReservationWindow.Show();
-            this.Close();
+            if ( string.IsNullOrEmpty(nameBox.Text) || string.IsNullOrEmpty(compBox.Text) || string.IsNullOrEmpty(phoneBox.Text) || string.IsNullOrEmpty(emailBox.Text))
+            {
+                MessageBox.Show("Please fill out the required fields");
+            }
+            else
+            {
+                //controller.AssignGuestCheckIn();
+                NoReservationWindow noReservationWindow = new NoReservationWindow();
+                noReservationWindow.Show();
+                this.Close();
+            }
         }
     }
 }
