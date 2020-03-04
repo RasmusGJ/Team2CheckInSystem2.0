@@ -14,8 +14,7 @@ namespace CheckInSystem.Application_Layer
         private Guest selectedGuest;
         public ObservableCollection<Guest> observableCollectionGuest { get; set; } = new ObservableCollection<Guest>();
         public Guest SelectedGuest { get { return selectedGuest; } set { selectedGuest = value; OnPropertyChanged("SelectedProduct"); } }
-
-
+        
 
         public List<Guest> guests { get; set; } = new List<Guest>();
         public GuestRepo()
@@ -44,8 +43,27 @@ namespace CheckInSystem.Application_Layer
                         guests.Add(guest);
                     }
                 }
+            }            
+        }
+
+        public void AddGuestToDB(string name, string company, string email, string phone)
+        {
+            string ConnectionString = "Server=10.56.8.32;Database=A_GRUPEDB02_2019;User Id=A_GRUPE02;Password=A_OPENDB02";
+
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                //Selects all from Employee tabel in database
+                string guestInsertQuery = "IF NOT EXISTS (SELECT * FROM Guest WHERE Guest.MobilePhone = '" + phone + "') INSERT INTO Guest VALUES ('" + name + "', '" + email + "', '" + company + "', '" + phone + "');";
+
+                SqlCommand command = new SqlCommand(guestInsertQuery, conn);
+                conn.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+
+                }
             }
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string name)
         {

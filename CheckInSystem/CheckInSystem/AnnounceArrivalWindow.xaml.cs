@@ -65,7 +65,8 @@ namespace CheckInSystem
 
         private void Ok_Button(object sender, RoutedEventArgs e)
         {
-
+            GuestRepo guestRepo = new GuestRepo();
+            guestRepo.AddGuestToDB(nameBox.Text, compBox.Text, emailBox.Text, phoneBox.Text);
             //controller.AssignGuestCheckIn();
             NoReservationWindow noReservationWindow = new NoReservationWindow();
             noReservationWindow.Show();
