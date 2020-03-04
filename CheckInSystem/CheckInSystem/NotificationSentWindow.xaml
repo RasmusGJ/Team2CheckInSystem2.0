@@ -41,7 +41,7 @@
         <Viewbox Stretch="Uniform" Grid.Row="8" Grid.Column="1">
             <Label FontWeight="Bold">Please read it</Label>
         </Viewbox>
-        <Image Source="Assets\bellIcon.PNG" Grid.RowSpan="3" Grid.Row="3" Grid.Column="1"/>
+        <Image Source="Assets\bellIcon.png" Grid.RowSpan="3" Grid.Row="3" Grid.Column="1"/>
         <Button  Grid.Row="9" Grid.Column="1" Style="{StaticResource BtnStyle}" Click="Button_Click" >
             <Viewbox Stretch="Uniform">
 

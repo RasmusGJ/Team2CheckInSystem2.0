@@ -20,9 +20,11 @@ namespace CheckInSystem
     /// </summary>
     public partial class AnnounceArrivalWindow : Window
     {
+        bool CheckedBox;
         Controller controller;
         public AnnounceArrivalWindow()
         {
+            
             InitializeComponent();
             WindowState = WindowState.Maximized;
             GuestRepo guestRepo = new GuestRepo();
@@ -62,14 +64,33 @@ namespace CheckInSystem
         {
             controller = newController;
         }
-
         private void Ok_Button(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrEmpty(nameBox.Text) || string.IsNullOrEmpty(compBox.Text) || string.IsNullOrEmpty(phoneBox.Text) || string.IsNullOrEmpty(emailBox.Text) || CheckedBox == false)
+            {
+                MessageBox.Show("Please fill out the required fields");
+            }
+            else
+            {
+                GuestRepo guestRepo = new GuestRepo();
+                guestRepo.AddGuestToDB(nameBox.Text, compBox.Text, emailBox.Text, phoneBox.Text);
+                //controller.AssignGuestCheckIn();
+                GuestRepo guestRepo = new GuestRepo();
+                guestRepo.AddGuestToDB(nameBox.Text, compBox.Text, emailBox.Text, phoneBox.Text);
+                NoReservationWindow noReservationWindow = new NoReservationWindow();
+                noReservationWindow.Show();
+                this.Close();
+            }
+        }
 
-            //controller.AssignGuestCheckIn();
-            NoReservationWindow noReservationWindow = new NoReservationWindow();
-            noReservationWindow.Show();
-            this.Close();
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            CheckedBox = true;
+        }
+
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            CheckedBox = false;
         }
 
         private void Hyperlink_Click(object sender, RoutedEventArgs e)
