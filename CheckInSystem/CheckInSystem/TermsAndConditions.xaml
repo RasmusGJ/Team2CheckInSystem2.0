@@ -5,7 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CheckInSystem"
         mc:Ignorable="d"
+<<<<<<< HEAD
         Title="TermsAndConditions" WindowStyle="None" Height="609" Width="800">
+=======
+        Title="TermsAndConditions" WindowStyle="ThreeDBorderWindow" Height="450" Width="800">
+>>>>>>> 334d8b5c69a6ab0e9e3a50d4ae61b6f1e5d49ca3
     <Grid>
 
         <StackPanel Margin="0,0,0,49">
