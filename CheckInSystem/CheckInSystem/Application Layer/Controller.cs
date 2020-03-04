@@ -49,7 +49,7 @@ namespace CheckInSystem.Application_Layer
             CheckInRepo.CheckIn(newCheckIn);
         }
 
-        public void SendMail()
+        public void SendMail(string toEmail)
         {
             try
             {
@@ -58,7 +58,7 @@ namespace CheckInSystem.Application_Layer
                 //From mail
                 mail.From = new MailAddress("ras_jebril@hotmail.com");
                 //Target mail
-                mail.To.Add("ras_jebril@hotmail.com");
+                mail.To.Add(toEmail);
                 mail.Subject = "Hydac bygning - Brandsikkerheds brochure";
                 mail.Body = "This is for testing SMTP mail from Hotmail";
 
