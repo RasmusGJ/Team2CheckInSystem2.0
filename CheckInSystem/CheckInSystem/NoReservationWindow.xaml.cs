@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -31,6 +32,7 @@ namespace CheckInSystem
         {
             GuestRequestWindow guestRequestWindow = new GuestRequestWindow();
             guestRequestWindow.Show();
+            Thread.Sleep(10);
             this.Close();
         }
 
@@ -38,6 +40,7 @@ namespace CheckInSystem
         {
             CoffeeDrinkerWindow coffeeDrinkerWindow = new CoffeeDrinkerWindow();
             coffeeDrinkerWindow.Show();
+            Thread.Sleep(10);
             this.Close();
         }
 

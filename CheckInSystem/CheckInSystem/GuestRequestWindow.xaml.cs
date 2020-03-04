@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -55,6 +56,7 @@ namespace CheckInSystem
         {
             NoReservationWindow noReservationWindow = new NoReservationWindow();
             noReservationWindow.Show();
+            Thread.Sleep(10);
             this.Close();
         }
 
@@ -62,6 +64,7 @@ namespace CheckInSystem
         {
             NotificationSentWindow notificationSent = new NotificationSentWindow();
             notificationSent.Show();
+            Thread.Sleep(10);
             this.Close();
         }
     }
