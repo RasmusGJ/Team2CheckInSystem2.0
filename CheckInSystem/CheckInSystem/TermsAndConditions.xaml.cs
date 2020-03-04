@@ -21,5 +21,11 @@ namespace CheckInSystem
         {
             InitializeComponent();
         }
+
+        private void CloseTermsAndConditions_Click(object sender, RoutedEventArgs e)
+        {
+            AnnounceArrivalWindow announceArrivalWindow = new AnnounceArrivalWindow();
+            this.Close();
+        }
     }
 }
