@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CheckInSystem"
         mc:Ignorable="d"
-        Title="AnnounceArrivalWindow" Height="1620" Width="2160">
+        Title="AnnounceArrivalWindow" WindowStyle="None" Height="1620" Width="2160">
     <Grid>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -85,12 +85,12 @@
                     </Viewbox>
                 </Button>
                 
-                <Viewbox x:Name="rememberBox" Grid.Row="9" Grid.Column="11" Grid.ColumnSpan="1" HorizontalAlignment="Right" Stretch="Uniform">
-                    <CheckBox/>
+                <Viewbox Grid.Row="9" Grid.Column="11" Grid.ColumnSpan="1" HorizontalAlignment="Right" Stretch="Uniform">
+                    <CheckBox x:Name="rememberBox"/>
                 </Viewbox>
 
-                <Viewbox x:Name="termsBox" Grid.Row="10" Grid.Column="11" Grid.ColumnSpan="1" HorizontalAlignment="Right" Stretch="Uniform">
-                    <CheckBox Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+                <Viewbox Grid.Row="10" Grid.Column="11" Grid.ColumnSpan="1" HorizontalAlignment="Right" Stretch="Uniform">
+                    <CheckBox x:Name="termsBox"/>
                 </Viewbox>
 
                 <ListView x:Name="listView" ItemsSource="{Binding guests, UpdateSourceTrigger=Explicit}" SelectedItem="{Binding Path=SelectedGuest, UpdateSourceTrigger=Explicit}" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="5" Grid.RowSpan="6">

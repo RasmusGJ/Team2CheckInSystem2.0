@@ -41,6 +41,7 @@ namespace CheckInSystem
             MainWindow mainWindow = new MainWindow();
             this.Visibility = Visibility.Hidden;
             mainWindow.Show();
+            Thread.Sleep(10);
             this.Close();
         }
     }

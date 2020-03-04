@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CheckInSystem.Domain_Layer;
+using System.Threading;
 
 namespace CheckInSystem
 {
@@ -33,6 +34,7 @@ namespace CheckInSystem
             rectangleRed.Fill = new SolidColorBrush(Color.FromRgb(254,24,24));
             PinCodeWindow pinWindow = new PinCodeWindow();
             pinWindow.Show();
+            Thread.Sleep(10);
             this.Close();
         }
 
@@ -40,6 +42,7 @@ namespace CheckInSystem
         {
             AnnounceArrivalWindow arrivalWindow = new AnnounceArrivalWindow();
             arrivalWindow.Show();
+            Thread.Sleep(10);
             this.Close();
         }
     }

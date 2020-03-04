@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -76,6 +77,7 @@ namespace CheckInSystem
             EmployeeWelcomeWindow welcomeWindow = new EmployeeWelcomeWindow();
             welcomeWindow.GetController(controller);
             welcomeWindow.Show();
+            Thread.Sleep(10);
             this.Close();
         }
 
@@ -86,6 +88,7 @@ namespace CheckInSystem
             EmployeeCheckoutWindow checkoutWindow = new EmployeeCheckoutWindow();
             checkoutWindow.GetController(controller);
             checkoutWindow.Show();
+            Thread.Sleep(10);
             this.Close();
         }
 
@@ -94,6 +97,7 @@ namespace CheckInSystem
             PinCodeWindow pinCodeWindow = new PinCodeWindow();
             pinCodeWindow.GetController(controller);
             pinCodeWindow.Show();
+            Thread.Sleep(10);
             this.Close();
         }
     }
