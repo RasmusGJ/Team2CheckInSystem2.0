@@ -5,153 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CheckInSystem"
         mc:Ignorable="d"
-        Title="TermsAndConditions" WindowStyle="None" Height="450" Width="800">
+        Title="TermsAndConditions" WindowStyle="None" Height="609" Width="800">
     <Grid>
 
-        <StackPanel>
+        <StackPanel Margin="0,0,0,49">
             <TextBlock HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Margin="0,35,0,0">Erklæring om databeskyttelse</TextBlock>
-
-            <ScrollViewer VerticalScrollBarVisibility="Visible">
-                <TextBlock TextWrapping="Wrap" Margin="10">
-                    
-                    <LineBreak/>
-Det glæder os, at du interesserer dig for vores hjemmesider og vores virksomhed, som er en
-del af HYDAC-koncernen. Vi lægger stor vægt på beskyttelsen af dine personoplysninger.
-Personoplysninger er alle oplysninger, som omhandler en identificeret eller identificerbar
-fysisk person (i det efterfølgende: Data). Dette indbefatter f.eks. IP-adressen, adressen,
-navnet, e-mail-adressen eller telefonnummeret.<LineBreak/><LineBreak/>
-Principielt indhenter vi kun data i det teknisk påkrævede omfang. Med den efterfølgende
-erklæring om databeskyttelse ønsker vi at oplyse dig om, hvilke oplysninger vi indsamler, og
-hvortil disse benyttes under dit besøg på vores hjemmesider.
-                    <LineBreak/><LineBreak/>
-I. Den ansvarliges navn og adresse
-Den ansvarlige i henhold til artikel 4, nr. 7, i GDPR og andre nationale lovgivninger om
-databeskyttelse i medlemslandene såsom andre lovmæssige bestemmelser mhp.
-databeskyttelse:
-HYDAC Verwaltung GmbH
-66273 Sulzbach/Saar
-Hirschbachstraße 4
-Postboks 12 51
-Tyskland
-Tlf.: +49 (0) 68 97 509-01
-E-mail: info@hydac.com
-Hjemmeside: https://www.hydac.com<LineBreak/><LineBreak/>
-II. Kontaktdata for den tilsynsførende for databeskyttelse
-Hvis du har spørgsmål vedrørende behandlingen af personoplysninger, bedes du rette
-henvendelse til den tilsynsførende for databeskyttelse.
-Det er muligt at rette henvendelse til den fælles tilsynsførende for databeskyttelse for
-virksomhederne i HYDAC-koncernen under:
-Zentralbereich Datenschutz (central for databeskyttelse)
-66280 Sulzbach/Saar
-Hirschbachstraße 4
-Werk 19
-Tyskland
-Tlf.: +49 (0) 68 97 / 509 9398
-E-mail: datenschutz@hydac.com
-III. Generelle oplysninger om databehandling
-1. Omfanget af behandlingen af data
-Vi behandler principielt kun brugerdata på vores hjemmesider, såfremt dette er nødvendigt
-for at sikre, at hjemmesiden samt indhold og ydelser fungerer korrekt. Behandlingen af 
-2
-brugerdata sker i overensstemmelse med det gældende retsgrundlag og kun i henhold til
-vores foruddefinerede formål.
-2. Retsgrundlag for behandlingen af data
-Virksomhederne i HYDAC-koncernen behandler data i overensstemmelse med
-bestemmelserne i GDPR.
-Indvilligelse
-Artikel 6, stk. 1, 1. sætning, litra a, i GDPR gælder som retsgrundlag, såfremt vi i forbindelse
-med behandling af data indhenter en indvilligelse hos den berørte person.
-Indgåelse af en kontrakt eller foranstaltninger forud for indgåelsen af en kontrakt
-Artikel 6, stk. 1, 1. sætning, litra b, i GDPR gælder som retsgrundlag ved behandling af data,
-som er nødvendige i forbindelse med indgåelse af en kontrakt, hvor den kontraherende part
-er den pågældende person. Dette gælder også ved behandlingsprocesser, der er
-nødvendige i forbindelse med foranstaltninger forud for indgåelsen af en kontrakt.
-Retlig forpligtelse
-Artikel 6, stk. 1, 1. sætning, litra c, i GDPR gælder som retsgrundlag, såfremt behandling af
-data i forbindelse med opfyldelse af en retlig forpligtelse, som vores virksomhed er underlagt,
-er nødvendig.
-Legitim interesse
-Artikel 6, stk. 1, 1. sætning, litra f, i GDPR gælder som retsgrundlag, hvis en behandling er
-nødvendig af hensyn til varetagelse af vores virksomheds eller en tredjeparts legitime
-interesser, og den førstnævnte interesse ikke tilsidesætter den implicerede persons
-interesser, grundlæggende rettigheder og friheder.
-3. Sletning af data og lagringsvarighed
-Den implicerede persons personoplysninger bliver slettet eller behandlingen af oplysningerne
-begrænses, så snart de ikke længere er nødvendige i forbindelse med behandlingsformålet.
-Derudover kan data lagres, hvis dette er fastsat af de europæiske eller nationale, lovgivende
-myndigheder i EU-lovgivningsmæssige forordninger, love eller øvrige forskrifter, som den
-ansvarshavende er underkastet. En begrænsning af behandlingen eller sletning af data
-finder også sted, når en foreskrevet frist for lagring i overensstemmelse med de nævnte
-normer udløber, medmindre en yderligere lagring i forbindelse med indgåelse eller opfyldelse
-af en kontrakt er nødvendig.
-IV. Anvendelse af hjemmesiden og oprettelse af log-filer
-1. Beskrivelse og omfang af databehandlingen
-Hvis hjemmesiden kun anvendes til at indhente oplysninger, uden du registrerer dig eller på
-anden vis overfører data, indhenter vi kun den data, som din browser overfører til vores
-server. Hvis du ønsker at besøge vores hjemmeside, indhenter vi følgende data, som er
-teknisk nødvendige mhp. korrekt visning og garanterer stabilitet og sikkerhed.
-3
-I den forbindelse indhentes følgende data:
-• Oplysninger om browsertype og den anvendte version
-• Brugerens operativsystem
-• Brugerens internet-service-provider
-• Brugerens IP-adresse
-• Besøgets dato og klokkeslæt
-• De hjemmesider, hvorfra brugersystemet når frem til vores hjemmeside
-• De hjemmesider, som bliver hentet af brugersystemet via vores hjemmeside
-Data bliver ligeledes gemt i vores systems log-filer. En lagring af disse data sammen med
-andre personoplysninger finder ikke sted.
-2. Retsgrundlag for databehandling
-Artikel 6, stk. 1, 1. sætning, litra f, i GDPR gælder som retsgrundlag for de data, der er
-nødvendige at indhente, og som bliver lagret temporært.
-3. Formålet med databehandlingen
-Systemets indhentning og temporære lagring af data er nødvendig for at gøre det muligt at få
-vist hjemmesiden på brugerens computer.
-Til disse formål har vi også en legitim interesse i databehandlingen i henhold til
-artikel 6, stk. 1, 1. sætning, litra f, i GDPR.
-4. Varighed af lagring
-Oplysningerne bliver slettet, når de ikke længere er nødvendige for de formål, hvortil de blev
-indhentet. I tilfælde af registrering af data for at kunne stille hjemmesiden til rådighed, gør
-dette sig også gældende, når den pågældende browser bliver lukket.
-5. Mulighed for indsigelse og sletning
-Hjemmesidens disponibilitet er afhængig af registrering af data, og lagring af data i log-filer
-er nødvendig for at hjemmesiden fungerer korrekt. I henhold til artikel 21 i GDPR har
-brugeren ingen mulighed for at gøre indsigelser.
-V. Anvendelse af cookies
-1. Beskrivelse og omfang af databehandlingen
-På en del af siderne på vores hjemmesider anvender vi cookies for at gøre besøget mere
-attraktivt og muliggøre bestemte funktioner. De såkaldte "cookies" er små tekstfiler, som din
-browser kan gemme på din computer. Du kan indstille din browser således, at du bliver
-informeret om placeringen af cookies, og om du i hvert enkelt tilfælde vil have muligheden for 
-4
-at tage stilling til cookies eller om du generelt ønsker at acceptere eller afvise cookies.
-Cookies kan anvendes til forskellige formål, som f.eks til at genkende, om din PC allerede
-har være brugt i forbindelse med et webtilbud (permanente cookies) eller for at gemme de
-tilbud, der blev besøgt sidst (session-cookies).
-Følgende cookies bliver indsamlet ved besøg af hjemmesiden:
-• Brugersprog
-• Session-cookie
-• Databeskyttelses-cookie (CookiePolicy)
-Følgende cookies bliver kun indsamlet ved anvendelse af bestemte funktioner på
-hjemmesiden:
-• Forespørgselsliste
-• Kontaktformular
-• Vareettiket
-• Ved login-ID (kun når brugeren er logget på systemet)
-• Visning mobil/desktop
-• Openstreet-map fejl-formular
-Vi anvender cookies for at gøre vores hjemmeside mere brugervenlig. Ved nogle elementer
-på vores hjemmeside er det nødvendigt, at den anvendte browser også kan identificeres
-efter et sideskift.
-I de pågældende cookies bliver herved bl.a. følgende data gemt og overført:
-• Sprogindstillinger
-• Log-in-oplysninger
-• Data, som bliver indtastet i formularer
-På vores hjemmeside anvender vi derudover cookies, som gør det muligt at analysere
-brugerens surf-adfærd (se i den forbindelse punkt IX).
-                </TextBlock>
+            <ScrollViewer VerticalScrollBarVisibility="Visible" Height="526">
+                <TextBlock TextWrapping="Wrap" Margin="10" Height="1125"><LineBreak/><Run Text="Det glæder os, at du interesserer dig for vores hjemmesider og vores virksomhed, som er en del af HYDAC-koncernen. Vi lægger stor vægt på beskyttelsen af dine personoplysninger. Personoplysninger er alle oplysninger, som omhandler en identificeret eller identificerbar fysisk person (i det efterfølgende: Data). Dette indbefatter f.eks. IP-adressen, adressen, navnet, e-mail-adressen eller telefonnummeret."/><LineBreak/><LineBreak/><Run Text="Principielt indhenter vi kun data i det teknisk påkrævede omfang. Med den efterfølgende erklæring om databeskyttelse ønsker vi at oplyse dig om, hvilke oplysninger vi indsamler, og hvortil disse benyttes under dit besøg på vores hjemmesider."/><LineBreak/><LineBreak/><Run Text="I. Den ansvarliges navn og adresse Den ansvarlige i henhold til artikel 4, nr. 7, i GDPR og andre nationale lovgivninger om databeskyttelse i medlemslandene såsom andre lovmæssige bestemmelser mhp. databeskyttelse: HYDAC Verwaltung GmbH 66273 Sulzbach/Saar Hirschbachstraße 4 Postboks 12 51 Tyskland Tlf.: +49 (0) 68 97 509-01 E-mail: info@hydac.com Hjemmeside: https://www.hydac.com"/><LineBreak/><LineBreak/><Run Text="II. Kontaktdata for den tilsynsførende for databeskyttelse Hvis du har spørgsmål vedrørende behandlingen af personoplysninger, bedes du rette henvendelse til den tilsynsførende for databeskyttelse. Det er muligt at rette henvendelse til den fælles tilsynsførende for databeskyttelse for virksomhederne i HYDAC-koncernen under: Zentralbereich Datenschutz (central for databeskyttelse) 66280 Sulzbach/Saar Hirschbachstraße 4 Werk 19 Tyskland Tlf.: +49 (0) 68 97 / 509 9398 E-mail: datenschutz@hydac.com III. Generelle oplysninger om databehandling 1. Omfanget af behandlingen af data Vi behandler principielt kun brugerdata på vores hjemmesider, såfremt dette er nødvendigt for at sikre, at hjemmesiden samt indhold og ydelser fungerer korrekt. Behandlingen af 2 brugerdata sker i overensstemmelse med det gældende retsgrundlag og kun i henhold til vores foruddefinerede formål. 2. Retsgrundlag for behandlingen af data Virksomhederne i HYDAC-koncernen behandler data i overensstemmelse med bestemmelserne i GDPR. Indvilligelse Artikel 6, stk. 1, 1. sætning, litra a, i GDPR gælder som retsgrundlag, såfremt vi i forbindelse med behandling af data indhenter en indvilligelse hos den berørte person. Indgåelse af en kontrakt eller foranstaltninger forud for indgåelsen af en kontrakt Artikel 6, stk. 1, 1. sætning, litra b, i GDPR gælder som retsgrundlag ved behandling af data, som er nødvendige i forbindelse med indgåelse af en kontrakt, hvor den kontraherende part er den pågældende person. Dette gælder også ved behandlingsprocesser, der er nødvendige i forbindelse med foranstaltninger forud for indgåelsen af en kontrakt. Retlig forpligtelse Artikel 6, stk. 1, 1. sætning, litra c, i GDPR gælder som retsgrundlag, såfremt behandling af data i forbindelse med opfyldelse af en retlig forpligtelse, som vores virksomhed er underlagt, er nødvendig. Legitim interesse Artikel 6, stk. 1, 1. sætning, litra f, i GDPR gælder som retsgrundlag, hvis en behandling er nødvendig af hensyn til varetagelse af vores virksomheds eller en tredjeparts legitime interesser, og den førstnævnte interesse ikke tilsidesætter den implicerede persons interesser, grundlæggende rettigheder og friheder. 3. Sletning af data og lagringsvarighed Den implicerede persons personoplysninger bliver slettet eller behandlingen af oplysningerne begrænses, så snart de ikke længere er nødvendige i forbindelse med behandlingsformålet. Derudover kan data lagres, hvis dette er fastsat af de europæiske eller nationale, lovgivende myndigheder i EU-lovgivningsmæssige forordninger, love eller øvrige forskrifter, som den ansvarshavende er underkastet. En begrænsning af behandlingen eller sletning af data finder også sted, når en foreskrevet frist for lagring i overensstemmelse med de nævnte normer udløber, medmindre en yderligere lagring i forbindelse med indgåelse eller opfyldelse af en kontrakt er nødvendig. IV. Anvendelse af hjemmesiden og oprettelse af log-filer 1. Beskrivelse og omfang af databehandlingen Hvis hjemmesiden kun anvendes til at indhente oplysninger, uden du registrerer dig eller på anden vis overfører data, indhenter vi kun den data, som din browser overfører til vores server. Hvis du ønsker at besøge vores hjemmeside, indhenter vi følgende data, som er teknisk nødvendige mhp. korrekt visning og garanterer stabilitet og sikkerhed. 3 I den forbindelse indhentes følgende data: • Oplysninger om browsertype og den anvendte version • Brugerens operativsystem • Brugerens internet-service-provider • Brugerens IP-adresse • Besøgets dato og klokkeslæt • De hjemmesider, hvorfra brugersystemet når frem til vores hjemmeside • De hjemmesider, som bliver hentet af brugersystemet via vores hjemmeside Data bliver ligeledes gemt i vores systems log-filer. En lagring af disse data sammen med andre personoplysninger finder ikke sted. 2. Retsgrundlag for databehandling Artikel 6, stk. 1, 1. sætning, litra f, i GDPR gælder som retsgrundlag for de data, der er nødvendige at indhente, og som bliver lagret temporært. 3. Formålet med databehandlingen Systemets indhentning og temporære lagring af data er nødvendig for at gøre det muligt at få vist hjemmesiden på brugerens computer. Til disse formål har vi også en legitim interesse i databehandlingen i henhold til artikel 6, stk. 1, 1. sætning, litra f, i GDPR. 4. Varighed af lagring Oplysningerne bliver slettet, når de ikke længere er nødvendige for de formål, hvortil de blev indhentet. I tilfælde af registrering af data for at kunne stille hjemmesiden til rådighed, gør dette sig også gældende, når den pågældende browser bliver lukket. 5. Mulighed for indsigelse og sletning Hjemmesidens disponibilitet er afhængig af registrering af data, og lagring af data i log-filer er nødvendig for at hjemmesiden fungerer korrekt. I henhold til artikel 21 i GDPR har brugeren ingen mulighed for at gøre indsigelser. V. Anvendelse af cookies 1. Beskrivelse og omfang af databehandlingen På en del af siderne på vores hjemmesider anvender vi cookies for at gøre besøget mere attraktivt og muliggøre bestemte funktioner. De såkaldte &quot;cookies&quot; er små tekstfiler, som din browser kan gemme på din computer. Du kan indstille din browser således, at du bliver informeret om placeringen af cookies, og om du i hvert enkelt tilfælde vil have muligheden for 4 at tage stilling til cookies eller om du generelt ønsker at acceptere eller afvise cookies. Cookies kan anvendes til forskellige formål, som f.eks til at genkende, om din PC allerede har være brugt i forbindelse med et webtilbud (permanente cookies) eller for at gemme de tilbud, der blev besøgt sidst (session-cookies). Følgende cookies bliver indsamlet ved besøg af hjemmesiden: • Brugersprog • Session-cookie • Databeskyttelses-cookie (CookiePolicy) Følgende cookies bliver kun indsamlet ved anvendelse af bestemte funktioner på hjemmesiden: • Forespørgselsliste • Kontaktformular • Vareettiket • Ved login-ID (kun når brugeren er logget på systemet) • Visning mobil/desktop • Openstreet-map fejl-formular Vi anvender cookies for at gøre vores hjemmeside mere brugervenlig. Ved nogle elementer på vores hjemmeside er det nødvendigt, at den anvendte browser også kan identificeres efter et sideskift. I de pågældende cookies bliver herved bl.a. følgende data gemt og overført: • Sprogindstillinger • Log-in-oplysninger • Data, som bliver indtastet i formularer På vores hjemmeside anvender vi derudover cookies, som gør det muligt at analysere brugerens surf-adfærd (se i den forbindelse punkt IX)."/></TextBlock>
             </ScrollViewer>
-            
+
         </StackPanel> 
         
     </Grid>
