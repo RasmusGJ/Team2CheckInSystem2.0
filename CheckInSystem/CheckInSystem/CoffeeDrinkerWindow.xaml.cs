@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Threading;
 
 namespace CheckInSystem
 {
@@ -27,6 +28,7 @@ namespace CheckInSystem
         {
             NoReservationWindow noReservationWindow = new NoReservationWindow();
             noReservationWindow.Show();
+            Thread.Sleep(10);
             this.Close();
         }
 
@@ -34,6 +36,7 @@ namespace CheckInSystem
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
+            Thread.Sleep(10);
             this.Close();
         }
 
@@ -41,6 +44,7 @@ namespace CheckInSystem
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
+            Thread.Sleep(10);
             this.Close();
         }
     }

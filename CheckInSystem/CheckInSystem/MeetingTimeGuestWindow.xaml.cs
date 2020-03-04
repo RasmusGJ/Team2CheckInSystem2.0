@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -26,6 +27,7 @@ namespace CheckInSystem
         {
             AnnounceArrivalWindow announceArrivalWindow = new AnnounceArrivalWindow();
             announceArrivalWindow.Show();
+            Thread.Sleep(10);
             this.Close();
         }
     }

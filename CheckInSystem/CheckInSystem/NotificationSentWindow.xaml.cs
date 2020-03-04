@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -29,6 +30,7 @@ namespace CheckInSystem
             //controller.SendMail();
             MainWindow mainwindow = new MainWindow();
             mainwindow.Show();
+            Thread.Sleep(10);
             this.Close();
         }
 
@@ -36,6 +38,7 @@ namespace CheckInSystem
         {
             GuestRequestWindow guestRequestWindow = new GuestRequestWindow();
             guestRequestWindow.Show();
+            Thread.Sleep(10);
             this.Close();
         }
     }

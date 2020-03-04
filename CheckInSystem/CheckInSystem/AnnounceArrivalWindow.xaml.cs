@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using CheckInSystem.Application_Layer;
 using CheckInSystem.Domain_Layer;
+using System.Threading;
 
 
 namespace CheckInSystem
@@ -20,7 +21,6 @@ namespace CheckInSystem
     /// </summary>
     public partial class AnnounceArrivalWindow : Window
     {
-        bool CheckedBox;
         Controller controller;
         public AnnounceArrivalWindow()
         {
@@ -58,6 +58,7 @@ namespace CheckInSystem
         {
             MainWindow mainwindow = new MainWindow();
             mainwindow.Show();
+            Thread.Sleep(10);
             this.Close();
         }
         public void GetController(Controller newController)
@@ -66,7 +67,7 @@ namespace CheckInSystem
         }
         private void Ok_Button(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(nameBox.Text) || string.IsNullOrEmpty(compBox.Text) || string.IsNullOrEmpty(phoneBox.Text) || string.IsNullOrEmpty(emailBox.Text) || CheckedBox == false)
+            if (string.IsNullOrEmpty(nameBox.Text) || string.IsNullOrEmpty(compBox.Text) || string.IsNullOrEmpty(phoneBox.Text) || string.IsNullOrEmpty(emailBox.Text) || termsBox.IsChecked  == false)
             {
                 MessageBox.Show("Please fill out the required fields");
             }
@@ -77,18 +78,9 @@ namespace CheckInSystem
                 //controller.AssignGuestCheckIn();
                 NoReservationWindow noReservationWindow = new NoReservationWindow();
                 noReservationWindow.Show();
+                Thread.Sleep(10);
                 this.Close();
             }
-        }
-
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            CheckedBox = true;
-        }
-
-        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            CheckedBox = false;
         }
 
         private void Hyperlink_Click(object sender, RoutedEventArgs e)

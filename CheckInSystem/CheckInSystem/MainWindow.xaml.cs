@@ -34,6 +34,7 @@ namespace CheckInSystem
             rectangleRed.Fill = new SolidColorBrush(Color.FromRgb(254,24,24));
             PinCodeWindow pinWindow = new PinCodeWindow();
             pinWindow.Show();
+            Thread.Sleep(10);
             this.Close();
         }
 

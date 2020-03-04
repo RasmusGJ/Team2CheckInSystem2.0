@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -110,6 +111,7 @@ namespace CheckInSystem
                 MoodWindow moodWindow = new MoodWindow();
                 moodWindow.GetController(controller);
                 moodWindow.Show();
+                Thread.Sleep(10);
                 this.Close();
             }
             else
@@ -124,6 +126,7 @@ namespace CheckInSystem
         {
             MainWindow mainwindow = new MainWindow();            
             mainwindow.Show();
+            Thread.Sleep(10);
             this.Close();
         }
     }
