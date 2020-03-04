@@ -71,5 +71,12 @@ namespace CheckInSystem
             noReservationWindow.Show();
             this.Close();
         }
+
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            TermsAndConditions termsAndConditions = new TermsAndConditions();
+            termsAndConditions.Show();
+        }
     }
 }
+

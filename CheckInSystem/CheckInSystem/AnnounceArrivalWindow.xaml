@@ -73,10 +73,13 @@
                 <Label>Remember me:</Label>
             </Viewbox>
             <Viewbox Grid.Row="10" Grid.Column="7" HorizontalAlignment="Left" Grid.ColumnSpan="4">
-                <Label>Accept terms and conditions:</Label>
+                <Label>
+                    <Hyperlink Click="Hyperlink_Click">
+                        Accept terms and conditions
+                    </Hyperlink>
+                </Label>
             </Viewbox>
-
-            <Button  Grid.Row="11" Grid.Column="3" Grid.ColumnSpan="6" Style="{StaticResource BtnStyle}" Click="Ok_Button" >
+            <Button Grid.Row="11" Grid.Column="3" Grid.ColumnSpan="6" Style="{StaticResource BtnStyle}" Click="Ok_Button" >
                 <Viewbox Stretch="Uniform">
                     <Label>OK</Label>
                 </Viewbox>
@@ -127,7 +130,6 @@
                     <Image Source="Assets\backButtonIcon.png"/>
                 </Viewbox>
             </Button>
-
         </Grid>
     </Grid>
 </Window>
