@@ -72,6 +72,8 @@ namespace CheckInSystem
             }
             else
             {
+                GuestRepo guestRepo = new GuestRepo();
+                guestRepo.AddGuestToDB(nameBox.Text, compBox.Text, emailBox.Text, phoneBox.Text);
                 //controller.AssignGuestCheckIn();
                 GuestRepo guestRepo = new GuestRepo();
                 guestRepo.AddGuestToDB(nameBox.Text, compBox.Text, emailBox.Text, phoneBox.Text);

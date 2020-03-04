@@ -68,7 +68,6 @@
 
             <TextBox x:Name="emailBox" Text="{Binding ElementName=listView, Path=SelectedItem.Email, Mode=OneWay}" Grid.Row="7" Grid.Column="7" Grid.ColumnSpan="5" VerticalContentAlignment="Center" FontSize="25"/>
 
-
             <Viewbox Grid.Row="9" Grid.Column="7" HorizontalAlignment="Left" Grid.ColumnSpan="2">
                 <Label>Remember me:</Label>
             </Viewbox>
