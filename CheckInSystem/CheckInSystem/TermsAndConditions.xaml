@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CheckInSystem"
         mc:Ignorable="d"
-        Title="TermsAndConditions" WindowStyle="None" Height="450" Width="800">
+        Title="TermsAndConditions" WindowStyle="ThreeDBorderWindow" Height="450" Width="800">
     <Grid>
         
     </Grid>
