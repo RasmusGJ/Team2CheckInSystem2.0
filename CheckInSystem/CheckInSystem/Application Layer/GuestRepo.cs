@@ -46,7 +46,7 @@ namespace CheckInSystem.Application_Layer
             }            
         }
         
-        public void GuestDB(string id = "0", string name = "", string company = "", string email = "", string phone = "")
+        public void GuestDB(string id, string name, string company, string email, string phone)
         {
             if (string.IsNullOrEmpty(id))
             {
@@ -70,20 +70,28 @@ namespace CheckInSystem.Application_Layer
 
                         }
                     }
-                    break;
+                    SelectedGuest = g;
+                    return;
                 }                
             }
 
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
+                Guest g = new Guest();
                 string guestInsertQuery = "INSERT INTO Guest (Name, Email, Company, MobilePhone) VALUES ('" + name + "', '" + email + "', '" + company + "', '" + phone + "');";
+                string guestIdQuery = "SELECT MAX (Id) FROM Guest;";
 
-                SqlCommand command = new SqlCommand(guestInsertQuery, conn);
+                SqlCommand command = new SqlCommand(guestInsertQuery + guestIdQuery, conn);
                 conn.Open();
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
-
-                }
+                   
+                    while (reader.Read())
+                    {
+                        g.Id = reader.GetInt32(0);
+                        SelectedGuest = g;
+                    }
+                }            
             }
         }
 
