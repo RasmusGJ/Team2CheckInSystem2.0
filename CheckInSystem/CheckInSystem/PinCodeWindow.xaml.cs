@@ -41,12 +41,6 @@ namespace CheckInSystem
             UpdateCircles();
 
         }        
-
-        public void GetController(Controller newcontroller)
-        {
-            controller = newcontroller;
-        }
-
         public void UpdateCircles()
         {
             switch (TextBoxNumPad.Text.Length)
