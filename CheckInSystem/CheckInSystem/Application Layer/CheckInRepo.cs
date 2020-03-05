@@ -75,12 +75,15 @@ namespace CheckInSystem.Application_Layer
             checkIn.FromTime = DateTime.Now;
             string currentTime = checkIn.FromTime.ToString("yyyy-dd-MM HH:mm:ss");
 
-            Person checkInPerson = new Employee();
-            checkInPerson.Id = checkIn.person.Id;
-
-            if (CheckIfCheckedIn(checkInPerson as Employee) == true)
+            if(checkIn.person is Employee)
             {
-                CheckOut(checkInPerson);
+                Person checkInPerson = new Employee();
+                checkInPerson.Id = checkIn.person.Id;
+
+                if (CheckIfCheckedIn(checkInPerson as Employee) == true)
+                {
+                    CheckOut(checkInPerson);
+                }
             }
 
             using (SqlConnection conn = new SqlConnection(ConnectionString))
