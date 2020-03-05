@@ -34,6 +34,10 @@ namespace CheckInSystem
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(listView.ItemsSource);
             view.Filter = UserFilter;
         }
+        public void GetController(Controller newController)
+        {
+            controller = newController;
+        }
         private bool UserFilter(object item)
         {
             if (String.IsNullOrEmpty(nameBox.Text) && String.IsNullOrEmpty(compBox.Text))
@@ -77,6 +81,7 @@ namespace CheckInSystem
                 controller.CheckInRepo.CheckIn(checkIn);
 
                 NoReservationWindow noReservationWindow = new NoReservationWindow();
+                noReservationWindow.GetController(controller);
                 noReservationWindow.Show();
                 Thread.Sleep(10);
                 this.Close();

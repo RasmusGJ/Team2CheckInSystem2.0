@@ -20,6 +20,7 @@ namespace CheckInSystem
     /// </summary>
     public partial class GuestRequestWindow : Window
     {
+        Controller controller;
         public GuestRequestWindow()
         {
             InitializeComponent();
@@ -29,6 +30,10 @@ namespace CheckInSystem
             listView.ItemsSource = employeeRepo.employees;
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(listView.ItemsSource);
             view.Filter = UserFilter;
+        }
+        public void GetController(Controller newController)
+        {
+            controller = newController;
         }
 
         private bool UserFilter(object item)
@@ -62,7 +67,10 @@ namespace CheckInSystem
 
         private void Click_Ok(object sender, RoutedEventArgs e)
         {
+            controller.SendMail("Mail?");
+            controller.CurrentPersonName = nameFilter.Text;
             NotificationSentWindow notificationSent = new NotificationSentWindow();
+            notificationSent.GetController(controller);
             notificationSent.Show();
             Thread.Sleep(10);
             this.Close();
