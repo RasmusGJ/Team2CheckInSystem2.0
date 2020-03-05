@@ -26,6 +26,10 @@ namespace CheckInSystem
             InitializeComponent();
             WindowState = WindowState.Maximized;
         }
+        public void GetController(Controller newController)
+        {
+            controller = newController;
+        }
 
         private void AddNum(object sender, RoutedEventArgs e)
         {
