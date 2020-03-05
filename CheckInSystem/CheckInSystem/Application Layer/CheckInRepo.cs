@@ -40,18 +40,16 @@ namespace CheckInSystem.Application_Layer
                         checkIn.mood = (Mood)(reader.GetInt32("Mood_Id"));
                         try
                         {
-                            if (reader.GetInt32("Employee_Id") == null)
-                            {
-
-                            }
-                            
-                        }
-                        catch (Exception)
-                        {
+                            int id = reader.GetInt32("Employee_Id");
                             Employee employee = new Employee();
-                            employee.Id = reader.GetInt32("Employee_Id");
+                            employee.Id = id;
                             checkIn.person = employee;
-                            throw;
+                        }
+                        catch
+                        {
+                            Guest guest = new Guest();
+                            guest.Id = reader.GetInt32("Guest_Id");
+                            checkIn.person = guest;
                         }                      
 
                         checkIns.Add(checkIn);
