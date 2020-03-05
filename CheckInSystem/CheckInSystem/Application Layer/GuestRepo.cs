@@ -46,36 +46,22 @@ namespace CheckInSystem.Application_Layer
             }            
         }
         
-        public void GuestDB(string id, string name, string company, string email, string phone)
+        public void GuestDB(string id = "0", string name = "", string company = "", string email = "", string phone = "")
         {
+            if (string.IsNullOrEmpty(id))
+            {
+                id = "0";
+            }
             int parsedId = Int32.Parse(id);
+            string ConnectionString = "Server=10.56.8.32;Database=A_GRUPEDB02_2019;User Id=A_GRUPE02;Password=A_OPENDB02";
 
             foreach (Guest g in guests)
             {
                 if (g.Id == parsedId)
                 {
-
-                    string ConnectionString = "Server=10.56.8.32;Database=A_GRUPEDB02_2019;User Id=A_GRUPE02;Password=A_OPENDB02";
-
                     using (SqlConnection conn = new SqlConnection(ConnectionString))
                     {
-                        string guestInsertQuery = "UPDATE Guest SET Name = '" + name + "', Email = '" + email + "', Company = '" + company + "', MobilePhone = '" + phone + "') WHERE Guest.Id = " + id + ";";
-
-                        SqlCommand command = new SqlCommand(guestInsertQuery, conn);
-                        conn.Open();
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-
-                        }
-                    }                 
-                }
-                else
-                {
-                    string ConnectionString = "Server=10.56.8.32;Database=A_GRUPEDB02_2019;User Id=A_GRUPE02;Password=A_OPENDB02";
-
-                    using (SqlConnection conn = new SqlConnection(ConnectionString))
-                    {
-                        string guestInsertQuery = "INSERT INTO Guest (Name, Email, Company, MobilePhone) VALUES ('" + name + "', '" + email + "', '" + company + "', '" + phone + "');";
+                        string guestInsertQuery = "UPDATE Guest SET Name = '" + name + "', Email = '" + email + "', Company = '" + company + "', MobilePhone = '" + phone + "' WHERE Guest.Id = " + id + ";";
 
                         SqlCommand command = new SqlCommand(guestInsertQuery, conn);
                         conn.Open();
@@ -84,6 +70,19 @@ namespace CheckInSystem.Application_Layer
 
                         }
                     }
+                    break;
+                }                
+            }
+
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                string guestInsertQuery = "INSERT INTO Guest (Name, Email, Company, MobilePhone) VALUES ('" + name + "', '" + email + "', '" + company + "', '" + phone + "');";
+
+                SqlCommand command = new SqlCommand(guestInsertQuery, conn);
+                conn.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+
                 }
             }
         }
