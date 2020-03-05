@@ -62,12 +62,14 @@ namespace CheckInSystem
             Thread.Sleep(10);
             this.Close();
         }
+
         public void GetController(Controller newController)
         {
             controller = newController;
             guestRepo = controller.guestRepo;
             
         }
+
         private void Ok_Button(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(nameBox.Text) || string.IsNullOrEmpty(compBox.Text) || string.IsNullOrEmpty(phoneBox.Text) || string.IsNullOrEmpty(emailBox.Text) || termsBox.IsChecked  == false)
@@ -76,7 +78,6 @@ namespace CheckInSystem
             }
             else
             {
-                GuestRepo guestRepo = new GuestRepo();
                 guestRepo.GuestDB(idBox.Text, nameBox.Text, compBox.Text, emailBox.Text, phoneBox.Text);
                 //controller.AssignGuestCheckIn();
                 CheckIn checkIn = new CheckIn() { person = guestRepo.SelectedGuest };
