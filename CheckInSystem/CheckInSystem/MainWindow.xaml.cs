@@ -29,6 +29,8 @@ namespace CheckInSystem
             InitializeComponent();
             WindowState = WindowState.Maximized;
             AppointmentRepo test = new AppointmentRepo();
+            
+            
         }
 
         private void GoToPinCodeWindow(object sender, RoutedEventArgs e)

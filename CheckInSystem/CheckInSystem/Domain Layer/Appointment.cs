@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CheckInSystem.Domain_Layer
 {
-    class Appointment : TimeStamp
+    public class Appointment : TimeStamp
     {
         public int Id;
         public Employee Booker;

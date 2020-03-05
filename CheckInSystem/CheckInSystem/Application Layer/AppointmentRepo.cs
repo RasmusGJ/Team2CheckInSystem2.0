@@ -8,11 +8,13 @@ using System.Windows;
 
 namespace CheckInSystem.Application_Layer
 {
-    class AppointmentRepo
+    public class AppointmentRepo
     {
         List<Appointment> appointments = new List<Appointment>();
+
         public AppointmentRepo()
         {
+            
             string ConnectionString = "Server=10.56.8.32;Database=A_GRUPEDB02_2019;User Id=A_GRUPE02;Password=A_OPENDB02";
 
             using (SqlConnection conn = new SqlConnection(ConnectionString))
@@ -40,6 +42,17 @@ namespace CheckInSystem.Application_Layer
                     }
                 }
             }
+        }
+        public bool CheckIfAppointment(int id)
+        {
+            foreach(Appointment ap in appointments)
+            {
+                if (ap.Id == id)
+                {                    
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
