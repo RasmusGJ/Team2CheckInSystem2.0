@@ -61,6 +61,8 @@
             </Viewbox>
 
             <TextBox x:Name="phoneBox" Text="{Binding ElementName=listView, Path=SelectedItem.MobilePhone, Mode=OneWay}" Grid.Row="5" Grid.Column="7" Grid.ColumnSpan="5" VerticalContentAlignment="Center" FontSize="25"/>
+            
+            <TextBox x:Name="idBox" Visibility="Hidden" Text="{Binding ElementName=listView, Path=SelectedItem.Id, Mode=OneWay}" Grid.Row="5" Grid.Column="7" Grid.ColumnSpan="5" VerticalContentAlignment="Center" FontSize="25"/>
 
             <Viewbox Grid.Row="6" Grid.Column="7" Grid.ColumnSpan="2" HorizontalAlignment="Left">
                 <Label>E-mail:</Label>

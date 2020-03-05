@@ -45,15 +45,38 @@ namespace CheckInSystem.Application_Layer
                 }
             }            
         }
-
-        public void AddGuestToDB(string name, string company, string email, string phone)
+        
+        public void GuestDB(string id = "0", string name = "", string company = "", string email = "", string phone = "")
         {
+            if (string.IsNullOrEmpty(id))
+            {
+                id = "0";
+            }
+            int parsedId = Int32.Parse(id);
             string ConnectionString = "Server=10.56.8.32;Database=A_GRUPEDB02_2019;User Id=A_GRUPE02;Password=A_OPENDB02";
+
+            foreach (Guest g in guests)
+            {
+                if (g.Id == parsedId)
+                {
+                    using (SqlConnection conn = new SqlConnection(ConnectionString))
+                    {
+                        string guestInsertQuery = "UPDATE Guest SET Name = '" + name + "', Email = '" + email + "', Company = '" + company + "', MobilePhone = '" + phone + "' WHERE Guest.Id = " + id + ";";
+
+                        SqlCommand command = new SqlCommand(guestInsertQuery, conn);
+                        conn.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+                        }
+                    }
+                    break;
+                }                
+            }
 
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
-                //Selects all from Employee tabel in database
-                string guestInsertQuery = "IF NOT EXISTS (SELECT * FROM Guest WHERE Guest.MobilePhone = '" + phone + "' AND WHERE Guest.Email = '" + email + "' AND WHERE Guest.Company = '" + company + "') INSERT INTO Guest VALUES ('" + name + "', '" + email + "', '" + company + "', '" + phone + "');";
+                string guestInsertQuery = "INSERT INTO Guest (Name, Email, Company, MobilePhone) VALUES ('" + name + "', '" + email + "', '" + company + "', '" + phone + "');";
 
                 SqlCommand command = new SqlCommand(guestInsertQuery, conn);
                 conn.Open();
