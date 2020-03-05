@@ -28,7 +28,7 @@ namespace CheckInSystem
             
             InitializeComponent();
             WindowState = WindowState.Maximized;
-
+            
             DataContext = guestRepo;
             listView.ItemsSource = guestRepo.guests;
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(listView.ItemsSource);
