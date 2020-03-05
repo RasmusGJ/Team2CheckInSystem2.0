@@ -12,6 +12,7 @@ namespace CheckInSystem.Application_Layer
 {
     public class Controller
     {
+        public string CurrentPersonName { get; set; }
         public CheckInRepo CheckInRepo = new CheckInRepo();
         public EmployeeRepo employeesRepo = new EmployeeRepo();
         public GuestRepo guestRepo = new GuestRepo();

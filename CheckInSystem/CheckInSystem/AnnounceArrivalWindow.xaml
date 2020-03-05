@@ -133,6 +133,12 @@
                     <Image Source="Assets\backButtonIcon.png"/>
                 </Viewbox>
             </Button>
+            
+            <Button x:Name="keyBoard" Style="{StaticResource NumPadBtn}" Grid.Column="11" Grid.Row="11" Click="KeyBoard_Click">
+                <Viewbox>
+                    <Image Source="Assets\KeyBoard.png"/>
+                </Viewbox>
+            </Button>
         </Grid>
     </Grid>
 </Window>

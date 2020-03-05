@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using CheckInSystem.Application_Layer;
 
 namespace CheckInSystem
 {
@@ -18,10 +19,15 @@ namespace CheckInSystem
     /// </summary>
     public partial class NoReservationWindow : Window
     {
+        Controller controller;
         public NoReservationWindow()
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;
+        }
+        public void GetController(Controller newController)
+        {
+            controller = newController;
         }
         public void GetPerson()
         {
@@ -31,6 +37,7 @@ namespace CheckInSystem
         private void GoToGuestRequestWindow(object sender, RoutedEventArgs e)
         {
             GuestRequestWindow guestRequestWindow = new GuestRequestWindow();
+            guestRequestWindow.GetController(controller);
             guestRequestWindow.Show();
             Thread.Sleep(10);
             this.Close();

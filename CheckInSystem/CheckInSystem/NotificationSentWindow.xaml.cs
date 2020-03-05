@@ -18,12 +18,19 @@ namespace CheckInSystem
     /// </summary>
     public partial class NotificationSentWindow : Window
     {
+        Controller controller;
         public NotificationSentWindow()
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;
+
         }
 
+        public void GetController(Controller newController)
+        {
+            controller = newController;
+            employeeName.Content = controller.CurrentPersonName;
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //Controller controller = new Controller();
@@ -35,7 +42,7 @@ namespace CheckInSystem
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
-        {
+        { 
             GuestRequestWindow guestRequestWindow = new GuestRequestWindow();
             guestRequestWindow.Show();
             Thread.Sleep(10);

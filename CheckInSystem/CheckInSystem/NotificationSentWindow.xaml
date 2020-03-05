@@ -30,7 +30,7 @@
             <Label Name="welcomeLabel" Content="A notification has been sent to"></Label>
         </Viewbox>
         <Viewbox Stretch="Uniform" Grid.Row="2" Grid.Column="1">
-            <Label Content="Insert name"></Label>
+            <Label x:Name="employeeName" Content="Insert Name"></Label>
         </Viewbox>
         <Viewbox Stretch="Uniform" Grid.Row="6" Grid.Column="1">
             <Label>You have received fire safety</Label>
