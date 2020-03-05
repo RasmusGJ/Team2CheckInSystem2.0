@@ -19,6 +19,7 @@
     <None Remove="Assets\GuestIcon.png" />
     <None Remove="Assets\HappySmiley.png" />
     <None Remove="Assets\hydacLogo.png" />
+    <None Remove="Assets\KeyBoard.png" />
     <None Remove="Assets\NeutralSmiley.png" />
     <None Remove="Assets\SadSmiley.png" />
     <None Remove="Assets\WelcomeIcon.png" />
@@ -45,6 +46,7 @@
     <Resource Include="Assets\GuestIcon.png" />
     <Resource Include="Assets\HappySmiley.png" />
     <Resource Include="Assets\hydacLogo.png" />
+    <Resource Include="Assets\KeyBoard.png" />
   </ItemGroup>
 
   <ItemGroup>
