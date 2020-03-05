@@ -45,24 +45,49 @@ namespace CheckInSystem.Application_Layer
                 }
             }            
         }
-
-        public void AddGuestToDB(int id, string name, string company, string email, string phone)
+        
+        public void GuestDB(string id, string name, string company, string email, string phone)
         {
-            string ConnectionString = "Server=10.56.8.32;Database=A_GRUPEDB02_2019;User Id=A_GRUPE02;Password=A_OPENDB02";
+            int parsedId = Int32.Parse(id);
 
-            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            foreach (Guest g in guests)
             {
-                //Selects all from Employee tabel in database
-                string guestInsertQuery = "IF NOT EXISTS (SELECT * FROM Guest WHERE Guest.Id = '" + id + "') INSERT INTO Guest VALUES ('" + name + "', '" + email + "', '" + company + "', '" + phone + "');";
-
-                SqlCommand command = new SqlCommand(guestInsertQuery, conn);
-                conn.Open();
-                using (SqlDataReader reader = command.ExecuteReader())
+                if (g.Id == parsedId)
                 {
 
+                    string ConnectionString = "Server=10.56.8.32;Database=A_GRUPEDB02_2019;User Id=A_GRUPE02;Password=A_OPENDB02";
+
+                    using (SqlConnection conn = new SqlConnection(ConnectionString))
+                    {
+                        string guestInsertQuery = "UPDATE Guest SET Name = '" + name + "', Email = '" + email + "', Company = '" + company + "', MobilePhone = '" + phone + "') WHERE Guest.Id = " + id + ";";
+
+                        SqlCommand command = new SqlCommand(guestInsertQuery, conn);
+                        conn.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+                        }
+                    }                 
+                }
+                else
+                {
+                    string ConnectionString = "Server=10.56.8.32;Database=A_GRUPEDB02_2019;User Id=A_GRUPE02;Password=A_OPENDB02";
+
+                    using (SqlConnection conn = new SqlConnection(ConnectionString))
+                    {
+                        string guestInsertQuery = "INSERT INTO Guest (Name, Email, Company, MobilePhone) VALUES ('" + name + "', '" + email + "', '" + company + "', '" + phone + "');";
+
+                        SqlCommand command = new SqlCommand(guestInsertQuery, conn);
+                        conn.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+                        }
+                    }
                 }
             }
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string name)
         {
