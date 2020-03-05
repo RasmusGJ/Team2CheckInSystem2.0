@@ -38,18 +38,21 @@ namespace CheckInSystem.Application_Layer
                         checkIn.FromTime = reader.GetDateTime("FromDateTime");
                         checkIn.ToTime = reader.GetDateTime("ToDateTime");
                         checkIn.mood = (Mood)(reader.GetInt32("Mood_Id"));
-
-                        if (reader.GetInt32("Employee_Id") == 0)
+                        try
                         {
-                            //Guest guest = new Guest(); HUSK AT LAVE GUEST KLASSE!!!
-                            //checkIn.person.Id = reader.GetString("Guest_Id");
+                            if (reader.GetInt32("Employee_Id") == null)
+                            {
+
+                            }
+                            
                         }
-                        else
+                        catch (Exception)
                         {
                             Employee employee = new Employee();
                             employee.Id = reader.GetInt32("Employee_Id");
                             checkIn.person = employee;
-                        }
+                            throw;
+                        }                      
 
                         checkIns.Add(checkIn);
                     }
@@ -75,12 +78,15 @@ namespace CheckInSystem.Application_Layer
             checkIn.FromTime = DateTime.Now;
             string currentTime = checkIn.FromTime.ToString("yyyy-dd-MM HH:mm:ss");
 
-            Person checkInPerson = new Employee();
-            checkInPerson.Id = checkIn.person.Id;
-
-            if (CheckIfCheckedIn(checkInPerson as Employee) == true)
+            if(checkIn.person is Employee)
             {
-                CheckOut(checkInPerson);
+                Person checkInPerson = new Employee();
+                checkInPerson.Id = checkIn.person.Id;
+
+                if (CheckIfCheckedIn(checkInPerson as Employee) == true)
+                {
+                    CheckOut(checkInPerson);
+                }
             }
 
             using (SqlConnection conn = new SqlConnection(ConnectionString))

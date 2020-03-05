@@ -21,13 +21,14 @@ namespace CheckInSystem
     /// </summary>
     public partial class AnnounceArrivalWindow : Window
     {
-        Controller controller;
+        Controller controller = new Controller();
+        GuestRepo guestRepo;
         public AnnounceArrivalWindow()
         {
             
             InitializeComponent();
             WindowState = WindowState.Maximized;
-            GuestRepo guestRepo = new GuestRepo();
+            guestRepo = controller.guestRepo; 
             DataContext = guestRepo;
             listView.ItemsSource = guestRepo.guests;
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(listView.ItemsSource);
@@ -61,10 +62,7 @@ namespace CheckInSystem
             Thread.Sleep(10);
             this.Close();
         }
-        public void GetController(Controller newController)
-        {
-            controller = newController;
-        }
+      
         private void Ok_Button(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(nameBox.Text) || string.IsNullOrEmpty(compBox.Text) || string.IsNullOrEmpty(phoneBox.Text) || string.IsNullOrEmpty(emailBox.Text) || termsBox.IsChecked  == false)
@@ -73,9 +71,11 @@ namespace CheckInSystem
             }
             else
             {
-                GuestRepo guestRepo = new GuestRepo();
                 guestRepo.GuestDB(idBox.Text, nameBox.Text, compBox.Text, emailBox.Text, phoneBox.Text);
-                //controller.AssignGuestCheckIn();
+
+                CheckIn checkIn = new CheckIn() { person = guestRepo.SelectedGuest };
+                controller.CheckInRepo.CheckIn(checkIn);
+
                 NoReservationWindow noReservationWindow = new NoReservationWindow();
                 noReservationWindow.Show();
                 Thread.Sleep(10);
