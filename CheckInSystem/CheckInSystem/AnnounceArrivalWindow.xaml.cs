@@ -12,7 +12,7 @@ using System.Windows.Shapes;
 using CheckInSystem.Application_Layer;
 using CheckInSystem.Domain_Layer;
 using System.Threading;
-
+using System.Diagnostics;
 
 namespace CheckInSystem
 {
@@ -87,6 +87,15 @@ namespace CheckInSystem
         {
             TermsAndConditions termsAndConditions = new TermsAndConditions();
             termsAndConditions.Show();
+        }
+        private void KeyBoard_Click(object sender, RoutedEventArgs e)
+        {
+            Process process = new Process();
+            process.StartInfo.UseShellExecute = true;
+            process.StartInfo.WorkingDirectory = "c:\\";
+            process.StartInfo.FileName = "c:\\WINDOWS\\system32\\osk.exe";
+            process.StartInfo.Verb = "runas";
+            process.Start();
         }
     }
 }
