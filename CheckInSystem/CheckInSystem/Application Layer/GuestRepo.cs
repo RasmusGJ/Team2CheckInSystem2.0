@@ -46,14 +46,14 @@ namespace CheckInSystem.Application_Layer
             }            
         }
 
-        public void AddGuestToDB(string name, string company, string email, string phone)
+        public void AddGuestToDB(int id, string name, string company, string email, string phone)
         {
             string ConnectionString = "Server=10.56.8.32;Database=A_GRUPEDB02_2019;User Id=A_GRUPE02;Password=A_OPENDB02";
 
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 //Selects all from Employee tabel in database
-                string guestInsertQuery = "IF NOT EXISTS (SELECT * FROM Guest WHERE Guest.MobilePhone = '" + phone + "' AND WHERE Guest.Email = '" + email + "' AND WHERE Guest.Company = '" + company + "') INSERT INTO Guest VALUES ('" + name + "', '" + email + "', '" + company + "', '" + phone + "');";
+                string guestInsertQuery = "IF NOT EXISTS (SELECT * FROM Guest WHERE Guest.Id = '" + id + "') INSERT INTO Guest VALUES ('" + name + "', '" + email + "', '" + company + "', '" + phone + "');";
 
                 SqlCommand command = new SqlCommand(guestInsertQuery, conn);
                 conn.Open();
