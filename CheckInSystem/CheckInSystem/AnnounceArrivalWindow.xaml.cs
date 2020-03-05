@@ -71,7 +71,6 @@ namespace CheckInSystem
             }
             else
             {
-                GuestRepo guestRepo = new GuestRepo();
                 guestRepo.GuestDB(idBox.Text, nameBox.Text, compBox.Text, emailBox.Text, phoneBox.Text);
 
                 CheckIn checkIn = new CheckIn() { person = guestRepo.SelectedGuest };
