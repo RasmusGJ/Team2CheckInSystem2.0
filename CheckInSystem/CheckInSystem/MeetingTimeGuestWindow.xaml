@@ -34,19 +34,19 @@
             <Label Name="welcomeLabel" Content="Welcome [Insert Name]"  ></Label>
         </Viewbox>
         <Viewbox Stretch="Uniform" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
-            <Label>At [Insert time]</Label>
+            <Label x:Name="timeLabel">At [Insert time]</Label>
         </Viewbox>
         <Viewbox Stretch="Uniform" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
             <Label>You have a meeting with:</Label>
         </Viewbox>
         <Viewbox Stretch="Uniform" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="1">
-            <Label>[Name]</Label>
+            <Label x:Name="nameLabel">[Name]</Label>
         </Viewbox>
         <Viewbox Stretch="Uniform" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="1">
-            <Label>[Role]</Label>
+            <Label x:Name="roleLabel" >[Role]</Label>
         </Viewbox>
         <Viewbox Stretch="Uniform" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="1">
-            <Label>[Department]</Label>
+            <Label x:Name="departmentLabel">[Department]</Label>
         </Viewbox>
         <Viewbox Stretch="Uniform" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2">
             <Label>They have been notified and will be</Label>
@@ -55,17 +55,16 @@
             <Label>with you shortly</Label>
         </Viewbox>
 
-        <Button  Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource BtnStyle}" >
+        <Button  Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource BtnStyle}" Click="Button_Click" >
             <Viewbox Stretch="Uniform">
 
                 <Label>OK</Label>
             </Viewbox>
         </Button>
 
-        <Label Grid.Column="1" Margin="165,29,35,16" Grid.RowSpan="2" Grid.Row="6">[Department]</Label>
-
-        <Image Source="\Assets\PersonImage.PNG" Grid.RowSpan="4" Grid.Row="4" Grid.Column="1"/>
-        <Rectangle Grid.Row="4" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="2" Stroke="Black" />
+        <Image Source="/Assets/hydacLogo.png"/>
+        <Image x:Name="empImage" HorizontalAlignment="Left" Source="/Assets/jensHau.jpg" Grid.RowSpan="4" Grid.Row="4" Grid.Column="1"/>
+        <Rectangle Panel.ZIndex="1" Grid.Row="4" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="2" Stroke="Black" />
         <Button x:Name="backButton" Style="{StaticResource NumPadBtn}" Grid.Column="0" Grid.Row="12" Click="BackButton_Click">
             <Viewbox>
                 <Image Source="Assets\backButtonIcon.png"/>

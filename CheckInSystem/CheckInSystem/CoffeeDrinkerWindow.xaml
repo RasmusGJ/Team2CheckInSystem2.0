@@ -38,10 +38,15 @@
         <Viewbox Stretch="Uniform" Grid.Row="7" Grid.Column="1">
             <Label>informationon your phone.</Label>
         </Viewbox>
+        <Viewbox Grid.Column="1" Grid.Row="3" Grid.RowSpan="3">
+            <Image Source="/Assets/bellIcon.png"/>
+        </Viewbox>
         <Viewbox Stretch="Uniform" Grid.Row="8" Grid.Column="1">
             <Label FontWeight="Bold">Please read it</Label>
         </Viewbox>
-        <Image Source="\Assets\Happy2.PNG" Grid.RowSpan="3" Grid.Row="3" Grid.Column="1"/>
+        <Viewbox>
+            <Image Source="Assets\hydacLogo.png"/>
+        </Viewbox>
         <Button x:Name="backButton" Style="{StaticResource NumPadBtn}" Grid.Column="0" Grid.Row="9" Click="backButton_Click" >
             <Viewbox>
                 <Image Source="Assets\backButtonIcon.png"/>

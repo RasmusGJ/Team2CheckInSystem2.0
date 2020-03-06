@@ -23,12 +23,19 @@ namespace CheckInSystem
         public MeetingTimeGuestWindow()
         {
             InitializeComponent();
-            WindowState = WindowState.Maximized;            
+            WindowState = WindowState.Maximized;
+            
+        
         }
         public void GetController(Controller newController)
         {
             controller = newController;
             welcomeLabel.Content = "Welcome " + controller.CurrentPersonName;
+            timeLabel.Content = "At " + controller.appointmentRepo.currentAppointment.FromTime.ToString("HH:mm");
+            controller.appointmentRepo.GetBookerInfo();
+            nameLabel.Content = controller.appointmentRepo.currentAppointment.Booker.Name;
+            roleLabel.Content = controller.appointmentRepo.currentAppointment.Booker.Role;
+            departmentLabel.Content = controller.appointmentRepo.currentAppointment.Booker.Department;
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)

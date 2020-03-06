@@ -19,8 +19,10 @@
     <None Remove="Assets\GuestIcon.png" />
     <None Remove="Assets\HappySmiley.png" />
     <None Remove="Assets\hydacLogo.png" />
+    <None Remove="Assets\jensHau.jpg" />
     <None Remove="Assets\KeyBoard.png" />
     <None Remove="Assets\NeutralSmiley.png" />
+    <None Remove="Assets\PersonImage.PNG" />
     <None Remove="Assets\SadSmiley.png" />
     <None Remove="Assets\WelcomeIcon.png" />
     <None Remove="Fonts\orkney-bold.ttf" />
@@ -46,11 +48,13 @@
     <Resource Include="Assets\GuestIcon.png" />
     <Resource Include="Assets\HappySmiley.png" />
     <Resource Include="Assets\hydacLogo.png" />
+    <Resource Include="Assets\jensHau.jpg" />
     <Resource Include="Assets\KeyBoard.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Assets\NeutralSmiley.png" />
+    <Resource Include="Assets\PersonImage.PNG" />
     <Resource Include="Assets\SadSmiley.png" />
     <Resource Include="Assets\WelcomeIcon.png" />
     <Content Include="Fonts\orkney-bold.ttf">
