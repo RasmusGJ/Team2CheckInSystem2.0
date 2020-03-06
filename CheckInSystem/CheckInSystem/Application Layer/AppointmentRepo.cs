@@ -19,7 +19,7 @@ namespace CheckInSystem.Application_Layer
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 //Selects all from Employee tabel in database
-                string pinCodeQuery = "SELECT Appointment.Id, Appointment.FromDateTime, Appointment.ToDateTime,Appointment.Employee_Id AS Booker , AppointmentToEmployee.Employee_Id, AppointmentToGuest.Guest_Id FROM Appointment " +
+                string pinCodeQuery = "SELECT Appointment.Id, Appointment.FromDateTime, Appointment.ToDateTime,Appointment.Employee_Id AS Booker, AppointmentToEmployee.Employee_Id, AppointmentToGuest.Guest_Id FROM Appointment " +
                                         "LEFT JOIN AppointmentToEmployee ON Appointment.Id = AppointmentToEmployee.Appointment_Id " +
                                         "INNER JOIN AppointmentToGuest ON Appointment.Id = AppointmentToGuest.Appointment_Id " +
                                         "WHERE FromDateTime >= '" + DateTime.Now.Date.ToString("yyyy-dd-MM") + "'; ";

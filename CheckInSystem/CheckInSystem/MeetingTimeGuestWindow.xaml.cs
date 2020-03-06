@@ -21,6 +21,7 @@ namespace CheckInSystem
         public MeetingTimeGuestWindow()
         {
             InitializeComponent();
+            WindowState = WindowState.Maximized;
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
