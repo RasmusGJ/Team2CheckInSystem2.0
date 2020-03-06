@@ -23,6 +23,7 @@ namespace CheckInSystem
         public MeetingTimeGuestWindow()
         {
             InitializeComponent();
+            WindowState = WindowState.Maximized;
         }
         public void GetController(Controller newController)
         {
