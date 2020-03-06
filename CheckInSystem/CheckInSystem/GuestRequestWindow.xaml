@@ -58,6 +58,13 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
+                    <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Path=Email}"  Width="500">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=Email}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                     <GridView.ColumnHeaderContainerStyle>
                         <Style TargetType="GridViewColumnHeader">
                             <Setter Property="Height"  Value="50"/>
@@ -103,5 +110,7 @@
                 <Image Source="Assets\backButtonIcon.png"/>
             </Viewbox>
         </Button>
+        <Label x:Name="emailGet" Visibility="Hidden" Content="{Binding ElementName=listView, Path=SelectedItem.Email}"></Label>  
     </Grid>
+
 </Window>
