@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using CheckInSystem.Application_Layer;
 
 namespace CheckInSystem
 {
@@ -18,11 +19,15 @@ namespace CheckInSystem
     /// </summary>
     public partial class MeetingTimeGuestWindow : Window
     {
+        public Controller controller;
         public MeetingTimeGuestWindow()
         {
             InitializeComponent();
         }
-
+        public void GetController(Controller newController)
+        {
+            controller = newController;
+        }
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             AnnounceArrivalWindow announceArrivalWindow = new AnnounceArrivalWindow();
