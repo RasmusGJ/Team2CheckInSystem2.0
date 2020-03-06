@@ -8,7 +8,7 @@ namespace CheckInSystem.Domain_Layer
     {
         public int Id;
         public Employee Booker;
-        public List<Employee> Employees;
-        public List<Guest> Guests;
+        public List<Employee> Employees = new List<Employee>();
+        public List<Guest> Guests = new List<Guest>();
     }
 }

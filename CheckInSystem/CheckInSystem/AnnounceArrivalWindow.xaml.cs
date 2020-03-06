@@ -87,7 +87,7 @@ namespace CheckInSystem
                 {
                     MeetingTimeGuestWindow meetingGuestWindow = new MeetingTimeGuestWindow();
                     //IMPLEMENT:
-                    //meetingGuestWindow.GetController(controller);
+                    meetingGuestWindow.GetController(controller);
                     meetingGuestWindow.Show();
                     Thread.Sleep(10);
                     this.Close();
@@ -95,7 +95,6 @@ namespace CheckInSystem
                 else
                 {
                     NoReservationWindow noReservationWindow = new NoReservationWindow();
-                    controller.CurrentPersonName = nameBox.Text;
                     noReservationWindow.GetController(controller);
                     noReservationWindow.Show();
                     Thread.Sleep(10);
