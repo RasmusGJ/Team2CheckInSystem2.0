@@ -28,6 +28,7 @@ namespace CheckInSystem
         public void GetController(Controller newController)
         {
             controller = newController;
+            welcomeLabel.Content = "Welcome " + controller.CurrentPersonName;
         }
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {

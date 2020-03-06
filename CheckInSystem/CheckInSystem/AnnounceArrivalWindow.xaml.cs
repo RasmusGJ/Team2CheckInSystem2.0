@@ -86,6 +86,7 @@ namespace CheckInSystem
                 if (appointmentRepo.CheckIfAppointment(parsedId) == true)
                 {
                     MeetingTimeGuestWindow meetingGuestWindow = new MeetingTimeGuestWindow();
+                    controller.CurrentPersonName = nameBox.Text;
                     //IMPLEMENT:
                     meetingGuestWindow.GetController(controller);
                     meetingGuestWindow.Show();

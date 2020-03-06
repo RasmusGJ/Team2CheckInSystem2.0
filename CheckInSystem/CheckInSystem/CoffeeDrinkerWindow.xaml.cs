@@ -33,6 +33,7 @@ namespace CheckInSystem
         private void backButton_Click(object sender, RoutedEventArgs e)
         {
             NoReservationWindow noReservationWindow = new NoReservationWindow();
+            noReservationWindow.GetController(controller);
             noReservationWindow.Show();
             Thread.Sleep(10);
             this.Close();
