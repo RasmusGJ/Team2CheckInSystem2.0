@@ -55,7 +55,7 @@
             <Label>with you shortly</Label>
         </Viewbox>
 
-        <Button  Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource BtnStyle}" >
+        <Button  Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource BtnStyle}" Click="Button_Click" >
             <Viewbox Stretch="Uniform">
 
                 <Label>OK</Label>
