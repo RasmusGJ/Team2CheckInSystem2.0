@@ -48,8 +48,8 @@ namespace CheckInSystem
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
+            MainWindow mainwindow = new MainWindow();
+            mainwindow.Show();
             Thread.Sleep(10);
             this.Close();
         }

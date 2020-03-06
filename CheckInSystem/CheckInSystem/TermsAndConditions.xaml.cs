@@ -24,7 +24,6 @@ namespace CheckInSystem
 
         private void CloseTermsAndConditions_Click(object sender, RoutedEventArgs e)
         {
-            AnnounceArrivalWindow announceArrivalWindow = new AnnounceArrivalWindow();
             this.Close();
         }
     }
