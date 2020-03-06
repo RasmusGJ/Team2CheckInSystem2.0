@@ -10,7 +10,7 @@ namespace CheckInSystem.Application_Layer
 {
     public class AppointmentRepo
     {
-        List<Appointment> appointments = new List<Appointment>();
+        public List<Appointment> appointments = new List<Appointment>();
 
         public AppointmentRepo()
         {            
