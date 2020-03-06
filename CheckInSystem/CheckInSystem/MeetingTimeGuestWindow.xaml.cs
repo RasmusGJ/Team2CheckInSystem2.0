@@ -23,12 +23,13 @@ namespace CheckInSystem
         public MeetingTimeGuestWindow()
         {
             InitializeComponent();
-            WindowState = WindowState.Maximized;
+            WindowState = WindowState.Maximized;            
         }
         public void GetController(Controller newController)
         {
             controller = newController;
         }
+
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             AnnounceArrivalWindow announceArrivalWindow = new AnnounceArrivalWindow();
