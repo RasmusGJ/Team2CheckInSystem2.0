@@ -29,6 +29,7 @@ namespace CheckInSystem
             
             InitializeComponent();
             WindowState = WindowState.Maximized;
+            guestRepo = controller.guestRepo;
             appointmentRepo = controller.appointmentRepo;
             DataContext = guestRepo;
             listView.ItemsSource = guestRepo.guests;

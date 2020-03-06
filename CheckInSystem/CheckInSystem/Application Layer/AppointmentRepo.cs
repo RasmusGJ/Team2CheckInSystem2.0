@@ -13,8 +13,7 @@ namespace CheckInSystem.Application_Layer
         List<Appointment> appointments = new List<Appointment>();
 
         public AppointmentRepo()
-        {
-            
+        {            
             string ConnectionString = "Server=10.56.8.32;Database=A_GRUPEDB02_2019;User Id=A_GRUPE02;Password=A_OPENDB02";
 
             using (SqlConnection conn = new SqlConnection(ConnectionString))
@@ -37,7 +36,6 @@ namespace CheckInSystem.Application_Layer
                         appointment.ToTime = reader.GetDateTime(2);
                         appointment.Guests.Add(new Guest() { Id = reader.GetInt32(5) });
 
-
                         appointments.Add(appointment);
                     }
                 }
@@ -47,10 +45,13 @@ namespace CheckInSystem.Application_Layer
         {
             foreach(Appointment ap in appointments)
             {
-                if (ap.Id == id)
-                {                    
-                    return true;
-                }
+                foreach (Guest g in ap.Guests)
+                {
+                    if (g.Id == id)
+                    {
+                        return true;
+                    }
+                }               
             }
             return false;
         }
