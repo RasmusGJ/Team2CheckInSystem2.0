@@ -80,6 +80,7 @@ namespace CheckInSystem
                 CheckIn checkIn = new CheckIn() { person = guestRepo.SelectedGuest };
                 controller.CheckInRepo.CheckIn(checkIn);
 
+                controller.CurrentPersonName = nameBox.Text;
                 NoReservationWindow noReservationWindow = new NoReservationWindow();
                 noReservationWindow.GetController(controller);
                 noReservationWindow.Show();

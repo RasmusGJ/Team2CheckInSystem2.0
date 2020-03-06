@@ -30,7 +30,7 @@
             <Label Name="welcomeLabel" Content="Good to have you here"></Label>
         </Viewbox>
         <Viewbox Stretch="Uniform" Grid.Row="2" Grid.Column="1">
-            <Label Content="Insert name"></Label>
+            <Label x:Name="guestName" Content="Insert name"></Label>
         </Viewbox>
         <Viewbox Stretch="Uniform" Grid.Row="6" Grid.Column="1">
             <Label>You have received fire safety</Label>
