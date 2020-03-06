@@ -46,14 +46,10 @@ namespace CheckInSystem
         private void GoToCoffeeDrinkerWindow(object sender, RoutedEventArgs e)
         {
             CoffeeDrinkerWindow coffeeDrinkerWindow = new CoffeeDrinkerWindow();
+            coffeeDrinkerWindow.GetController(controller);
             coffeeDrinkerWindow.Show();
             Thread.Sleep(10);
             this.Close();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

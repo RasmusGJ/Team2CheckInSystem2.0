@@ -95,6 +95,7 @@ namespace CheckInSystem
                 else
                 {
                     NoReservationWindow noReservationWindow = new NoReservationWindow();
+                    controller.CurrentPersonName = nameBox.Text;
                     noReservationWindow.GetController(controller);
                     noReservationWindow.Show();
                     Thread.Sleep(10);

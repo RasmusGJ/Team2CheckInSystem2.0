@@ -47,8 +47,7 @@
             <Label Content="Speak with personal?" Foreground="#191919"/>
         </Viewbox>
 
-        <Button  Opacity="0" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="6" Click="GoToCoffeeDrinkerWindow">
-        </Button>
+        <Button  Opacity="0" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="6" Click="GoToCoffeeDrinkerWindow"></Button>
 
         <Image Panel.ZIndex="-1" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Width="700" Source ="Assets\coffeeIcon.png"></Image>
 

@@ -67,7 +67,7 @@ namespace CheckInSystem
 
         private void Click_Ok(object sender, RoutedEventArgs e)
         {
-            controller.SendMail("Mail?");
+            // controller.SendMail(emailGet.Content.ToString());
             controller.CurrentPersonName = nameFilter.Text;
             NotificationSentWindow notificationSent = new NotificationSentWindow();
             notificationSent.GetController(controller);
