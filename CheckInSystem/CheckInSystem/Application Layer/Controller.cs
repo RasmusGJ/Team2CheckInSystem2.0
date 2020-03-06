@@ -16,6 +16,7 @@ namespace CheckInSystem.Application_Layer
         public CheckInRepo CheckInRepo = new CheckInRepo();
         public EmployeeRepo employeesRepo = new EmployeeRepo();
         public GuestRepo guestRepo = new GuestRepo();
+        public AppointmentRepo appointmentRepo = new AppointmentRepo();
         public Person CurrentPerson;
         
         public bool VerifyPin(string pinCode)

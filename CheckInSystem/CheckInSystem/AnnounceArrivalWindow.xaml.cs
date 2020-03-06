@@ -23,12 +23,13 @@ namespace CheckInSystem
     {
         Controller controller = new Controller();
         GuestRepo guestRepo;
+        AppointmentRepo appointmentRepo;
         public AnnounceArrivalWindow()
         {
             
             InitializeComponent();
             WindowState = WindowState.Maximized;
-            guestRepo = controller.guestRepo; 
+            appointmentRepo = controller.appointmentRepo;
             DataContext = guestRepo;
             listView.ItemsSource = guestRepo.guests;
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(listView.ItemsSource);
@@ -80,12 +81,24 @@ namespace CheckInSystem
                 CheckIn checkIn = new CheckIn() { person = guestRepo.SelectedGuest };
                 controller.CheckInRepo.CheckIn(checkIn);
 
-                controller.CurrentPersonName = nameBox.Text;
-                NoReservationWindow noReservationWindow = new NoReservationWindow();
-                noReservationWindow.GetController(controller);
-                noReservationWindow.Show();
-                Thread.Sleep(10);
-                this.Close();
+                int parsedId = Int32.Parse(idBox.Text);
+                if (appointmentRepo.CheckIfAppointment(parsedId) == true)
+                {
+                    MeetingTimeGuestWindow meetingGuestWindow = new MeetingTimeGuestWindow();
+                    //IMPLEMENT:
+                    //meetingGuestWindow.GetController(controller);
+                    meetingGuestWindow.Show();
+                    Thread.Sleep(10);
+                    this.Close();
+                }
+                else
+                {
+                    NoReservationWindow noReservationWindow = new NoReservationWindow();
+                    noReservationWindow.GetController(controller);
+                    noReservationWindow.Show();
+                    Thread.Sleep(10);
+                    this.Close();
+                }                
             }
         }
 

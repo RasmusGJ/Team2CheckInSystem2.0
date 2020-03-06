@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CheckInSystem.Domain_Layer;
 using System.Threading;
+using CheckInSystem.Application_Layer;
 
 namespace CheckInSystem
 {
@@ -27,6 +28,9 @@ namespace CheckInSystem
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;
+            AppointmentRepo test = new AppointmentRepo();
+            
+            
         }
 
         private void GoToPinCodeWindow(object sender, RoutedEventArgs e)
