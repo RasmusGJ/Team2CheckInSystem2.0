@@ -23,17 +23,26 @@ namespace CheckInSystem
         public MeetingTimeGuestWindow()
         {
             InitializeComponent();
-            WindowState = WindowState.Maximized;
+            WindowState = WindowState.Maximized;            
         }
         public void GetController(Controller newController)
         {
             controller = newController;
             welcomeLabel.Content = "Welcome " + controller.CurrentPersonName;
         }
+
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             AnnounceArrivalWindow announceArrivalWindow = new AnnounceArrivalWindow();
             announceArrivalWindow.Show();
+            Thread.Sleep(10);
+            this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             Thread.Sleep(10);
             this.Close();
         }
