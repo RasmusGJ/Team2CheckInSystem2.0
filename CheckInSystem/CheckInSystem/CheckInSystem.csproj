@@ -17,7 +17,7 @@
     <None Remove="Assets\coffeeIcon.png" />
     <None Remove="Assets\EmployeeIcon.png" />
     <None Remove="Assets\GuestIcon.png" />
-    <None Remove="Assets\HappySmiley.png" />
+    <None Remove="Assets\HappySmileyHighlighted.png" />
     <None Remove="Assets\hydacLogo.png" />
     <None Remove="Assets\jensHau.jpg" />
     <None Remove="Assets\KeyBoard.png" />
@@ -47,6 +47,7 @@
     <Resource Include="Assets\EmployeeIcon.png" />
     <Resource Include="Assets\GuestIcon.png" />
     <Resource Include="Assets\HappySmiley.png" />
+    <Resource Include="Assets\HappySmileyHighlighted.png" />
     <Resource Include="Assets\hydacLogo.png" />
     <Resource Include="Assets\jensHau.jpg" />
     <Resource Include="Assets\KeyBoard.png" />
@@ -63,6 +64,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Assets\Employees\" />
+    <Folder Include="Assets\Icons\" />
+    <Folder Include="Assets\Misc\" />
+    <Folder Include="Assets\Logos\" />
+    <Folder Include="Assets\Smileys\" />
     <Folder Include="UI\" />
   </ItemGroup>
 

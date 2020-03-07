@@ -100,5 +100,6 @@ namespace CheckInSystem
             Thread.Sleep(10);
             this.Close();
         }
+
     }
 }

@@ -87,7 +87,6 @@ namespace CheckInSystem
                 {
                     MeetingTimeGuestWindow meetingGuestWindow = new MeetingTimeGuestWindow();
                     controller.CurrentPersonName = nameBox.Text;
-                    //IMPLEMENT:
                     meetingGuestWindow.GetController(controller);
                     meetingGuestWindow.Show();
                     Thread.Sleep(10);

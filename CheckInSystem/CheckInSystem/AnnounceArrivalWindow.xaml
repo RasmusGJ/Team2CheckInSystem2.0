@@ -84,7 +84,7 @@
             <Button x:Name="okButton"  Grid.Row="11" Grid.Column="3" Grid.ColumnSpan="6" Style="{StaticResource BtnStyle}" Click="Ok_Button" >
                     <Viewbox Stretch="Uniform">
                         <Label>OK</Label>
-                    </Viewbox>
+                    </Viewbox>                
                 </Button>
                 
                 <Viewbox Grid.Row="9" Grid.Column="11" Grid.ColumnSpan="1" HorizontalAlignment="Right" Stretch="Uniform">
@@ -125,6 +125,9 @@
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
                         <Setter Property="Height" Value="50" />
+                        <Setter Property="BorderThickness" Value="2"/>
+                        <Setter Property="BorderBrush" Value="#E12728"/>
+
                     </Style>
                 </ListView.ItemContainerStyle>
             </ListView>

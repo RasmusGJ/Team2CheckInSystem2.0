@@ -64,9 +64,11 @@
             </Label>
         </Viewbox>
 
-        <Button Grid.Column="5" Grid.Row="6"                
+        <Button
+                Grid.Column="5" Grid.Row="6"                
                 Name="happyLabel" 
-                BorderBrush="Transparent" Click="HappySelect">
+                BorderBrush="Transparent" 
+                Click="HappySelect">
             <Button.Background>
                 <ImageBrush Stretch="Uniform" ImageSource="Assets\HappySmiley.png"></ImageBrush>
             </Button.Background>
