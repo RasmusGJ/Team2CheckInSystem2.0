@@ -34,6 +34,10 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
+        <Viewbox Stretch="Uniform"  HorizontalAlignment="Left" Grid.ColumnSpan="2">
+            <Image Source="Assets/hydacLogo.png"/>
+        </Viewbox>
+
         <ListView x:Name="listView" ItemsSource="{Binding employees, UpdateSourceTrigger=Explicit}" SelectedItem="{Binding Path=SelectedEmp, UpdateSourceTrigger=Explicit}" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="5" Grid.RowSpan="4">
             <ListView.View>
                 <GridView>

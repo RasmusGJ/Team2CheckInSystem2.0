@@ -42,6 +42,7 @@ namespace CheckInSystem
         private void BackButton_Click(object sender, RoutedEventArgs e)
         { 
             GuestRequestWindow guestRequestWindow = new GuestRequestWindow();
+            guestRequestWindow.GetController(controller);
             guestRequestWindow.Show();
             Thread.Sleep(10);
             this.Close();
