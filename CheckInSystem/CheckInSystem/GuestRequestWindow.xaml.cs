@@ -88,7 +88,8 @@ namespace CheckInSystem
         }
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
-
+            nameFilter.Clear();
+            departmentFilter.Clear();
         }
     }
 }

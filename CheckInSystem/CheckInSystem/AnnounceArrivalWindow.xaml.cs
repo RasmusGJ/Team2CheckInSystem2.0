@@ -120,7 +120,10 @@ namespace CheckInSystem
         }
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
-            
+            nameBox.Clear();
+            compBox.Clear();
+            phoneBox.Clear();
+            emailBox.Clear();
         }
 
     }
