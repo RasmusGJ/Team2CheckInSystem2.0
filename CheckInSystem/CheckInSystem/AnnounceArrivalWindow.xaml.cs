@@ -81,8 +81,8 @@ namespace CheckInSystem
 
                 CheckIn checkIn = new CheckIn() { person = guestRepo.SelectedGuest };
                 controller.CheckInRepo.CheckIn(checkIn);
-
-                int parsedId = Int32.Parse(idBox.Text);
+                int parsedId = 0;
+                bool test = Int32.TryParse(idBox.Text, out parsedId);
                 if (appointmentRepo.CheckIfAppointment(parsedId) == true)
                 {
                     MeetingTimeGuestWindow meetingGuestWindow = new MeetingTimeGuestWindow();
