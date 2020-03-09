@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using CheckInSystem.Application_Layer;
 using CheckInSystem.Domain_Layer;
+using System.Diagnostics;
 
 namespace CheckInSystem
 {
@@ -75,6 +76,19 @@ namespace CheckInSystem
             notificationSent.Show();
             Thread.Sleep(10);
             this.Close();
+        }
+        private void KeyBoard_Click(object sender, RoutedEventArgs e)
+        {
+            Process process = new Process();
+            process.StartInfo.UseShellExecute = true;
+            process.StartInfo.WorkingDirectory = "c:\\";
+            process.StartInfo.FileName = "c:\\WINDOWS\\system32\\osk.exe";
+            process.StartInfo.Verb = "runas";
+            process.Start();
+        }
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

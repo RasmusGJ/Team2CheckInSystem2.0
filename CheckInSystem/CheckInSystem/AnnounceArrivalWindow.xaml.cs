@@ -118,6 +118,11 @@ namespace CheckInSystem
             process.StartInfo.Verb = "runas";
             process.Start();
         }
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
     }
 }
 

@@ -114,7 +114,17 @@
                 <Image Source="Assets\backButtonIcon.png"/>
             </Viewbox>
         </Button>
-        <Label x:Name="emailGet" Visibility="Hidden" Content="{Binding ElementName=listView, Path=SelectedItem.Email}"></Label>  
+        <Label x:Name="emailGet" Visibility="Hidden" Content="{Binding ElementName=listView, Path=SelectedItem.Email}"></Label>
+        <Button x:Name="keyBoard" Style="{StaticResource NumPadBtn}" Grid.Column="5" Grid.Row="12" Click="KeyBoard_Click">
+            <Viewbox>
+                <Image Source="Assets\KeyBoard.png"/>
+            </Viewbox>
+        </Button>
+        <Button x:Name="clearButton" Style="{StaticResource BtnStyle}" Grid.Column="5" Grid.Row="5" Click="Clear_Click">
+            <Viewbox>
+                <Label Content="Clear All"/>
+            </Viewbox>
+        </Button>
     </Grid>
 
 </Window>
