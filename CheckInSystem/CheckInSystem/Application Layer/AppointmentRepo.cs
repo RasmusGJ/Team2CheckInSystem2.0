@@ -51,7 +51,7 @@ namespace CheckInSystem.Application_Layer
                 {
                     if (g.Id == id)
                     {
-                        if(ap.FromTime.Date == DateTime.Now)
+                        if(ap.FromTime.Date <= DateTime.Now)
                         {
                             currentAppointment = ap;
                             return true;
