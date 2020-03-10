@@ -71,7 +71,6 @@
     <Folder Include="Assets\Misc\" />
     <Folder Include="Assets\Logos\" />
     <Folder Include="Assets\Smileys\" />
-    <Folder Include="UI\" />
   </ItemGroup>
 
 </Project>
