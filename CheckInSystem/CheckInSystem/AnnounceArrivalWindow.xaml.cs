@@ -36,10 +36,6 @@ namespace CheckInSystem
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(listView.ItemsSource);
             view.Filter = UserFilter;
         }
-        public void GetController(Controller newController)
-        {
-            controller = newController;
-        }
         private bool UserFilter(object item)
         {
             if (String.IsNullOrEmpty(nameBox.Text) && String.IsNullOrEmpty(compBox.Text))
@@ -85,7 +81,7 @@ namespace CheckInSystem
                 bool test = Int32.TryParse(idBox.Text, out parsedId);
                 if (appointmentRepo.CheckIfAppointment(parsedId) == true)
                 {
-                    MeetingTimeGuestWindow meetingGuestWindow = new MeetingTimeGuestWindow();
+                    GuestMeetingWindow meetingGuestWindow = new GuestMeetingWindow();
                     controller.CurrentPersonName = nameBox.Text;
                     meetingGuestWindow.GetController(controller);
                     meetingGuestWindow.Show();

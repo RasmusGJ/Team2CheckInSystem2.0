@@ -29,10 +29,6 @@ namespace CheckInSystem
         {
             controller = newController;
         }
-        public void GetPerson()
-        {
-
-        }
 
         private void GoToGuestRequestWindow(object sender, RoutedEventArgs e)
         {

@@ -17,10 +17,10 @@ namespace CheckInSystem
     /// <summary>
     /// Interaction logic for MeetingTimeGuestWindow.xaml
     /// </summary>
-    public partial class MeetingTimeGuestWindow : Window
+    public partial class GuestMeetingWindow : Window
     {
         public Controller controller;
-        public MeetingTimeGuestWindow()
+        public GuestMeetingWindow()
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;
