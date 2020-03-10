@@ -17,10 +17,10 @@ namespace CheckInSystem
     /// <summary>
     /// Interaction logic for NoReservationWindow.xaml
     /// </summary>
-    public partial class NoReservationWindow : Window
+    public partial class GuestNoMeetingWindow : Window
     {
         Controller controller;
-        public NoReservationWindow()
+        public GuestNoMeetingWindow()
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;

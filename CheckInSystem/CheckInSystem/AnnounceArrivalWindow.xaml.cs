@@ -90,7 +90,7 @@ namespace CheckInSystem
                 }
                 else
                 {
-                    NoReservationWindow noReservationWindow = new NoReservationWindow();
+                    GuestNoMeetingWindow noReservationWindow = new GuestNoMeetingWindow();
                     controller.CurrentPersonName = nameBox.Text;
                     noReservationWindow.GetController(controller);
                     noReservationWindow.Show();

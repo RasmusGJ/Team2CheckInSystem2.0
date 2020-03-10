@@ -32,7 +32,7 @@ namespace CheckInSystem
         }
         private void backButton_Click(object sender, RoutedEventArgs e)
         {
-            NoReservationWindow noReservationWindow = new NoReservationWindow();
+            GuestNoMeetingWindow noReservationWindow = new GuestNoMeetingWindow();
             noReservationWindow.GetController(controller);
             noReservationWindow.Show();
             Thread.Sleep(10);
