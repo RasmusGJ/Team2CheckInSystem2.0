@@ -10,8 +10,9 @@ namespace CheckInSystem.Application_Layer
 {
     public class CheckInRepo
     {
-        List<CheckIn> checkIns = new List<CheckIn>();
-        string ConnectionString = "Server=10.56.8.32;Database=A_GRUPEDB02_2019;User Id=A_GRUPE02;Password=A_OPENDB02";
+        List<CheckIn> checkIns = new List<CheckIn>(); //List for containing checkIns
+
+        string ConnectionString = "Server=10.56.8.32;Database=A_GRUPEDB02_2019;User Id=A_GRUPE02;Password=A_OPENDB02"; //Connection strings for sql queries
 
         public CheckInRepo()
         {
