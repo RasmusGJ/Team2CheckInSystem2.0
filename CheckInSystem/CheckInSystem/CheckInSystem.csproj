@@ -26,6 +26,7 @@
     <None Remove="Assets\SadSmiley.png" />
     <None Remove="Assets\WelcomeIcon.png" />
     <None Remove="Fonts\orkney-bold.ttf" />
+    <None Remove="Fonts\orkney-regular.ttf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -58,6 +59,7 @@
     <Resource Include="Assets\PersonImage.PNG" />
     <Resource Include="Assets\SadSmiley.png" />
     <Resource Include="Assets\WelcomeIcon.png" />
+    <Resource Include="Fonts\orkney-regular.ttf" />
     <Content Include="Fonts\orkney-bold.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

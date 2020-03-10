@@ -24,6 +24,7 @@ namespace CheckInSystem.Application_Layer
                                         "LEFT JOIN AppointmentToEmployee ON Appointment.Id = AppointmentToEmployee.Appointment_Id " +
                                         "INNER JOIN AppointmentToGuest ON Appointment.Id = AppointmentToGuest.Appointment_Id " +
                                         "WHERE FromDateTime >= '" + DateTime.Now.Date.ToString("yyyy-dd-MM") + "' OR ToDateTime >= '" + DateTime.Now.Date.ToString("yyyy-dd-MM") + "';";
+
                 SqlCommand command = new SqlCommand(pinCodeQuery, conn);
                 conn.Open();
                 using (SqlDataReader reader = command.ExecuteReader())
@@ -50,8 +51,12 @@ namespace CheckInSystem.Application_Layer
                 {
                     if (g.Id == id)
                     {
-                        currentAppointment = ap;
-                        return true;
+                        if(ap.FromTime.Date == DateTime.Now)
+                        {
+                            currentAppointment = ap;
+                            return true;
+
+                        }
                     }
                 }               
             }
