@@ -73,7 +73,7 @@ namespace CheckInSystem
         {
             if (string.IsNullOrEmpty(nameBox.Text) || string.IsNullOrEmpty(compBox.Text) || string.IsNullOrEmpty(phoneBox.Text) || string.IsNullOrEmpty(emailBox.Text) || termsBox.IsChecked  == false)
             {
-                MessageBox.Show("Please fill out the required fields");
+                MessageBox.Show("Please fill out the 4 fields. \nPlease accept terms and conditions");
             }
             else
             {
