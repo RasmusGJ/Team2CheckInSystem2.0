@@ -32,6 +32,7 @@ namespace CheckInSystem
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(listView.ItemsSource);
             view.Filter = UserFilter;
         }
+
         public void GetController(Controller newController)
         {
             controller = newController;
@@ -69,14 +70,22 @@ namespace CheckInSystem
 
         private void Click_Ok(object sender, RoutedEventArgs e)
         {
-            // controller.SendMail(emailGet.Content.ToString());
-            controller.CurrentPersonName = nameFilter.Text;
-            NotificationSentWindow notificationSent = new NotificationSentWindow();
-            notificationSent.GetController(controller);
-            notificationSent.Show();
-            Thread.Sleep(10);
-            this.Close();
+            if (string.IsNullOrEmpty(nameFilter.Text) || string.IsNullOrEmpty(departmentFilter.Text))
+            {
+                MessageBox.Show("Please fill out the 2 fields.");
+            }
+            else
+            {
+                // controller.SendMail(emailGet.Content.ToString());
+                controller.CurrentPersonName = nameFilter.Text;
+                NotificationSentWindow notificationSent = new NotificationSentWindow();
+                notificationSent.GetController(controller);
+                notificationSent.Show();
+                Thread.Sleep(10);
+                this.Close();
+            }
         }
+
         private void KeyBoard_Click(object sender, RoutedEventArgs e)
         {
             Process process = new Process();
@@ -86,6 +95,7 @@ namespace CheckInSystem
             process.StartInfo.Verb = "runas";
             process.Start();
         }
+
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
             nameFilter.Clear();
