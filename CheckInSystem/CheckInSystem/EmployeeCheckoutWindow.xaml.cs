@@ -26,14 +26,13 @@ namespace CheckInSystem
             WindowState = WindowState.Maximized;
         }
 
+        // Prepares the GetController method so we uphold the same data throughout the program
         public void GetController(Controller newController)
         {
             controller = newController;
-            //MessageBox.Show(newController.CurrentPerson.Name);
-
             nameText.Text = controller.CurrentPerson.Name;
         }
-
+        // Goes to MainWindow
         private void GoToMainWindow(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();

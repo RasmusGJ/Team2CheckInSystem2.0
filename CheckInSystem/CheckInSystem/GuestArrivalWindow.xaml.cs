@@ -36,6 +36,7 @@ namespace CheckInSystem
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(listView.ItemsSource);
             view.Filter = UserFilter;
         }
+        // Filters the textboxes so the listview matches the information in the textboxes
         private bool UserFilter(object item)
         {
             if (String.IsNullOrEmpty(nameBox.Text) && String.IsNullOrEmpty(compBox.Text))
@@ -52,11 +53,13 @@ namespace CheckInSystem
                     (item as Guest).Company.IndexOf(compBox.Text, StringComparison.OrdinalIgnoreCase) >= 0);
         }
 
+        // Refreshes the list view when there are changes made to their source
         private void txtFilter_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(listView.ItemsSource).Refresh();
         }
 
+        // Goes to MainWindow
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainwindow = new MainWindow();
@@ -64,21 +67,26 @@ namespace CheckInSystem
             Thread.Sleep(10);
             this.Close();
         }
-      
+        
+        // Goes to the next window
         private void Ok_Button(object sender, RoutedEventArgs e)
         {
+            // If the text boxes are not filled, and the terms and conditions are not accepted, a messagebox will appear.
             if (string.IsNullOrEmpty(nameBox.Text) || string.IsNullOrEmpty(compBox.Text) || string.IsNullOrEmpty(phoneBox.Text) || string.IsNullOrEmpty(emailBox.Text) || termsBox.IsChecked  == false)
             {
                 MessageBox.Show("Please fill out the 4 fields. \nPlease accept terms and conditions");
             }
             else
             {
+                // Gets the guest information from the textboxes
                 guestRepo.GuestDB(idBox.Text, nameBox.Text, compBox.Text, emailBox.Text, phoneBox.Text);
 
+                //Assigns a new checkin to the selectedguest
                 CheckIn checkIn = new CheckIn() { person = guestRepo.SelectedGuest };
                 controller.CheckInRepo.CheckIn(checkIn);
                 int parsedId = 0;
                 bool test = Int32.TryParse(idBox.Text, out parsedId);
+                // Checks if the guest has an appointment in the database, and sends them to the relevant window.
                 if (appointmentRepo.CheckIfAppointment(parsedId) == true)
                 {
                     GuestMeetingWindow meetingGuestWindow = new GuestMeetingWindow();
@@ -99,12 +107,13 @@ namespace CheckInSystem
                 }                
             }
         }
-
+        // Gives a hyperlink to the text, so the terms of service window opens, and can be read 
         private void Hyperlink_Click(object sender, RoutedEventArgs e)
         {
             TermsAndConditions termsAndConditions = new TermsAndConditions();
             termsAndConditions.Show();
         }
+        // Opens up an on-screen keyboard for inputing text into the text boxes.
         private void KeyBoard_Click(object sender, RoutedEventArgs e)
         {
             Process process = new Process();
@@ -114,6 +123,7 @@ namespace CheckInSystem
             process.StartInfo.Verb = "runas";
             process.Start();
         }
+        // A Clear option that makes it easier to clear the textboxes.
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
             nameBox.Clear();

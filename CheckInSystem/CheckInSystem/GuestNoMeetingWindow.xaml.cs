@@ -25,11 +25,12 @@ namespace CheckInSystem
             InitializeComponent();
             WindowState = WindowState.Maximized;
         }
+        // Gets the information from the previous window, so the same data is uphold for the next 
         public void GetController(Controller newController)
         {
             controller = newController;
         }
-
+        // Goes to GuestRequestWindow
         private void GoToGuestRequestWindow(object sender, RoutedEventArgs e)
         {
             GuestRequestPersonalWindow guestRequestWindow = new GuestRequestPersonalWindow();
@@ -38,12 +39,12 @@ namespace CheckInSystem
             Thread.Sleep(10);
             this.Close();
         }
-
+        // Goes to GuestNoPurposeWindow
         private void GoToCoffeeDrinkerWindow(object sender, RoutedEventArgs e)
         {
-            GuestNoPurposeWindow coffeeDrinkerWindow = new GuestNoPurposeWindow();
-            coffeeDrinkerWindow.GetController(controller);
-            coffeeDrinkerWindow.Show();
+            GuestNoPurposeWindow GuestNoPurposeWindow = new GuestNoPurposeWindow();
+            GuestNoPurposeWindow.GetController(controller);
+            GuestNoPurposeWindow.Show();
             Thread.Sleep(10);
             this.Close();
         }
