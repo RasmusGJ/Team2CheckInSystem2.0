@@ -51,6 +51,19 @@ namespace CheckInSystem.Application_Layer
             CheckInRepo.CheckIn(newCheckIn);
         }
 
+        bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public void SendMail(string toEmail)
         {
             try
