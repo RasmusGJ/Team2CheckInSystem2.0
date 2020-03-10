@@ -31,7 +31,7 @@ namespace CheckInSystem
         {
             controller = newController;
             welcomeLabel.Content = "Welcome " + controller.CurrentPersonName;
-            timeLabel.Content = "At " + controller.appointmentRepo.currentAppointment.FromTime.ToString("HH:mm dd-MM");
+            timeLabel.Content = "At " + controller.appointmentRepo.currentAppointment.FromTime.ToString("HH:mm dd-MM-yyyy");
             controller.appointmentRepo.GetBookerInfo();
             nameLabel.Content = controller.appointmentRepo.currentAppointment.Booker.Name;
             roleLabel.Content = controller.appointmentRepo.currentAppointment.Booker.Role;
