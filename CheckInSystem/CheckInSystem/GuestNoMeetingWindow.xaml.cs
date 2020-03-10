@@ -32,7 +32,7 @@ namespace CheckInSystem
 
         private void GoToGuestRequestWindow(object sender, RoutedEventArgs e)
         {
-            GuestRequestWindow guestRequestWindow = new GuestRequestWindow();
+            GuestRequestPersonalWindow guestRequestWindow = new GuestRequestPersonalWindow();
             guestRequestWindow.GetController(controller);
             guestRequestWindow.Show();
             Thread.Sleep(10);
@@ -41,7 +41,7 @@ namespace CheckInSystem
 
         private void GoToCoffeeDrinkerWindow(object sender, RoutedEventArgs e)
         {
-            GuestCoffeeWindow coffeeDrinkerWindow = new GuestCoffeeWindow();
+            GuestNoPurposeWindow coffeeDrinkerWindow = new GuestNoPurposeWindow();
             coffeeDrinkerWindow.GetController(controller);
             coffeeDrinkerWindow.Show();
             Thread.Sleep(10);
