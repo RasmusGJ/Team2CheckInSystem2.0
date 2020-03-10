@@ -17,10 +17,10 @@ namespace CheckInSystem
     /// <summary>
     /// Interaction logic for CoffeeDrinkerWindow.xaml
     /// </summary>C:\Users\jacob\Documents\GitHub\Team2CheckInSystem2.0\CheckInSystem\CheckInSystem\CoffeeDrinkerWindow.xaml.cs
-    public partial class GuestCoffeeWindow : Window
+    public partial class GuestNoPurposeWindow : Window
     {
         Controller controller;
-        public GuestCoffeeWindow()
+        public GuestNoPurposeWindow()
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;

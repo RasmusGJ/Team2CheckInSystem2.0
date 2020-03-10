@@ -19,10 +19,10 @@ namespace CheckInSystem
     /// <summary>
     /// Interaction logic for GuestRequestWindow.xaml
     /// </summary>
-    public partial class GuestRequestWindow : Window
+    public partial class GuestRequestPersonalWindow : Window
     {
         Controller controller;
-        public GuestRequestWindow()
+        public GuestRequestPersonalWindow()
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;
@@ -78,7 +78,7 @@ namespace CheckInSystem
             {
                 // controller.SendMail(emailGet.Content.ToString());
                 controller.CurrentPersonName = nameFilter.Text;
-                GuestNotificationWindow notificationSent = new GuestNotificationWindow();
+                GuestNotificationSentWindow notificationSent = new GuestNotificationSentWindow();
                 notificationSent.GetController(controller);
                 notificationSent.Show();
                 Thread.Sleep(10);

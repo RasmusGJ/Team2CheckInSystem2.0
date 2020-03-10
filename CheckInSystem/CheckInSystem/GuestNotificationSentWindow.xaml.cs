@@ -16,10 +16,10 @@ namespace CheckInSystem
     /// <summary>
     /// Interaction logic for NotificationSentWindow.xaml
     /// </summary>
-    public partial class GuestNotificationWindow : Window
+    public partial class GuestNotificationSentWindow : Window
     {
         Controller controller;
-        public GuestNotificationWindow()
+        public GuestNotificationSentWindow()
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;
@@ -41,7 +41,7 @@ namespace CheckInSystem
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         { 
-            GuestRequestWindow guestRequestWindow = new GuestRequestWindow();
+            GuestRequestPersonalWindow guestRequestWindow = new GuestRequestPersonalWindow();
             guestRequestWindow.GetController(controller);
             guestRequestWindow.Show();
             Thread.Sleep(10);
