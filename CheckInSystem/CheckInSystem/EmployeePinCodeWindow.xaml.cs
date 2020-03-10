@@ -18,10 +18,10 @@ namespace CheckInSystem
     /// <summary>
     /// Interaction logic for PinCodeWindow.xaml
     /// </summary>
-    public partial class PinCodeWindow : Window
+    public partial class EmployeePinCodeWindow : Window
     {
         public Controller controller = new Controller();
-        public PinCodeWindow()
+        public EmployeePinCodeWindow()
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;
@@ -38,10 +38,9 @@ namespace CheckInSystem
             {
                 TextBoxNumPad.Text += (sender as Button).Content;
             }
-
             UpdateCircles();
-
         }        
+
         public void UpdateCircles()
         {
             switch (TextBoxNumPad.Text.Length)
@@ -108,7 +107,7 @@ namespace CheckInSystem
 
             if (controller.VerifyPin(pinCode) == true)
             {
-                MoodWindow moodWindow = new MoodWindow();
+                EmployeeMoodWindow moodWindow = new EmployeeMoodWindow();
                 moodWindow.GetController(controller);
                 moodWindow.Show();
                 Thread.Sleep(10);

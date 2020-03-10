@@ -36,7 +36,7 @@ namespace CheckInSystem
         private void GoToPinCodeWindow(object sender, RoutedEventArgs e)
         {
             rectangleRed.Fill = new SolidColorBrush(Color.FromRgb(254,24,24));
-            PinCodeWindow pinWindow = new PinCodeWindow();
+            EmployeePinCodeWindow pinWindow = new EmployeePinCodeWindow();
             pinWindow.Show();
             Thread.Sleep(10);
             this.Close();
@@ -44,7 +44,7 @@ namespace CheckInSystem
 
         private void GoToGuestArrivalWindow(object sender, RoutedEventArgs e)
         {
-            AnnounceArrivalWindow arrivalWindow = new AnnounceArrivalWindow();
+            GuestArrivalWindow arrivalWindow = new GuestArrivalWindow();
             arrivalWindow.Show();
             Thread.Sleep(10);
             this.Close();

@@ -40,7 +40,7 @@ namespace CheckInSystem
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            AnnounceArrivalWindow announceArrivalWindow = new AnnounceArrivalWindow();
+            GuestArrivalWindow announceArrivalWindow = new GuestArrivalWindow();
             announceArrivalWindow.Show();
             Thread.Sleep(10);
             this.Close();

@@ -16,10 +16,10 @@ namespace CheckInSystem
     /// <summary>
     /// Interaction logic for NotificationSentWindow.xaml
     /// </summary>
-    public partial class NotificationSentWindow : Window
+    public partial class GuestNotificationWindow : Window
     {
         Controller controller;
-        public NotificationSentWindow()
+        public GuestNotificationWindow()
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;

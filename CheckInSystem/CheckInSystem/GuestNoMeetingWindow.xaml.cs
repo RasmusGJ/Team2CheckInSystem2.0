@@ -41,7 +41,7 @@ namespace CheckInSystem
 
         private void GoToCoffeeDrinkerWindow(object sender, RoutedEventArgs e)
         {
-            CoffeeDrinkerWindow coffeeDrinkerWindow = new CoffeeDrinkerWindow();
+            GuestCoffeeWindow coffeeDrinkerWindow = new GuestCoffeeWindow();
             coffeeDrinkerWindow.GetController(controller);
             coffeeDrinkerWindow.Show();
             Thread.Sleep(10);

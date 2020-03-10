@@ -1,11 +1,11 @@
-﻿<Window x:Class="CheckInSystem.NotificationSentWindow"
+﻿<Window x:Class="CheckInSystem.GuestCoffeeWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CheckInSystem"
         mc:Ignorable="d"
-        Title="NotificationSentWindow" WindowStyle="None" Height="1620" Width="2160">
+        Title="CoffeeDrinkerWindow" WindowStyle="None" Height="1620" Width="2160">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -20,40 +20,41 @@
             <RowDefinition Height="2*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
 
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Viewbox Stretch="Uniform" Grid.Row="1" Grid.Column="1">
-            <Label Name="welcomeLabel" Content="A notification has been sent to"></Label>
+            <Label Name="welcomeLabel" Content="Good to have you here"></Label>
         </Viewbox>
         <Viewbox Stretch="Uniform" Grid.Row="2" Grid.Column="1">
-            <Label x:Name="employeeName" Content="Insert Name"></Label>
+            <Label x:Name="guestName" Content="Insert name"></Label>
         </Viewbox>
         <Viewbox Stretch="Uniform" Grid.Row="6" Grid.Column="1">
             <Label>You have received fire safety</Label>
         </Viewbox>
         <Viewbox Stretch="Uniform" Grid.Row="7" Grid.Column="1">
-            <Label>information on your phone.</Label>
+            <Label>informationon your phone.</Label>
+        </Viewbox>
+        <Viewbox Grid.Column="1" Grid.Row="3" Grid.RowSpan="3">
+            <Image Source="/Assets/bellIcon.png"/>
         </Viewbox>
         <Viewbox Stretch="Uniform" Grid.Row="8" Grid.Column="1">
             <Label FontWeight="Bold">Please read it</Label>
         </Viewbox>
-        
-        <Image Source="Assets\hydacLogo.png"/>
-
-        <Image Source="Assets\bellIcon.png" Grid.RowSpan="3" Grid.Row="3" Grid.Column="1"/>
-        <Button  Grid.Row="9" Grid.Column="1" Style="{StaticResource BtnStyle}" Click="Button_Click" >
-            <Viewbox Stretch="Uniform">
-
-                <Label>OK</Label>
-            </Viewbox>
-        </Button>
-        <Button x:Name="backButton" Style="{StaticResource NumPadBtn}" Grid.Column="0" Grid.Row="9" Click="BackButton_Click">
+        <Viewbox>
+            <Image Source="Assets\hydacLogo.png"/>
+        </Viewbox>
+        <Button x:Name="backButton" Style="{StaticResource NumPadBtn}" Grid.Column="0" Grid.Row="9" Click="backButton_Click" >
             <Viewbox>
                 <Image Source="Assets\backButtonIcon.png"/>
+            </Viewbox>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="1" Style="{StaticResource BtnStyle}" Click="Button_Click">
+            <Viewbox Stretch="Uniform">
+                <Label>Ok</Label>
             </Viewbox>
         </Button>
     </Grid>

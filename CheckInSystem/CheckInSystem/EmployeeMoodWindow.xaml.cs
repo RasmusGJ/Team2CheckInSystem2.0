@@ -18,11 +18,11 @@ namespace CheckInSystem
     /// <summary>
     /// Interaction logic for MoodWindow.xaml
     /// </summary>
-    public partial class MoodWindow : Window
+    public partial class EmployeeMoodWindow : Window
     {
         Controller controller;
 
-        public MoodWindow()
+        public EmployeeMoodWindow()
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;                  
@@ -94,7 +94,7 @@ namespace CheckInSystem
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            PinCodeWindow pinCodeWindow = new PinCodeWindow();
+            EmployeePinCodeWindow pinCodeWindow = new EmployeePinCodeWindow();
             pinCodeWindow.GetController(controller);
             pinCodeWindow.Show();
             Thread.Sleep(10);

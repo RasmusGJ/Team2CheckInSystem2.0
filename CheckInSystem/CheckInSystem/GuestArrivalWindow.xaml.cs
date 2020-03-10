@@ -19,12 +19,12 @@ namespace CheckInSystem
     /// <summary>
     /// Interaction logic for AnnounceArrivalWindow.xaml
     /// </summary>
-    public partial class AnnounceArrivalWindow : Window
+    public partial class GuestArrivalWindow : Window
     {
         Controller controller = new Controller();
         GuestRepo guestRepo;
         AppointmentRepo appointmentRepo;
-        public AnnounceArrivalWindow()
+        public GuestArrivalWindow()
         {
             
             InitializeComponent();
