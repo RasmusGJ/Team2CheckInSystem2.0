@@ -23,8 +23,7 @@ namespace CheckInSystem.Application_Layer
                 string pinCodeQuery = "SELECT Appointment.Id, Appointment.FromDateTime, Appointment.ToDateTime,Appointment.Employee_Id AS Booker, AppointmentToEmployee.Employee_Id, AppointmentToGuest.Guest_Id FROM Appointment " +
                                         "LEFT JOIN AppointmentToEmployee ON Appointment.Id = AppointmentToEmployee.Appointment_Id " +
                                         "INNER JOIN AppointmentToGuest ON Appointment.Id = AppointmentToGuest.Appointment_Id " +
-                                        "WHERE FromDateTime >= '" + DateTime.Now.Date.ToString("yyyy-dd-MM") + "'; ";
-
+                                        "WHERE FromDateTime >= '" + DateTime.Now.Date.ToString("yyyy-dd-MM") + "' OR ToDateTime >= '" + DateTime.Now.Date.ToString("yyyy-dd-MM") + "';";
                 SqlCommand command = new SqlCommand(pinCodeQuery, conn);
                 conn.Open();
                 using (SqlDataReader reader = command.ExecuteReader())

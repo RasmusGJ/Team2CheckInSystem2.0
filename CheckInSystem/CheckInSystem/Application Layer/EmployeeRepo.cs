@@ -23,7 +23,7 @@ namespace CheckInSystem.Application_Layer
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 //Selects all from Employee tabel in database
-                string pinCodeQuery = "SELECT Employee.Id, Employee.Name, Employee.Email, Employee.MobilePhone, Employee.LandlinePhone, Employee.Initials, Employee.PinCode, Role.Title AS RoleTitle, Department.Title AS DepartmentTitle " +
+                string pinCodeQuery = "SELECT Employee.Id, Employee.Name, Employee.Email, Employee.MobilePhone, Employee.LandlinePhone, Employee.Initials, Employee.PinCode, Role.RoleTranslation AS RoleTitleENG, Department.DepartmentTranslation AS DepartmentTitleENG " +
                     "FROM Employee " +
                     "INNER JOIN Role ON Employee.Role_Id = Role.Id " +
                     "INNER JOIN Department ON Role.Department_Id = Department.Id";
@@ -42,9 +42,9 @@ namespace CheckInSystem.Application_Layer
                         employee.LandlinePhone = reader.GetString("LandlinePhone");
                         employee.PinCode = reader.GetString("PinCode");
                         employee.Email = reader.GetString("Email");
-                        employee.Role = reader.GetString("RoleTitle");
+                        employee.Role = reader.GetString("RoleTitleENG");
                         employee.MobilePhone = reader.GetString("MobilePhone");
-                        employee.Department = reader.GetString("DepartmentTitle");
+                        employee.Department = reader.GetString("DepartmentTitleENG");
                         employee.Id = reader.GetInt32("Id");
                         employees.Add(employee);
                     }
