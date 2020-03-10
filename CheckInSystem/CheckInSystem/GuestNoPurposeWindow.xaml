@@ -39,7 +39,7 @@
             <Label>informationon your phone.</Label>
         </Viewbox>
         <Viewbox Grid.Column="1" Grid.Row="3" Grid.RowSpan="3">
-            <Image Source="/Assets/bellIcon.png"/>
+            <Image Source="/Assets/WelcomeIcon.png"/>
         </Viewbox>
         <Viewbox Stretch="Uniform" Grid.Row="8" Grid.Column="1">
             <Label FontWeight="Bold">Please read it</Label>
