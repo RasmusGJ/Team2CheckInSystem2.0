@@ -34,18 +34,18 @@ namespace CheckInSystem
         private void GoToPinCodeWindow(object sender, RoutedEventArgs e)
         {
             rectangleRed.Fill = new SolidColorBrush(Color.FromRgb(254,24,24));
-            EmployeePinCodeWindow pinWindow = new EmployeePinCodeWindow();
-            pinWindow.GetController(controller);
-            pinWindow.Show();
+            EmployeePinCodeWindow employeePinCodeWindow = new EmployeePinCodeWindow();
+            employeePinCodeWindow.GetController(controller);
+            employeePinCodeWindow.Show();
             Thread.Sleep(10);
             this.Close();
         }
         /// Goes to GuestArrivalWindow
         private void GoToGuestArrivalWindow(object sender, RoutedEventArgs e)
         {
-            GuestArrivalWindow arrivalWindow = new GuestArrivalWindow();
-            arrivalWindow.GetController(controller);
-            arrivalWindow.Show();
+            GuestArrivalWindow guestArrivalWindow = new GuestArrivalWindow();
+            guestArrivalWindow.GetController(controller);
+            guestArrivalWindow.Show();
             Thread.Sleep(10);
             this.Close();
         }

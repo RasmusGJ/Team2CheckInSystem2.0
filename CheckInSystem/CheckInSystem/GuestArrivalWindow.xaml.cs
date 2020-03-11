@@ -13,6 +13,7 @@ using CheckInSystem.Application_Layer;
 using CheckInSystem.Domain_Layer;
 using System.Threading;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace CheckInSystem
 {
@@ -43,7 +44,7 @@ namespace CheckInSystem
         }
 
 
-        // Filters the textboxes so the listview matches the information in the textboxes
+        // Filters the listview so the listview matches the information in the textboxes
         private bool UserFilter(object item)
         {
             if (String.IsNullOrEmpty(nameBox.Text) && String.IsNullOrEmpty(compBox.Text))
@@ -138,6 +139,11 @@ namespace CheckInSystem
             emailBox.Clear();
         }
 
+        private void phoneBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
     }
 }
 

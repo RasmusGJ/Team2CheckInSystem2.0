@@ -28,17 +28,17 @@ namespace CheckInSystem
             WindowState = WindowState.Maximized;                  
             
         }
-
+        // Gets the controller from the previous window, so as to uphold the same data.
         public void GetController(Controller newController)
         {
             controller = new Controller()
             {
                 CurrentPerson = newController.CurrentPerson
             };
-
             HideOrShowCheckOutBtn();          
         }
-
+        // Hides or shows the checkout button based on whether or not the employee is logged in
+        // If the employee is logged in, the button is shown, if not it will be hidden
         public void HideOrShowCheckOutBtn()
         {
             if (controller.CheckInRepo.CheckIfCheckedIn(controller.CurrentPerson as Employee) == true)
@@ -50,56 +50,53 @@ namespace CheckInSystem
             {
                 checkOutButton.Visibility = Visibility.Hidden;
             }
-
-
             nameLabel.Content = controller.CurrentPerson.Name;
         }
-
+        // Assigns the chosen mood to the selected employee logging in
         private void SadSelect(object sender, RoutedEventArgs e)
         {
             controller.AssignMood(Mood.Negative);
             OpenWelcomeWindow();
 
         }
-
+        // Assigns the chosen mood to the selected employee logging in
         private void NeutralSelect(object sender, RoutedEventArgs e)
         {
             controller.AssignMood(Mood.Neutral);
             OpenWelcomeWindow();
 
         }
-
+        // Assigns the chosen mood to the selected employee logging in
         private void HappySelect(object sender, RoutedEventArgs e)
         {
             controller.AssignMood(Mood.Positive);
             OpenWelcomeWindow();
         }
-
+        // Goes to EmployeeWelcomeWindow
         private void OpenWelcomeWindow()
         {
-            EmployeeWelcomeWindow welcomeWindow = new EmployeeWelcomeWindow();
-            welcomeWindow.GetController(controller);
-            welcomeWindow.Show();
+            EmployeeWelcomeWindow employeeWelcomeWindow = new EmployeeWelcomeWindow();
+            employeeWelcomeWindow.GetController(controller);
+            employeeWelcomeWindow.Show();
             Thread.Sleep(10);
             this.Close();
         }
-
-
+        // Checks out the employee from the database, and goes to the EmployeeCheckoutWindow
         private void CheckOutButton(object sender, RoutedEventArgs e)
         {           
             controller.CheckInRepo.CheckOut(controller.CurrentPerson);
-            EmployeeCheckoutWindow checkoutWindow = new EmployeeCheckoutWindow();
-            checkoutWindow.GetController(controller);
-            checkoutWindow.Show();
+            EmployeeCheckoutWindow employeeCheckoutWindow = new EmployeeCheckoutWindow();
+            employeeCheckoutWindow.GetController(controller);
+            employeeCheckoutWindow.Show();
             Thread.Sleep(10);
             this.Close();
         }
-
+        // Returns to the EmployeePinCodeWindow
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            EmployeePinCodeWindow pinCodeWindow = new EmployeePinCodeWindow();
-            pinCodeWindow.GetController(controller);
-            pinCodeWindow.Show();
+            EmployeePinCodeWindow employeePinCodeWindow = new EmployeePinCodeWindow();
+            employeePinCodeWindow.GetController(controller);
+            employeePinCodeWindow.Show();
             Thread.Sleep(10);
             this.Close();
         }

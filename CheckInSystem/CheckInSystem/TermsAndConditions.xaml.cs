@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CheckInSystem;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -9,6 +10,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+
+C:\Users\jacob\Documents\GitHub\Team2CheckInSystem2.0\CheckInSystem\CheckInSystem\TermsAndConditions.xaml.cs
 
 namespace CheckInSystem
 {
