@@ -13,6 +13,7 @@ using CheckInSystem.Application_Layer;
 using CheckInSystem.Domain_Layer;
 using System.Threading;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace CheckInSystem
 {
@@ -138,6 +139,11 @@ namespace CheckInSystem
             emailBox.Clear();
         }
 
+        private void phoneBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
     }
 }
 

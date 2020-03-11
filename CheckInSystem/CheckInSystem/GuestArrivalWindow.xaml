@@ -25,7 +25,8 @@
 
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>                
+                <RowDefinition Height="0.5*"></RowDefinition>
+                <RowDefinition Height="0.5*"></RowDefinition>                
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition Height="0.3*" ></RowDefinition>
@@ -37,43 +38,43 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>                
+                <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Viewbox Stretch="Uniform"  HorizontalAlignment="Left" Grid.ColumnSpan="2">
+            <Viewbox Stretch="Uniform"  HorizontalAlignment="Left" Grid.ColumnSpan="2" Grid.RowSpan="2">
                 <Image Source="Assets/hydacLogo.png"/>
             </Viewbox>
 
-            <Viewbox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Grid.ColumnSpan="2">
+            <Viewbox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Grid.ColumnSpan="2">
                 <Label>Name:</Label>
             </Viewbox>
-            
-            <Viewbox Stretch="Uniform" Grid.Row="1" Grid.Column="7" HorizontalAlignment="Left" Grid.ColumnSpan="2">
+
+            <Viewbox Stretch="Uniform" Grid.Row="2" Grid.Column="7" HorizontalAlignment="Left" Grid.ColumnSpan="2">
                 <Label>Company:</Label>
             </Viewbox>
 
-            <TextBox Text="{Binding ElementName=listView, Path=SelectedItem.Name, Mode=OneWay}" Name="nameBox" TextChanged="txtFilter_TextChanged" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" VerticalContentAlignment="Center" FontSize="25"/>
+            <TextBox Text="{Binding ElementName=listView, Path=SelectedItem.Name, Mode=OneWay}" Name="nameBox" TextChanged="txtFilter_TextChanged" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="5" VerticalContentAlignment="Center" FontSize="25"/>
 
-            <TextBox Text="{Binding ElementName=listView, Path=SelectedItem.Company, Mode=OneWay}" Name="compBox" TextChanged="txtFilter_TextChanged"  Grid.Row="2" Grid.Column="7" Grid.ColumnSpan="5" VerticalContentAlignment="Center" FontSize="25"/>
+            <TextBox Text="{Binding ElementName=listView, Path=SelectedItem.Company, Mode=OneWay}" Name="compBox" TextChanged="txtFilter_TextChanged"  Grid.Row="3" Grid.Column="7" Grid.ColumnSpan="5" VerticalContentAlignment="Center" FontSize="25"/>
 
-            <Viewbox Grid.Row="4" Grid.Column="7" Grid.ColumnSpan="2" HorizontalAlignment="Left">
+            <Viewbox Grid.Row="5" Grid.Column="7" Grid.ColumnSpan="2" HorizontalAlignment="Left">
                 <Label>Phone:</Label>
             </Viewbox>
 
-            <TextBox x:Name="phoneBox" Text="{Binding ElementName=listView, Path=SelectedItem.MobilePhone, Mode=OneWay}" Grid.Row="5" Grid.Column="7" Grid.ColumnSpan="5" VerticalContentAlignment="Center" FontSize="25"/>
-            
+            <TextBox x:Name="phoneBox" PreviewTextInput="phoneBox_PreviewTextInput" Text="{Binding ElementName=listView, Path=SelectedItem.MobilePhone, Mode=OneWay}" Grid.Row="6" Grid.Column="7" Grid.ColumnSpan="5" VerticalContentAlignment="Center" FontSize="25"/>
+
             <TextBox x:Name="idBox" Visibility="Hidden" Text="{Binding ElementName=listView, Path=SelectedItem.Id, Mode=OneWay}" Grid.Row="5" Grid.Column="7" Grid.ColumnSpan="5" VerticalContentAlignment="Center" FontSize="25"/>
 
-            <Viewbox Grid.Row="6" Grid.Column="7" Grid.ColumnSpan="2" HorizontalAlignment="Left">
+            <Viewbox Grid.Row="7" Grid.Column="7" Grid.ColumnSpan="2" HorizontalAlignment="Left">
                 <Label>E-mail:</Label>
             </Viewbox>
 
-            <TextBox x:Name="emailBox" Text="{Binding ElementName=listView, Path=SelectedItem.Email, Mode=OneWay}" Grid.Row="7" Grid.Column="7" Grid.ColumnSpan="5" VerticalContentAlignment="Center" FontSize="25"/>
+            <TextBox x:Name="emailBox" Text="{Binding ElementName=listView, Path=SelectedItem.Email, Mode=OneWay}" Grid.Row="8" Grid.Column="7" Grid.ColumnSpan="5" VerticalContentAlignment="Center" FontSize="25"/>
 
-            <Viewbox Grid.Row="9" Grid.Column="7" HorizontalAlignment="Left" Grid.ColumnSpan="2">
+            <Viewbox Grid.Row="10" Grid.Column="7" HorizontalAlignment="Left" Grid.ColumnSpan="2">
                 <Label>Remember me:</Label>
             </Viewbox>
-            <Viewbox Grid.Row="10" Grid.Column="7" HorizontalAlignment="Left" Grid.ColumnSpan="4">
+            <Viewbox Grid.Row="11" Grid.Column="7" HorizontalAlignment="Left" Grid.ColumnSpan="4">
                 <Label>
                     <Hyperlink Click="Hyperlink_Click">
                         Accept terms and conditions
@@ -81,21 +82,21 @@
                 </Label>
             </Viewbox>
 
-            <Button x:Name="okButton"  Grid.Row="11" Grid.Column="3" Grid.ColumnSpan="6" Style="{StaticResource BtnStyle}" Click="Ok_Button" >
-                    <Viewbox Stretch="Uniform">
-                        <Label Foreground="White">OK</Label>
-                    </Viewbox>                
-                </Button>
-                
-                <Viewbox Grid.Row="9" Grid.Column="11" Grid.ColumnSpan="1" HorizontalAlignment="Right" Stretch="Uniform">
-                    <CheckBox x:Name="rememberBox"/>
+            <Button x:Name="okButton"  Grid.Row="12" Grid.Column="3" Grid.ColumnSpan="6" Style="{StaticResource BtnStyle}" Click="Ok_Button" >
+                <Viewbox Stretch="Uniform">
+                    <Label Foreground="White">OK</Label>
                 </Viewbox>
+            </Button>
 
-                <Viewbox Grid.Row="10" Grid.Column="11" Grid.ColumnSpan="1" HorizontalAlignment="Right" Stretch="Uniform">
-                    <CheckBox x:Name="termsBox"/>
-                </Viewbox>
+            <Viewbox Grid.Row="10" Grid.Column="11" Grid.ColumnSpan="1" HorizontalAlignment="Right" Stretch="Uniform">
+                <CheckBox x:Name="rememberBox"/>
+            </Viewbox>
 
-                <ListView x:Name="listView" ItemsSource="{Binding guests, UpdateSourceTrigger=Explicit}" SelectedItem="{Binding Path=SelectedGuest, UpdateSourceTrigger=Explicit}" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="5" Grid.RowSpan="6">
+            <Viewbox Grid.Row="11" Grid.Column="11" Grid.ColumnSpan="1" HorizontalAlignment="Right" Stretch="Uniform">
+                <CheckBox x:Name="termsBox"/>
+            </Viewbox>
+
+            <ListView x:Name="listView" ItemsSource="{Binding guests, UpdateSourceTrigger=Explicit}" SelectedItem="{Binding Path=SelectedGuest, UpdateSourceTrigger=Explicit}" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="5" Grid.RowSpan="6">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=Name}" Width="300" >
@@ -117,30 +118,30 @@
                                 <Setter Property="Height"  Value="25"/>
                                 <Setter Property="FontSize" Value="15"/>
                                 <Setter Property="Foreground" Value="White"/>
-                                <Setter Property="Background" Value="Gray"/>
+                                <Setter Property="Background" Value="#454444"/>
                             </Style>
                         </GridView.ColumnHeaderContainerStyle>
                     </GridView>
                 </ListView.View>
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
-                        <Setter Property="Height" Value="50" />                     
+                        <Setter Property="Height" Value="50" />
                     </Style>
                 </ListView.ItemContainerStyle>
             </ListView>
-            <Button x:Name="backButton" Style="{StaticResource NumPadBtn}" Grid.Column="1" Grid.Row="11" Click="BackButton_Click">
+            <Button x:Name="backButton" Style="{StaticResource NumPadBtn}" Grid.Column="1" Grid.Row="12" Click="BackButton_Click">
                 <Viewbox>
                     <Image Source="Assets\backButtonIcon.png"/>
                 </Viewbox>
             </Button>
 
-            <Button x:Name="clearButton" Background="Gray" Grid.Column="7" Grid.Row="8" Click="Clear_Click">
+            <Button x:Name="clearButton" Background="#454444" Grid.Column="11" Grid.Row="1" Click="Clear_Click">
                 <Viewbox>
-                    <Label Foreground="White" Content="Clear All"/>
+                    <Label Foreground="White" Content="Clear all"/>
                 </Viewbox>
             </Button>
 
-            <Button x:Name="keyBoard" Style="{StaticResource NumPadBtn}" Grid.Column="11" Grid.Row="11" Click="KeyBoard_Click" HorizontalAlignment="Right">
+            <Button x:Name="keyBoard" Style="{StaticResource NumPadBtn}" Grid.Column="11" Grid.Row="12" Click="KeyBoard_Click" HorizontalAlignment="Right">
                 <Viewbox>
                     <Image Source="Assets\KeyBoard.png"/>
                 </Viewbox>
