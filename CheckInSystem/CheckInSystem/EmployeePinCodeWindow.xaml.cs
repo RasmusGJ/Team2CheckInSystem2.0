@@ -96,7 +96,7 @@ namespace CheckInSystem
         {
             if(TextBoxNumPad.Text.Length != 4)
             {
-                MessageBox.Show("Incorrect pin");
+                MessageBox.Show("Pin too short, try again.");
                 return;
             }
 
@@ -115,7 +115,7 @@ namespace CheckInSystem
             }
             else
             {
-                MessageBox.Show("Wrong PinCode BITCH");
+                MessageBox.Show("Wrong pin code, try again.");
                 TextBoxNumPad.Text = "";
                 UpdateCircles();
             }

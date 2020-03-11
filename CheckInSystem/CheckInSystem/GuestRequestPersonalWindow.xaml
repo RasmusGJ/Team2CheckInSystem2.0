@@ -74,7 +74,7 @@
                             <Setter Property="Height"  Value="50"/>
                             <Setter Property="FontSize" Value="30"/>
                             <Setter Property="Foreground" Value="White"/>
-                            <Setter Property="Background" Value="#E12728"/>
+                            <Setter Property="Background" Value="#454444"/>
                         </Style>
                     </GridView.ColumnHeaderContainerStyle>
                 </GridView>
@@ -120,7 +120,7 @@
                 <Image Source="Assets\KeyBoard.png"/>
             </Viewbox>
         </Button>
-        <Button x:Name="clearButton" Style="{StaticResource BtnStyle}" Width="200" Grid.Column="5" Grid.Row="5" Click="Clear_Click">
+        <Button x:Name="clearButton" Style="{StaticResource BtnStyle}" Width="200" Grid.Column="5" Grid.Row="5" Click="Clear_Click" Background="#454444">
             <Viewbox>
                 <Label Content="Clear All"/>
             </Viewbox>
