@@ -44,7 +44,7 @@ namespace CheckInSystem
         }
 
 
-        // Filters the textboxes so the listview matches the information in the textboxes
+        // Filters the listview so the listview matches the information in the textboxes
         private bool UserFilter(object item)
         {
             if (String.IsNullOrEmpty(nameBox.Text) && String.IsNullOrEmpty(compBox.Text))
