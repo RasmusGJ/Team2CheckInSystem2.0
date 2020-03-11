@@ -53,7 +53,6 @@ namespace CheckInSystem.Application_Layer
         //the methods parameter to the guest tabel in the database.
         //The method checks if id passed through parameter is equivilent-
         //to any guest id's in database -> if so, then UPDATE guest information.
-        //!!SelectedGuest
         public void AddGuestToDB(string id, string name, string company, string email, string phone)
         {
             if (string.IsNullOrEmpty(id))
@@ -63,6 +62,8 @@ namespace CheckInSystem.Application_Layer
             int parsedId = Int32.Parse(id);
             string ConnectionString = "Server=10.56.8.32;Database=A_GRUPEDB02_2019;User Id=A_GRUPE02;Password=A_OPENDB02";
 
+            //
+            //
             foreach (Guest g in guests)
             {
                 if (g.Id == parsedId)
