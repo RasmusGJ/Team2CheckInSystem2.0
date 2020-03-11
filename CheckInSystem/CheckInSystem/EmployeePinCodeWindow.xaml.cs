@@ -26,12 +26,12 @@ namespace CheckInSystem
             InitializeComponent();
             WindowState = WindowState.Maximized;
         }
-
+        // Gets the controller from the previous window, so the same data is uphold
         public void GetController(Controller newController)
         {
             controller = newController;
         }
-
+        // Adds a number to the pincode as long as the pincode doesn't pass 4 numbers
         private void AddNum(object sender, RoutedEventArgs e)
         {
             if(TextBoxNumPad.Text.Length < 4)
@@ -40,7 +40,8 @@ namespace CheckInSystem
             }
             UpdateCircles();
         }        
-
+        // Updates the interface to fill out the circles as the pincode is filled out
+        // So if the pincode has one number the first circle is filled and so on
         public void UpdateCircles()
         {
             switch (TextBoxNumPad.Text.Length)
@@ -80,18 +81,17 @@ namespace CheckInSystem
                     break;
                     
             }
-
         }
+        // Removes the last entered number in the pincode 
         private void DeleteNum(object sender, RoutedEventArgs e)
         {
             if(TextBoxNumPad.Text.Length >= 1)
             {
                 TextBoxNumPad.Text = TextBoxNumPad.Text.Remove(TextBoxNumPad.Text.Length - 1);
             }
-            
             UpdateCircles();
         }
-
+        // Starts the verification proccess for the pincode, only if there are 4 numbers in the string
         private void ClickVerify(object sender, RoutedEventArgs e)
         {
             if(TextBoxNumPad.Text.Length != 4)
@@ -119,8 +119,8 @@ namespace CheckInSystem
                 TextBoxNumPad.Text = "";
                 UpdateCircles();
             }
-
         }
+        // Goes to the previous window MainWindow
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainwindow = new MainWindow();            

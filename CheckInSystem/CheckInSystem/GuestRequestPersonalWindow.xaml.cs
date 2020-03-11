@@ -32,12 +32,12 @@ namespace CheckInSystem
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(listView.ItemsSource);
             view.Filter = UserFilter;
         }
-
+        // Gets the controller from the previous window, so the same data is uphold
         public void GetController(Controller newController)
         {
             controller = newController;
         }
-
+        // Filters the listview based on the input from the textboxes
         private bool UserFilter(object item)
         {
             if (String.IsNullOrEmpty(nameFilter.Text) && String.IsNullOrEmpty(departmentFilter.Text))
@@ -53,21 +53,21 @@ namespace CheckInSystem
                 return ((item as Employee).Name.IndexOf(nameFilter.Text, StringComparison.OrdinalIgnoreCase) >= 0 && 
                     (item as Employee).Department.IndexOf(departmentFilter.Text, StringComparison.OrdinalIgnoreCase) >= 0);
         }
-
+        // Refreshes the Listview if there is text in the textboxes
         private void txtFilter_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(listView.ItemsSource).Refresh();
         }
-
+        // Goes back to the previous window 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            GuestNoMeetingWindow noReservationWindow = new GuestNoMeetingWindow();
-            noReservationWindow.GetController(controller);
-            noReservationWindow.Show();
+            GuestNoMeetingWindow guestNoMeetingWindow = new GuestNoMeetingWindow();
+            guestNoMeetingWindow.GetController(controller);
+            guestNoMeetingWindow.Show();
             Thread.Sleep(10);
             this.Close();
         }
-
+        // Checks if the required textboxes have been filled, if not a messagebox will pop up 
         private void Click_Ok(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(nameFilter.Text) || string.IsNullOrEmpty(departmentFilter.Text))
@@ -78,14 +78,14 @@ namespace CheckInSystem
             {
                 // controller.SendMail(emailGet.Content.ToString());
                 controller.CurrentPersonName = nameFilter.Text;
-                GuestNotificationSentWindow notificationSent = new GuestNotificationSentWindow();
-                notificationSent.GetController(controller);
-                notificationSent.Show();
+                GuestNotificationSentWindow guestNotificationSentWindow = new GuestNotificationSentWindow();
+                guestNotificationSentWindow.GetController(controller);
+                guestNotificationSentWindow.Show();
                 Thread.Sleep(10);
                 this.Close();
             }
         }
-
+        // Opens the on screen keyboard
         private void KeyBoard_Click(object sender, RoutedEventArgs e)
         {
             Process process = new Process();
@@ -95,7 +95,7 @@ namespace CheckInSystem
             process.StartInfo.Verb = "runas";
             process.Start();
         }
-
+        // Clears the textboxes for text
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
             nameFilter.Clear();

@@ -25,12 +25,13 @@ namespace CheckInSystem
             WindowState = WindowState.Maximized;
 
         }
-
+        // Gets the controller from the previous window so as to uphold the same information.
         public void GetController(Controller newController)
         {
             controller = newController;
             employeeName.Content = controller.CurrentPersonName;
         }
+        // Goes to MainWindow
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainwindow = new MainWindow();
@@ -38,7 +39,7 @@ namespace CheckInSystem
             Thread.Sleep(10);
             this.Close();
         }
-
+        // Goes to the previous window GuestRequestPersonalWindow
         private void BackButton_Click(object sender, RoutedEventArgs e)
         { 
             GuestRequestPersonalWindow guestRequestWindow = new GuestRequestPersonalWindow();
