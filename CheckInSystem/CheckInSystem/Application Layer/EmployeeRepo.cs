@@ -11,10 +11,14 @@ namespace CheckInSystem.Application_Layer
 {
     public class EmployeeRepo : INotifyPropertyChanged
     {
+        //The SelectedEmp property is used in windows that wish to -
+        //grab a selected employee from lists.        
         private Employee selectedEmp;
         public ObservableCollection<Employee> observableCollectionGuest { get; set; } = new ObservableCollection<Employee>();
         public Employee SelectedEmp { get { return selectedEmp; } set { selectedEmp = value; OnPropertyChanged("SelectedProduct"); } }
 
+        //Uses constructor to populate the List employees- 
+        //when EmployeeRepo object is created
         public List<Employee> employees { get; set; } = new List<Employee>();
         public EmployeeRepo()
         {
@@ -22,7 +26,9 @@ namespace CheckInSystem.Application_Layer
 
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
-                //Selects all from Employee tabel in database
+                //Selects all data from Employee tabel and joins-
+                //Role titles and Department titles to-
+                //appropriate employees
                 string pinCodeQuery = "SELECT Employee.Id, Employee.Name, Employee.Email, Employee.MobilePhone, Employee.LandlinePhone, Employee.Initials, Employee.PinCode, Role.RoleTranslation AS RoleTitleENG, Department.DepartmentTranslation AS DepartmentTitleENG " +
                     "FROM Employee " +
                     "INNER JOIN Role ON Employee.Role_Id = Role.Id " +
@@ -32,6 +38,7 @@ namespace CheckInSystem.Application_Layer
                 conn.Open();
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
+                    //Reads database while there is something to read.
                     while (reader.Read())
                     {
                         Employee employee = new Employee();
@@ -50,8 +57,9 @@ namespace CheckInSystem.Application_Layer
                     }
                 }
             }
-
         }
+
+        //OnPropertyChanged is used to dynamically change bindings within xaml
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string name)
         {

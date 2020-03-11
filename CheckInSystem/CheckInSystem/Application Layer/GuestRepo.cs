@@ -11,11 +11,14 @@ namespace CheckInSystem.Application_Layer
 {
     public class GuestRepo : INotifyPropertyChanged
     {
+        //The SelectedGuest property is used in the windows that wish to -
+        //grab a selected guest from lists.  
         private Guest selectedGuest;
         public ObservableCollection<Guest> observableCollectionGuest { get; set; } = new ObservableCollection<Guest>();
         public Guest SelectedGuest { get { return selectedGuest; } set { selectedGuest = value; OnPropertyChanged("SelectedProduct"); } }
-        
 
+        //Uses constructor to populate the List employees- 
+        //when EmployeeRepo object is created
         public List<Guest> guests { get; set; } = new List<Guest>();
         public GuestRepo()
         {
@@ -23,7 +26,7 @@ namespace CheckInSystem.Application_Layer
 
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
-                //Selects all from Employee tabel in database
+                //Selects all from Guest tabel in database
                 string guestQuery = "SELECT Guest.Name, Guest.Email, Guest.Company, Guest.MobilePhone, Guest.Id " +
                     "FROM Guest;";
 
@@ -34,7 +37,7 @@ namespace CheckInSystem.Application_Layer
                     while (reader.Read())
                     {
                         Guest guest = new Guest();
-                        //Adds relavent column to properties in Guest object. Then adds an employee to employees list.
+                        //Adds relavent column to properties in Guest object. Then adds a guest to guests list.
                         guest.Name = reader.GetString(0);
                         guest.Email = reader.GetString(1);
                         guest.Company = reader.GetString(2);
@@ -46,7 +49,12 @@ namespace CheckInSystem.Application_Layer
             }            
         }
         
-        public void GuestDB(string id, string name, string company, string email, string phone)
+        //The AddGuestToDB method adds data passed through-
+        //the methods parameter to the guest tabel in the database.
+        //The method checks if id passed through parameter is equivilent-
+        //to any guest id's in database -> if so, then UPDATE guest information.
+        //!!SelectedGuest
+        public void AddGuestToDB(string id, string name, string company, string email, string phone)
         {
             if (string.IsNullOrEmpty(id))
             {
