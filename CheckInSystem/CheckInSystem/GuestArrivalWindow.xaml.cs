@@ -137,6 +137,8 @@ namespace CheckInSystem
             compBox.Clear();
             phoneBox.Clear();
             emailBox.Clear();
+
+            listView.SelectedItem = null;
         }
 
         private void phoneBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
