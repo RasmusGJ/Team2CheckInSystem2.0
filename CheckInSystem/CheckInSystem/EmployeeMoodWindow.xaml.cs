@@ -31,7 +31,10 @@ namespace CheckInSystem
 
         public void GetController(Controller newController)
         {
-            controller = newController;
+            controller = new Controller()
+            {
+                CurrentPerson = newController.CurrentPerson
+            };
 
             HideOrShowCheckOutBtn();          
         }
