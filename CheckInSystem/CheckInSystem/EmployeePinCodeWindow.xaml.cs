@@ -97,6 +97,8 @@ namespace CheckInSystem
             if(TextBoxNumPad.Text.Length != 4)
             {
                 MessageBox.Show("Pin too short, try again.");
+                TextBoxNumPad.Text = "";
+                UpdateCircles();
                 return;
             }
 
