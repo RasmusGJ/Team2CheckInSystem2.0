@@ -29,6 +29,11 @@ namespace CheckInSystem
             
             InitializeComponent();
             WindowState = WindowState.Maximized;
+        }
+
+        public void GetController(Controller newController)
+        {
+            controller = newController;
             guestRepo = controller.guestRepo;
             appointmentRepo = controller.appointmentRepo;
             DataContext = guestRepo;
@@ -36,6 +41,8 @@ namespace CheckInSystem
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(listView.ItemsSource);
             view.Filter = UserFilter;
         }
+
+
         // Filters the textboxes so the listview matches the information in the textboxes
         private bool UserFilter(object item)
         {
