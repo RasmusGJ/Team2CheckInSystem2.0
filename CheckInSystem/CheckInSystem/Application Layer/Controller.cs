@@ -26,15 +26,16 @@ namespace CheckInSystem.Application_Layer
             {
                 if (pinCode == employee.PinCode)
                 {
+                    // If the pincode matches an employee, they will be assigned as the CurrentPerson in the login process
+                    // So their information can be displayed in later windows
                     CurrentPerson = new Employee();
                     CurrentPerson = employee;
-
                     return true;
                 }               
             }
             return false;          
         }
-
+        // Assigns the selected mood and a checkin time to the CurrentPerson going through the login proccess
         public void AssignMood(Mood mood)
         {
             CheckIn newCheckIn = new CheckIn();
@@ -42,7 +43,7 @@ namespace CheckInSystem.Application_Layer
             newCheckIn.person = CurrentPerson;
             CheckInRepo.CheckIn(newCheckIn);
         }
-
+        // Assigns a guest as the CurrentPerson and gives them a check in time, as well as checking them into the database 
         public void AssignGuestCheckIn()
         {
             CurrentPerson = new Guest();            
@@ -50,7 +51,7 @@ namespace CheckInSystem.Application_Layer
             newCheckIn.person = CurrentPerson;
             CheckInRepo.CheckIn(newCheckIn);
         }
-
+        // Checks if the entered email is valid
         bool IsValidEmail(string email)
         {
             try
@@ -63,7 +64,7 @@ namespace CheckInSystem.Application_Layer
                 return false;
             }
         }
-
+        // Sends a mail to the guest so they recieve the relevant safety information
         public void SendMail(string toEmail)
         {
             try

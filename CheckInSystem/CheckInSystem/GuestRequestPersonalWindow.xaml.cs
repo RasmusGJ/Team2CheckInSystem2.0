@@ -76,7 +76,6 @@ namespace CheckInSystem
             }
             else
             {
-                // controller.SendMail(emailGet.Content.ToString());
                 controller.CurrentPersonName = nameFilter.Text;
                 GuestNotificationSentWindow guestNotificationSentWindow = new GuestNotificationSentWindow();
                 guestNotificationSentWindow.GetController(controller);
