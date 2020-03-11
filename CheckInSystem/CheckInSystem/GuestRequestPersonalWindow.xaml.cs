@@ -99,6 +99,8 @@ namespace CheckInSystem
         {
             nameFilter.Clear();
             departmentFilter.Clear();
+
+            listView.SelectedItem = null;
         }
     }
 }
