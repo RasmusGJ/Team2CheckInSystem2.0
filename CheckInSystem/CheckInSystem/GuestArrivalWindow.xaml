@@ -134,7 +134,7 @@
                 </Viewbox>
             </Button>
 
-            <Button x:Name="clearButton" Background="Gray" Grid.Column="10" Grid.Row="11" Click="Clear_Click">
+            <Button x:Name="clearButton" Background="Gray" Grid.Column="7" Grid.Row="8" Click="Clear_Click">
                 <Viewbox>
                     <Label Foreground="White" Content="Clear All"/>
                 </Viewbox>
