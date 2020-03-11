@@ -23,20 +23,19 @@ namespace CheckInSystem
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        Controller controller = new Controller();
         public MainWindow()
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;
-            AppointmentRepo test = new AppointmentRepo();
-            
-            
         }
+
         /// Goes to EmployeePincodeWindow
         private void GoToPinCodeWindow(object sender, RoutedEventArgs e)
         {
             rectangleRed.Fill = new SolidColorBrush(Color.FromRgb(254,24,24));
             EmployeePinCodeWindow pinWindow = new EmployeePinCodeWindow();
+            pinWindow.GetController(controller);
             pinWindow.Show();
             Thread.Sleep(10);
             this.Close();
@@ -45,6 +44,7 @@ namespace CheckInSystem
         private void GoToGuestArrivalWindow(object sender, RoutedEventArgs e)
         {
             GuestArrivalWindow arrivalWindow = new GuestArrivalWindow();
+            arrivalWindow.GetController(controller);
             arrivalWindow.Show();
             Thread.Sleep(10);
             this.Close();
