@@ -24,9 +24,9 @@ namespace CheckInSystem
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;
-            
-        
         }
+        // GetController pulls the controller from the previous window with all the saved information
+        // Regarding the guest and the person booking
         public void GetController(Controller newController)
         {
             controller = newController;
@@ -37,15 +37,15 @@ namespace CheckInSystem
             roleLabel.Content = controller.appointmentRepo.currentAppointment.Booker.Role;
             departmentLabel.Content = controller.appointmentRepo.currentAppointment.Booker.Department;
         }
-
+        // Goes to the previous window, GuestArrivalWindow
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            GuestArrivalWindow announceArrivalWindow = new GuestArrivalWindow();
-            announceArrivalWindow.Show();
+            GuestArrivalWindow guestArrivalWindow = new GuestArrivalWindow();
+            guestArrivalWindow.Show();
             Thread.Sleep(10);
             this.Close();
         }
-
+        // Goes to MainWindow
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainwindow = new MainWindow();

@@ -32,7 +32,7 @@ namespace CheckInSystem
             
             
         }
-
+        /// Goes to EmployeePincodeWindow
         private void GoToPinCodeWindow(object sender, RoutedEventArgs e)
         {
             rectangleRed.Fill = new SolidColorBrush(Color.FromRgb(254,24,24));
@@ -41,7 +41,7 @@ namespace CheckInSystem
             Thread.Sleep(10);
             this.Close();
         }
-
+        /// Goes to GuestArrivalWindow
         private void GoToGuestArrivalWindow(object sender, RoutedEventArgs e)
         {
             GuestArrivalWindow arrivalWindow = new GuestArrivalWindow();
