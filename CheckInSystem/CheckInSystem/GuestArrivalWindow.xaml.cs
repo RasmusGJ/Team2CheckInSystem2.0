@@ -85,6 +85,7 @@ namespace CheckInSystem
             }
             else
             {
+                // controller.SendMail(emailBox.Text.ToString());
                 guestRepo.AddGuestToDB(idBox.Text, nameBox.Text, compBox.Text, emailBox.Text, phoneBox.Text);
 
                 //Assigns a new checkin to the selectedguest
